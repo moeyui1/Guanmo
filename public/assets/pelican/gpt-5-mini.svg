@@ -1,0 +1,173 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a6e0ff"/>
+      <stop offset="100%" stop-color="#e8f8ff"/>
+    </linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8ad07a"/>
+      <stop offset="100%" stop-color="#58a14a"/>
+    </linearGradient>
+    <style>
+      .road { fill:#444; }
+      .road-line { stroke:#fff; stroke-width:8; stroke-linecap:round; stroke-dasharray:36 28; }
+      .rim { fill:#1f2a2f; }
+      .hub { fill:#243033; }
+      .tire { fill:#0e1214; }
+      .spoke { stroke:#6f8a95; stroke-width:2; stroke-linecap:round; }
+      .frame { stroke:#2b3940; stroke-width:8; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .metal { stroke:#6b7980; stroke-width:5; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .pel-white { fill:#fffdfb; }
+      .pel-gray { fill:#e6eef3; }
+      .beak { fill:#f6b24d; }
+      .shoe { fill:#3a2b1f; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="540" fill="url(#sky)" />
+  <g opacity="0.7">
+    <ellipse cx="140" cy="120" rx="96" ry="36" fill="#fff"/>
+    <ellipse cx="240" cy="100" rx="60" ry="26" fill="#fff"/>
+    <ellipse cx="760" cy="90" rx="110" ry="40" fill="#fff"/>
+  </g>
+
+  <!-- Hills and road -->
+  <path d="M0 360 C140 300 320 300 460 360 C620 420 820 420 960 360 L960 540 L0 540 Z" fill="url(#hill)"/>
+  <rect x="0" y="420" width="960" height="120" class="road"/>
+  <line x1="-200" y1="476" x2="1160" y2="476" class="road-line">
+    <animate attributeName="x1" from="-200" to="-560" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="x2" from="1160" to="800" dur="8s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Bicycle group -->
+  <g id="bike" transform="translate(0,0)">
+
+    <!-- Rear wheel -->
+    <g id="rearWheel" transform="translate(300,390)">
+      <circle r="96" class="tire"/>
+      <circle r="72" class="rim"/>
+      <g id="rearSpokes">
+        <line x1="0" y1="0" x2="0" y2="-72" class="spoke"/>
+        <line x1="0" y1="0" x2="54" y2="-54" class="spoke"/>
+        <line x1="0" y1="0" x2="72" y2="0" class="spoke"/>
+        <line x1="0" y1="0" x2="54" y2="54" class="spoke"/>
+        <line x1="0" y1="0" x2="0" y2="72" class="spoke"/>
+        <line x1="0" y1="0" x2="-54" y2="54" class="spoke"/>
+        <line x1="0" y1="0" x2="-72" y2="0" class="spoke"/>
+        <line x1="0" y1="0" x2="-54" y2="-54" class="spoke"/>
+      </g>
+      <circle r="10" class="hub"/>
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Front wheel -->
+    <g id="frontWheel" transform="translate(660,390)">
+      <circle r="96" class="tire"/>
+      <circle r="72" class="rim"/>
+      <g>
+        <line x1="0" y1="0" x2="0" y2="-72" class="spoke"/>
+        <line x1="0" y1="0" x2="54" y2="-54" class="spoke"/>
+        <line x1="0" y1="0" x2="72" y2="0" class="spoke"/>
+        <line x1="0" y1="0" x2="54" y2="54" class="spoke"/>
+        <line x1="0" y1="0" x2="0" y2="72" class="spoke"/>
+        <line x1="0" y1="0" x2="-54" y2="54" class="spoke"/>
+        <line x1="0" y1="0" x2="-72" y2="0" class="spoke"/>
+        <line x1="0" y1="0" x2="-54" y2="-54" class="spoke"/>
+      </g>
+      <circle r="10" class="hub"/>
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Frame -->
+    <path d="M300 390 L455 300 L610 310 L660 390" class="frame"/>
+    <line x1="455" y1="300" x2="480" y2="368" class="frame"/>
+    <circle cx="480" cy="368" r="26" fill="#2b3940"/>
+
+    <!-- Handlebars -->
+    <path d="M610 310 L640 272" class="metal"/>
+    <circle cx="642" cy="270" r="6" fill="#2b3940"/>
+
+    <!-- Crank and pedals -->
+    <g id="crank" transform="translate(480,368)">
+      <circle r="6" fill="#111"/>
+      <!-- right pedal arm -->
+      <g id="rightPedal" transform="translate(44,0)">
+        <rect x="-16" y="-6" width="32" height="12" rx="3" fill="#2b2f33"/>
+        <rect x="-4" y="10" width="8" height="12" rx="2" class="shoe"/>
+      </g>
+      <!-- left pedal arm (opposite) -->
+      <g id="leftPedal" transform="translate(-44,0) rotate(180)">
+        <rect x="-16" y="-6" width="32" height="12" rx="3" fill="#2b2f33"/>
+        <rect x="-4" y="10" width="8" height="12" rx="2" class="shoe"/>
+      </g>
+
+      <!-- rotate whole crank to drive pedals and emulate pedaling -->
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite"/>
+    </g>
+
+  </g>
+
+  <!-- Pelican sitting on bike -->
+  <g id="pelican" transform="translate(0,0)">
+    <!-- slight bobbing body group tied to seat point (480,260) -->
+    <g transform="translate(0,0)">
+      <g id="body" transform="translate(0,0)">
+        <!-- torso -->
+        <ellipse cx="480" cy="250" rx="110" ry="68" class="pel-white"/>
+        <ellipse cx="440" cy="270" rx="68" ry="38" class="pel-gray"/>
+
+        <!-- wing with gentle flap (use SMIL rotate) -->
+        <g id="wing" transform="translate(480,240)">
+          <path d="M-40 -6 C40 -40 110 -14 90 40 C60 76 -10 70 -50 40 C-78 6 -60 2 -40 -6 Z" class="pel-gray"/>
+          <animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0; -8; 0" dur="2s" repeatCount="indefinite"/>
+        </g>
+
+        <!-- head and beak -->
+        <g transform="translate(565,215)">
+          <circle cx="0" cy="0" r="30" class="pel-white"/>
+          <circle cx="8" cy="-4" r="5" fill="#1a2228"/>
+          <path d="M28 6 L72 24 L60 36 L30 18" class="beak"/>
+          <path d="M58 28 C68 34 64 42 52 42 C48 34 52 30 58 28 Z" fill="#d9892a"/>
+        </g>
+
+        <!-- neck shading -->
+        <path d="M520 230 C500 230 480 240 468 256" fill="none" stroke="#dfe9ee" stroke-width="6" stroke-linecap="round"/>
+
+        <!-- eye small highlight -->
+        <circle cx="572" cy="212" r="2" fill="#fff"/>
+
+      </g>
+
+      <!-- legs: animate rotation to sync with pedals -->
+      <!-- right leg connecting to pedal at crank (translate to hip point then rotate) -->
+      <g id="rightLeg" transform="translate(500,300)">
+        <g id="rleg" transform="translate(0,0)">
+          <path d="M0 0 C6 28 14 56 14 82" stroke="#c47f2a" stroke-width="12" stroke-linecap="round" fill="none"/>
+          <path d="M14 82 C18 92 28 98 38 96" stroke="#c47f2a" stroke-width="12" stroke-linecap="round" fill="none"/>
+        </g>
+        <!-- rotate around hip; values offset to match pedal phase (right pedal at 0deg) -->
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate" values="-20;40;-20" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1"/>
+      </g>
+
+      <!-- left leg (opposite phase) -->
+      <g id="leftLeg" transform="translate(450,300)">
+        <g id="lleg" transform="translate(0,0)">
+          <path d="M0 0 C-6 28 -14 56 -14 82" stroke="#c47f2a" stroke-width="12" stroke-linecap="round" fill="none"/>
+          <path d="M-14 82 C-18 92 -28 98 -38 96" stroke="#c47f2a" stroke-width="12" stroke-linecap="round" fill="none"/>
+        </g>
+        <!-- left leg opposite phase: start with 180 offset achieved by keyTimes shift -->
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate" values="40;-20;40" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1"/>
+      </g>
+
+      <!-- small tail -->
+      <path d="M420 268 C398 272 390 286 408 294 C422 286 432 276 420 268 Z" fill="#e1eef3"/>
+
+    </g>
+
+    <!-- slight body bob synchronized with pedaling (use SMIL translate anim) -->
+    <animateTransform xlink:href="#body" attributeName="transform" attributeType="XML" type="translate" values="0 0; 0 -4; 0 0" dur="2s" repeatCount="indefinite"/>
+
+  </g>
+
+</svg>

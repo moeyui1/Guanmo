@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#a6e0ff"/>
+      <stop offset="1" stop-color="#dff3ff"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff59a"/>
+      <stop offset="1" stop-color="#ffd89a"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f2f7fb"/>
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    <style>
+      .ground { fill: #8fc57b; }
+      .road { fill: #e6efe1; }
+      .wheel-tire { fill: #222; stroke: #000; stroke-width:2; }
+      .wheel-rim { fill: #f4f7f9; stroke:#c8d2d9; stroke-width:2; }
+      .spoke { stroke:#c8d2d9; stroke-width:1.5; }
+      .frame { fill:none; stroke:#c84e28; stroke-width:6; stroke-linecap:round; stroke-linejoin:round; }
+      .seat { fill:#2b2b2b; }
+      .handle { stroke:#c84e28; stroke-width:6; stroke-linecap:round; }
+      .beak { fill:#f6b14a; stroke:#d28a2e; stroke-width:2; }
+      .eye { fill:#1b1b1b; }
+      .body { fill:url(#body); stroke:#dfe9ef; stroke-width:2; }
+      .wing { fill:#f8fbff; stroke:#e0eaf2; stroke-width:1.5; }
+      .leg { fill:#ffd7a6; stroke:#d7a46b; stroke-width:1.2; }
+      .foot { fill:#ffb36b; stroke:#d2843f; stroke-width:1.2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#sky)"/>
+  <g transform="translate(820,80)">
+    <circle r="48" fill="url(#sun)" opacity="0.95"/>
+  </g>
+
+  <!-- Ground and road -->
+  <rect x="0" y="420" width="960" height="120" fill="#bfe6b5"/>
+  <path d="M0 460 C200 440, 400 480, 960 450 L960 540 L0 540 Z" class="ground" opacity="0.6"/>
+  <rect x="0" y="490" width="960" height="30" class="road"/>
+
+  <!-- Bicycle group -->
+  <g id="bike-and-pelican" transform="translate(140,60)">
+    <!-- shadow under bike -->
+    <ellipse cx="440" cy="420" rx="160" ry="18" fill="#000" opacity="0.12"/>
+
+    <!-- Rear wheel group (center at 220,360) -->
+    <g transform="translate(220,360)">
+      <g>
+        <circle r="62" class="wheel-tire"/>
+        <circle r="44" class="wheel-rim"/>
+        <!-- spokes -->
+        <g stroke-linecap="round">
+          <line x1="0" y1="-44" x2="0" y2="44" class="spoke"/>
+          <line x1="-44" y1="0" x2="44" y2="0" class="spoke"/>
+          <line x1="-31" y1="-31" x2="31" y2="31" class="spoke"/>
+          <line x1="31" y1="-31" x2="-31" y2="31" class="spoke"/>
+        </g>
+      </g>
+      <!-- wheel rotation -->
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+        from="0" to="360" dur="2s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Front wheel group (center at 520,360) -->
+    <g transform="translate(520,360)">
+      <g>
+        <circle r="62" class="wheel-tire"/>
+        <circle r="44" class="wheel-rim"/>
+        <!-- spokes -->
+        <g stroke-linecap="round">
+          <line x1="0" y1="-44" x2="0" y2="44" class="spoke"/>
+          <line x1="-44" y1="0" x2="44" y2="0" class="spoke"/>
+          <line x1="-31" y1="-31" x2="31" y2="31" class="spoke"/>
+          <line x1="31" y1="-31" x2="-31" y2="31" class="spoke"/>
+        </g>
+      </g>
+      <!-- wheel rotation -->
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+        from="0" to="360" dur="2s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Frame -->
+    <g>
+      <path d="M220 360 L320 300 L360 300 L420 260 L480 300 L520 300 L460 360" class="frame" fill="none"/>
+      <!-- seat tube -->
+      <path d="M320 300 L320 262" class="frame"/>
+      <rect x="300" y="246" width="40" height="10" rx="4" class="seat"/>
+      <!-- handlebar stem -->
+      <path d="M420 260 L460 240" class="frame"/>
+      <path d="M460 240 L500 230" class="handle"/>
+      <circle cx="500" cy="230" r="4" fill="#2b2b2b"/>
+      <circle cx="320" cy="262" r="6" fill="#d1a27a"/>
+    </g>
+
+    <!-- Pedal crank center -->
+    <g transform="translate(360,320)">
+      <!-- crank arm and pedal axle -->
+      <circle r="8" fill="#d1a27a" stroke="#a57a53" stroke-width="2"/>
+      <path d="M0 0 L28 10" stroke="#a57a53" stroke-width="4" stroke-linecap="round"/>
+      <path d="M0 0 L-24 -8" stroke="#a57a53" stroke-width="4" stroke-linecap="round"/>
+
+      <!-- feet group rotating - left foot -->
+      <g id="left-foot" transform="translate(28,10)">
+        <g class="leg">
+          <rect x="-6" y="-4" width="12" height="36" rx="4" transform="rotate(12)"/>
+        </g>
+        <g class="foot">
+          <rect x="-18" y="30" width="36" height="10" rx="3" transform="rotate(12)"/>
+        </g>
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+          from="0" to="360" dur="2s" repeatCount="indefinite"/>
+      </g>
+
+      <!-- right foot opposite phase -->
+      <g id="right-foot" transform="translate(-24,-8)">
+        <g class="leg">
+          <rect x="-6" y="-4" width="12" height="36" rx="4" transform="rotate(-12)"/>
+        </g>
+        <g class="foot">
+          <rect x="-18" y="30" width="36" height="10" rx="3" transform="rotate(-12)"/>
+        </g>
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+          from="0" to="360" dur="2s" begin="1s" repeatCount="indefinite"/>
+      </g>
+    </g>
+
+    <!-- Pelican body group (positioned above frame) -->
+    <g transform="translate(360,240)">
+      <!-- subtle bobbing matching pedaling (small up/down) -->
+      <animateTransform attributeName="transform" attributeType="XML" type="translate"
+        values="360 240;360 236;360 240" dur="2s" repeatCount="indefinite"/>
+
+      <!-- torso -->
+      <g filter="url(#shadow)">
+        <ellipse cx="-20" cy="8" rx="70" ry="50" class="body"/>
+      </g>
+      <!-- belly -->
+      <ellipse cx="-10" cy="24" rx="44" ry="26" fill="#fff6ea" stroke="#e9f0f7" stroke-width="1.5"/>
+
+      <!-- wing with flap animation -->
+      <g transform="translate(-10,8)">
+        <path d="M0 -6 C40 -10, 72 8, 36 34 C10 52, -10 24, 0 -6 Z" class="wing"/>
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+          values="-10 0 0;20 0 0;-10 0 0" dur="1.6s" repeatCount="indefinite"/>
+      </g>
+
+      <!-- neck and head -->
+      <g transform="translate(40,-24)">
+        <path d="M0 0 C18 -6, 44 -10, 62 4 C70 10, 70 22, 60 32 C52 40, 30 46, 6 34" fill="#fff" stroke="#dfe9ef" stroke-width="2"/>
+        <!-- beak -->
+        <path d="M62 4 C110 6, 120 24, 84 30 C96 24, 104 16, 62 4 Z" class="beak"/>
+        <path d="M84 30 C96 28, 104 20, 90 18" stroke="#d28a2e" stroke-width="1.6" fill="none"/>
+        <!-- lower beak -->
+        <path d="M84 30 C114 32, 120 46, 84 36 C92 36, 100 34, 84 30 Z" fill="#f5a84a" stroke="#c67a2e" stroke-width="1.2"/>
+
+        <!-- eye -->
+        <circle cx="50" cy="6" r="6" class="eye"/>
+        <circle cx="48" cy="4" r="2.2" fill="#fff" opacity="0.9"/>
+      </g>
+
+      <!-- tail -->
+      <path d="M-88 -6 C-120 -2,-130 20,-102 30 C-110 10,-100 -6,-88 -6 Z" fill="#f6fbff" stroke="#e4eef6" stroke-width="1.2"/>
+
+      <!-- back foot perched on pedal (attached to frame slightly) -->
+      <g transform="translate(-48,42) rotate(16)">
+        <rect x="-6" y="-6" width="12" height="36" rx="4" class="leg"/>
+        <rect x="-18" y="26" width="36" height="10" rx="3" class="foot"/>
+      </g>
+    </g>
+
+    <!-- small decorative details: basket on front -->
+    <g transform="translate(480,230) rotate(12)">
+      <rect x="-22" y="-10" width="44" height="28" rx="6" fill="#f7d9b2" stroke="#d6a875" stroke-width="2"/>
+      <path d="M-18 18 L18 18" stroke="#d6a875" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- small accent: clouds -->
+  <g fill="#ffffff" opacity="0.9" transform="translate(120,90)">
+    <ellipse cx="0" cy="0" rx="28" ry="18"/>
+    <ellipse cx="22" cy="-8" rx="36" ry="20"/>
+    <ellipse cx="54" cy="-2" rx="24" ry="14"/>
+    <animateTransform attributeName="transform" attributeType="XML" type="translate"
+      values="120 90;125 86;120 90" dur="8s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Ensure the entire SVG animation loops seamlessly and auto-starts:
+       many individual sub-animations loop with durations that divide 8s,
+       so the composite repeats cleanly every 8s. -->
+</svg>

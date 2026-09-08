@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8ed8f2"/>
+      <stop offset="1" stop-color="#e5f7ed"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8bcf82"/>
+      <stop offset="1" stop-color="#4e9a63"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffdf4"/>
+      <stop offset="1" stop-color="#d9e1df"/>
+    </linearGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="540" fill="url(#sky)"/>
+  <circle cx="790" cy="92" r="43" fill="#ffe59a" opacity=".9"/>
+  <g fill="#fff" opacity=".65">
+    <path d="M105 125c18-25 56-24 71 3 28-13 62 4 62 34H76c-4-18 8-33 29-37z"/>
+    <path d="M685 166c14-20 43-20 55 2 24-11 51 4 51 27H661c-3-14 8-26 24-29z"/>
+  </g>
+  <path d="M0 330 Q150 260 300 335 T610 320 T960 300 V540 H0Z" fill="#94c992"/>
+  <path d="M0 374 Q180 315 350 374 T700 358 T960 350 V540 H0Z" fill="url(#ground)"/>
+  <ellipse cx="516" cy="472" rx="285" ry="25" fill="#316b57" opacity=".22" filter="url(#soft)"/>
+  <path d="M0 454 Q180 428 350 454 T700 448 T960 445" fill="none" stroke="#b6df91" stroke-width="4" opacity=".55"/>
+
+  <g id="bicycle">
+    <g fill="none" stroke="#263f4b" stroke-width="8">
+      <circle cx="382" cy="410" r="72"/>
+      <circle cx="650" cy="410" r="72"/>
+    </g>
+    <g fill="none" stroke="#91b4bb" stroke-width="3">
+      <g>
+        <path d="M382 338V482M310 410H454M331 359L433 461M433 359L331 461"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 382 410" to="360 382 410" dur="8s" repeatCount="indefinite"/>
+      </g>
+      <g>
+        <path d="M650 338V482M578 410H722M599 359L701 461M701 359L599 461"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 650 410" to="360 650 410" dur="8s" repeatCount="indefinite"/>
+      </g>
+    </g>
+    <g fill="none" stroke="#d4493f" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M382 410 L477 331 L520 410 L382 410"/>
+      <path d="M477 331 L650 410 L520 410"/>
+      <path d="M477 331 L462 302"/>
+      <path d="M450 302 H488"/>
+      <path d="M650 410 L672 327"/>
+      <path d="M672 327 L700 313"/>
+      <path d="M700 313 L716 321"/>
+    </g>
+    <g fill="none" stroke="#263f4b" stroke-width="7" stroke-linecap="round">
+      <path d="M512 410H549"/>
+      <path d="M520 410 L500 434"/>
+      <path d="M520 410 L540 386"/>
+    </g>
+    <circle cx="520" cy="410" r="11" fill="#f2b544" stroke="#263f4b" stroke-width="5"/>
+    <path d="M466 299 Q477 291 491 299" fill="none" stroke="#263f4b" stroke-width="8" stroke-linecap="round"/>
+    <path d="M700 313 Q711 294 727 300" fill="none" stroke="#263f4b" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <g id="pedaling-legs" fill="none" stroke="#d8753d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M493 298 L514 342 L520 380">
+      <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
+        M493 298 L514 342 L520 380;
+        M493 298 L535 350 L550 410;
+        M493 298 L526 369 L520 440;
+        M493 298 L488 365 L490 410;
+        M493 298 L514 342 L520 380"/>
+    </path>
+    <path d="M512 300 L487 347 L520 440">
+      <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
+        M512 300 L487 347 L520 440;
+        M512 300 L492 360 L490 410;
+        M512 300 L505 348 L520 380;
+        M512 300 L530 350 L550 410;
+        M512 300 L487 347 L520 440"/>
+    </path>
+    <g fill="#e98d43" stroke="#b95d32" stroke-width="3">
+      <path d="M-4 0 Q10-8 24-2 L16 5 Q6 9-5 6Z">
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite" values="520 380;550 410;520 440;490 410;520 380"/>
+      </path>
+      <path d="M-4 0 Q10-8 24-2 L16 5 Q6 9-5 6Z">
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite" values="520 440;490 410;520 380;550 410;520 440"/>
+      </path>
+    </g>
+  </g>
+
+  <g id="pelican">
+    <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite" values="0 0;0 -3;0 0;0 3;0 0"/>
+    <path d="M457 274 Q420 248 430 205 Q437 174 470 162 Q500 153 521 177 L531 236 Q526 274 493 292Z" fill="url(#body)" stroke="#40515a" stroke-width="4"/>
+    <path d="M463 208 Q428 226 445 263 Q465 278 494 259 Q483 232 463 208Z" fill="#aab9bc" stroke="#40515a" stroke-width="4"/>
+    <path d="M455 231 Q473 240 491 256" fill="none" stroke="#87999f" stroke-width="4" opacity=".75"/>
+    <path d="M486 193 Q492 148 491 119" fill="none" stroke="#f5f4e9" stroke-width="25" stroke-linecap="round"/>
+    <path d="M486 193 Q492 148 491 119" fill="none" stroke="#40515a" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="503" cy="101" rx="36" ry="32" fill="url(#body)" stroke="#40515a" stroke-width="4"/>
+    <path d="M526 104 Q579 105 645 127 Q658 133 642 143 Q581 153 524 132Z" fill="#e9a149" stroke="#8d5937" stroke-width="4"/>
+    <path d="M526 128 Q568 143 632 140 Q603 183 552 158 Q532 149 518 133Z" fill="#f0a958" stroke="#8d5937" stroke-width="4"/>
+    <path d="M528 119 Q563 126 600 130" fill="none" stroke="#d17b3d" stroke-width="3"/>
+    <circle cx="513" cy="94" r="6" fill="#26343c"/>
+    <circle cx="515" cy="92" r="2" fill="#fff"/>
+    <path d="M475 80 Q491 62 513 72" fill="none" stroke="#d9e2df" stroke-width="8" stroke-linecap="round"/>
+    <path d="M449 285 Q476 299 508 291" fill="none" stroke="#40515a" stroke-width="4" opacity=".65"/>
+  </g>
+</svg>

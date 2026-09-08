@@ -1,0 +1,487 @@
+{
+  "topics": [
+    {
+      "id": "pelican",
+      "title": "鹈鹕骑单车",
+      "icon": "grid",
+      "prompt": "Create an original animated SVG of a pelican riding a bicycle.\n\nUse a 960 by 540 canvas (viewBox=\"0 0 960 540\"). Show the complete pelican and bicycle clearly. Make the scene visually appealing and the cycling motion convincing, with rotating wheels and pedaling feet. The animation should loop seamlessly every 8 seconds and start automatically.\n\nMake the SVG fully self-contained. Use only SVG shapes, inline CSS, and/or native SVG animation (SMIL). Do not use JavaScript, external assets, external fonts, links to external resources, or embedded raster images. Do not include a model name, watermark, or explanatory text in the artwork.\n\nReturn only the complete SVG source, starting with <svg and ending with </svg>, without Markdown fences or commentary.",
+      "samples": [
+        {
+          "id": "pelican-gpt-6-astra",
+          "model": "GPT-6 Astra",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "src": "assets/pelican/gpt-6-astra.svg"
+        },
+        {
+          "id": "pelican-gpt-6-astra-low-2026-09-08T15-37-26-457Z",
+          "model": "GPT-6 Astra",
+          "provider": "OpenAI",
+          "reasoning": "low",
+          "home": false,
+          "variant": "Low · 样本 1",
+          "src": "assets/pelican/efforts/gpt-6-astra-low-2026-09-08T15-37-26-457Z.svg"
+        },
+        {
+          "id": "pelican-gpt-6-astra-high-2026-09-08T15-37-26-457Z",
+          "model": "GPT-6 Astra",
+          "provider": "OpenAI",
+          "reasoning": "high",
+          "home": false,
+          "variant": "High · 样本 1",
+          "src": "assets/pelican/efforts/gpt-6-astra-high-2026-09-08T15-37-26-457Z.svg"
+        },
+        {
+          "id": "pelican-copilot-2026-09-08T16-33-11-024Z-gemini-3.8-flash",
+          "model": "Gemini 3.8 Flash",
+          "provider": "Google",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican/copilot/copilot-2026-09-08T16-33-11-024Z-gemini-3.8-flash.svg"
+        },
+        {
+          "id": "pelican-copilot-2026-09-08T16-40-07-514Z-gemini-3.8-flash",
+          "model": "Gemini 3.8 Flash",
+          "provider": "Google",
+          "reasoning": "default",
+          "home": false,
+          "variant": "默认 · 样本 2",
+          "note": "Copilot CLI",
+          "src": "assets/pelican/copilot/copilot-2026-09-08T16-40-07-514Z-gemini-3.8-flash.svg"
+        },
+        {
+          "id": "pelican-copilot-2026-09-08T16-54-18-184Z-gemini-3.8-flash",
+          "model": "Gemini 3.8 Flash",
+          "provider": "Google",
+          "reasoning": "low",
+          "home": false,
+          "variant": "Low · 样本 1 · 格式兼容处理",
+          "note": "Copilot CLI · 格式兼容处理：仅转义 CSS 注释中的 &",
+          "src": "assets/pelican/copilot/copilot-2026-09-08T16-54-18-184Z-gemini-3.8-flash.svg"
+        },
+        {
+          "id": "pelican-copilot-2026-09-08T16-54-18-454Z-gemini-3.8-flash",
+          "model": "Gemini 3.8 Flash",
+          "provider": "Google",
+          "reasoning": "high",
+          "home": false,
+          "variant": "High · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican/copilot/copilot-2026-09-08T16-54-18-454Z-gemini-3.8-flash.svg"
+        },
+        {
+          "id": "pelican-copilot-2026-09-08T16-34-28-125Z-grok-4.5",
+          "model": "Grok 4.5",
+          "provider": "xAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican/copilot/copilot-2026-09-08T16-34-28-125Z-grok-4.5.svg"
+        },
+        {
+          "id": "pelican-copilot-2026-09-08T16-35-48-760Z-grok-4.5",
+          "model": "Grok 4.5",
+          "provider": "xAI",
+          "reasoning": "default",
+          "home": false,
+          "variant": "默认 · 样本 2",
+          "note": "Copilot CLI",
+          "src": "assets/pelican/copilot/copilot-2026-09-08T16-35-48-760Z-grok-4.5.svg"
+        },
+        {
+          "id": "pelican-copilot-2026-09-08T16-54-18-726Z-grok-4.5",
+          "model": "Grok 4.5",
+          "provider": "xAI",
+          "reasoning": "low",
+          "home": false,
+          "variant": "Low · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican/copilot/copilot-2026-09-08T16-54-18-726Z-grok-4.5.svg"
+        },
+        {
+          "id": "pelican-copilot-2026-09-08T16-58-56-703Z-grok-4.5",
+          "model": "Grok 4.5",
+          "provider": "xAI",
+          "reasoning": "high",
+          "home": false,
+          "variant": "High · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican/copilot/copilot-2026-09-08T16-58-56-703Z-grok-4.5.svg"
+        },
+        {
+          "id": "pelican-gpt-5.6-sol",
+          "model": "GPT-5.6 Sol",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "src": "assets/pelican/gpt-5.6-sol.svg"
+        },
+        {
+          "id": "pelican-gpt-5.6-sol-low-2026-09-08T15-37-26-457Z",
+          "model": "GPT-5.6 Sol",
+          "provider": "OpenAI",
+          "reasoning": "low",
+          "home": false,
+          "variant": "Low · 样本 1",
+          "src": "assets/pelican/efforts/gpt-5.6-sol-low-2026-09-08T15-37-26-457Z.svg"
+        },
+        {
+          "id": "pelican-gpt-5.6-sol-high-2026-09-08T15-37-26-457Z",
+          "model": "GPT-5.6 Sol",
+          "provider": "OpenAI",
+          "reasoning": "high",
+          "home": false,
+          "variant": "High · 样本 1",
+          "src": "assets/pelican/efforts/gpt-5.6-sol-high-2026-09-08T15-37-26-457Z.svg"
+        },
+        {
+          "id": "pelican-gpt-5.6-terra",
+          "model": "GPT-5.6 Terra",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "src": "assets/pelican/gpt-5.6-terra.svg"
+        },
+        {
+          "id": "pelican-gpt-5.6-terra-low-2026-09-08T15-37-26-457Z",
+          "model": "GPT-5.6 Terra",
+          "provider": "OpenAI",
+          "reasoning": "low",
+          "home": false,
+          "variant": "Low · 样本 1",
+          "src": "assets/pelican/efforts/gpt-5.6-terra-low-2026-09-08T15-37-26-457Z.svg"
+        },
+        {
+          "id": "pelican-gpt-5.6-terra-high-2026-09-08T15-37-26-457Z",
+          "model": "GPT-5.6 Terra",
+          "provider": "OpenAI",
+          "reasoning": "high",
+          "home": false,
+          "variant": "High · 样本 1",
+          "src": "assets/pelican/efforts/gpt-5.6-terra-high-2026-09-08T15-37-26-457Z.svg"
+        },
+        {
+          "id": "pelican-gpt-5.6-luna",
+          "model": "GPT-5.6 Luna",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "src": "assets/pelican/gpt-5.6-luna.svg"
+        },
+        {
+          "id": "pelican-gpt-5.6-luna-low-2026-09-08T15-31-47-717Z",
+          "model": "GPT-5.6 Luna",
+          "provider": "OpenAI",
+          "reasoning": "low",
+          "home": false,
+          "variant": "Low · 样本 1",
+          "src": "assets/pelican/efforts/gpt-5.6-luna-low-2026-09-08T15-31-47-717Z.svg"
+        },
+        {
+          "id": "pelican-gpt-5.6-luna-high-2026-09-08T15-37-26-457Z",
+          "model": "GPT-5.6 Luna",
+          "provider": "OpenAI",
+          "reasoning": "high",
+          "home": false,
+          "variant": "High · 样本 1",
+          "src": "assets/pelican/efforts/gpt-5.6-luna-high-2026-09-08T15-37-26-457Z.svg"
+        },
+        {
+          "id": "pelican-gpt-5.5",
+          "model": "GPT-5.5",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "src": "assets/pelican/gpt-5.5.svg"
+        },
+        {
+          "id": "pelican-gpt-5.5-low-2026-09-08T15-37-26-457Z",
+          "model": "GPT-5.5",
+          "provider": "OpenAI",
+          "reasoning": "low",
+          "home": false,
+          "variant": "Low · 样本 1",
+          "src": "assets/pelican/efforts/gpt-5.5-low-2026-09-08T15-37-26-457Z.svg"
+        },
+        {
+          "id": "pelican-gpt-5.5-high-2026-09-08T15-37-26-457Z",
+          "model": "GPT-5.5",
+          "provider": "OpenAI",
+          "reasoning": "high",
+          "home": false,
+          "variant": "High · 样本 1",
+          "src": "assets/pelican/efforts/gpt-5.5-high-2026-09-08T15-37-26-457Z.svg"
+        },
+        {
+          "id": "pelican-gpt-5.4",
+          "model": "GPT-5.4",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "src": "assets/pelican/gpt-5.4.svg"
+        },
+        {
+          "id": "pelican-gpt-5.4-low-2026-09-08T15-37-26-457Z",
+          "model": "GPT-5.4",
+          "provider": "OpenAI",
+          "reasoning": "low",
+          "home": false,
+          "variant": "Low · 样本 1",
+          "src": "assets/pelican/efforts/gpt-5.4-low-2026-09-08T15-37-26-457Z.svg"
+        },
+        {
+          "id": "pelican-gpt-5.4-high-2026-09-08T15-37-26-457Z",
+          "model": "GPT-5.4",
+          "provider": "OpenAI",
+          "reasoning": "high",
+          "home": false,
+          "variant": "High · 样本 1",
+          "src": "assets/pelican/efforts/gpt-5.4-high-2026-09-08T15-37-26-457Z.svg"
+        },
+        {
+          "id": "pelican-gpt-5.3-codex",
+          "model": "GPT-5.3 Codex",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "src": "assets/pelican/gpt-5.3-codex.svg"
+        },
+        {
+          "id": "pelican-gpt-5.3-codex-low-2026-09-08T15-37-26-457Z",
+          "model": "GPT-5.3 Codex",
+          "provider": "OpenAI",
+          "reasoning": "low",
+          "home": false,
+          "variant": "Low · 样本 1",
+          "src": "assets/pelican/efforts/gpt-5.3-codex-low-2026-09-08T15-37-26-457Z.svg"
+        },
+        {
+          "id": "pelican-gpt-5.3-codex-high-2026-09-08T15-37-26-457Z",
+          "model": "GPT-5.3 Codex",
+          "provider": "OpenAI",
+          "reasoning": "high",
+          "home": false,
+          "variant": "High · 样本 1",
+          "src": "assets/pelican/efforts/gpt-5.3-codex-high-2026-09-08T15-37-26-457Z.svg"
+        },
+        {
+          "id": "pelican-gpt-5.2",
+          "model": "GPT-5.2",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "src": "assets/pelican/gpt-5.2.svg"
+        },
+        {
+          "id": "pelican-gpt-5.1",
+          "model": "GPT-5.1",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "src": "assets/pelican/gpt-5.1.svg"
+        },
+        {
+          "id": "pelican-gpt-5",
+          "model": "GPT-5",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "src": "assets/pelican/gpt-5.svg"
+        },
+        {
+          "id": "pelican-gpt-5-mini",
+          "model": "GPT-5 mini",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "src": "assets/pelican/gpt-5-mini.svg",
+          "note": "格式兼容处理"
+        },
+        {
+          "id": "pelican-gpt-5-mini-low-2026-09-08T15-37-26-457Z",
+          "model": "GPT-5 mini",
+          "provider": "OpenAI",
+          "reasoning": "low",
+          "home": false,
+          "variant": "Low · 样本 1",
+          "src": "assets/pelican/efforts/gpt-5-mini-low-2026-09-08T15-37-26-457Z.svg"
+        },
+        {
+          "id": "pelican-gpt-5-mini-high-2026-09-08T15-37-26-457Z",
+          "model": "GPT-5 mini",
+          "provider": "OpenAI",
+          "reasoning": "high",
+          "home": false,
+          "variant": "High · 样本 1 · 格式兼容处理",
+          "src": "assets/pelican/efforts/gpt-5-mini-high-2026-09-08T15-37-26-457Z.svg",
+          "note": "格式兼容处理：仅补 xlink 命名空间，原始输出保留"
+        },
+        {
+          "id": "pelican-gpt-4.1-syntax-fixed",
+          "model": "GPT-4.1",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "src": "assets/pelican/gpt-4.1-syntax-fixed.svg",
+          "note": "语法修复版",
+          "variant": "首轮 · 语法修复"
+        },
+        {
+          "id": "pelican-gpt-4.1-second",
+          "model": "GPT-4.1",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": false,
+          "variant": "第二轮 · 语法修复",
+          "note": "语法修复版",
+          "src": "assets/pelican/gpt-4.1-attempt-2-syntax-fixed.svg"
+        },
+        {
+          "id": "pelican-gpt-4o",
+          "model": "GPT-4o",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "src": "assets/pelican/gpt-4o.svg"
+        },
+        {
+          "id": "pelican-legacy-1",
+          "model": "未标注模型",
+          "provider": "个人样本",
+          "reasoning": "unspecified",
+          "home": false,
+          "variant": "早期样本 01",
+          "src": "assets/legacy/pelican_bicycle.svg"
+        },
+        {
+          "id": "pelican-legacy-2",
+          "model": "未标注模型",
+          "provider": "个人样本",
+          "reasoning": "unspecified",
+          "home": false,
+          "variant": "早期样本 02",
+          "src": "assets/legacy/pelican-riding-bicycle-animation.svg"
+        },
+        {
+          "id": "pelican-legacy-3",
+          "model": "未标注模型",
+          "provider": "个人样本",
+          "reasoning": "unspecified",
+          "home": false,
+          "variant": "早期样本 03",
+          "src": "assets/legacy/pelican-on-a-bicycle.svg"
+        },
+        {
+          "id": "pelican-legacy-4",
+          "model": "未标注模型",
+          "provider": "个人样本",
+          "reasoning": "unspecified",
+          "home": false,
+          "variant": "早期样本 04",
+          "src": "assets/legacy/pelican-on-a-bicycle-animated.svg"
+        }
+      ]
+    }
+  ],
+  "modelOrder": [
+    "GPT-6 Astra",
+    "Gemini 3.8 Flash",
+    "Grok 4.5",
+    "GPT-5.6 Sol",
+    "GPT-5.6 Terra",
+    "GPT-5.6 Luna",
+    "GPT-5.5",
+    "GPT-5.4",
+    "GPT-5.3 Codex",
+    "GPT-5.2",
+    "GPT-5.1",
+    "GPT-5",
+    "GPT-5 mini",
+    "GPT-4.1",
+    "GPT-4o",
+    "未标注模型"
+  ],
+  "modelReleases": [
+    {
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "releaseDate": "2026-09-03",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "model": "Gemini 3.8 Flash",
+      "provider": "Google",
+      "releaseDate": "2026-09-02",
+      "source": "https://ai.google.dev/gemini-api/docs/changelog"
+    },
+    {
+      "model": "Grok 4.5",
+      "provider": "xAI",
+      "releaseDate": "2026-07-16",
+      "source": "https://x.ai/news/grok-4-5"
+    },
+    {
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "releaseDate": "2026-07-09",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "model": "GPT-5.6 Terra",
+      "provider": "OpenAI",
+      "releaseDate": "2026-07-09",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "model": "GPT-5.6 Luna",
+      "provider": "OpenAI",
+      "releaseDate": "2026-07-09",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "model": "GPT-5.5",
+      "provider": "OpenAI",
+      "releaseDate": "2026-04-23",
+      "source": "https://developers.openai.com/codex/changelog"
+    },
+    {
+      "model": "GPT-5.4",
+      "provider": "OpenAI",
+      "releaseDate": "2026-03-05",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "model": "GPT-5.3 Codex",
+      "provider": "OpenAI",
+      "releaseDate": "2026-02-05",
+      "source": "https://developers.openai.com/codex/changelog"
+    },
+    {
+      "model": "GPT-5.2",
+      "provider": "OpenAI",
+      "releaseDate": "2025-12-11",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "model": "GPT-5.1",
+      "provider": "OpenAI",
+      "releaseDate": "2025-11",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "model": "GPT-5",
+      "provider": "OpenAI",
+      "releaseDate": "2025-08-07",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "model": "GPT-5 mini",
+      "provider": "OpenAI",
+      "releaseDate": "2025-08-07",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "model": "GPT-4.1",
+      "provider": "OpenAI",
+      "releaseDate": "2025-04-14",
+      "source": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "model": "GPT-4o",
+      "provider": "OpenAI",
+      "releaseDate": "2024-05-13",
+      "source": "https://developers.openai.com/api/docs/models/gpt-4o"
+    }
+  ]
+}

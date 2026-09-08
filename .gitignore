@@ -1,0 +1,14 @@
+/dist/
+/generations/
+/private/
+/qa/
+/node_modules/
+/generate-copilot.mjs
+/generate-efforts.mjs
+/import-copilot.mjs
+/latest-generation.txt
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <style>
+    .pelican-body { fill: #F4E7CF; }
+    .pelican-beak { fill: #FFCC00; }
+    .pelican-eye { fill: #000000; }
+    .bike-frame { fill: #0088CC; }
+    .bike-wheel { fill: none; stroke: #333333; stroke-width: 8; }
+    .bike-pedal { fill: #555555; }
+    .ground { fill: #88C057; }
+    @keyframes rotateWheel {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(-360deg); }
+    }
+    .wheel { animation: rotateWheel 8s linear infinite; transform-origin: center center; }
+  </style>
+  <rect class="ground" x="0" y="400" width="960" height="140" />
+  <g transform="translate(280, 280)">
+    <ellipse class="pelican-body" rx="70" ry="90" />
+    <ellipse class="pelican-body" cx="-50" cy="-40" rx="45" ry="25" />
+    <polygon class="pelican-beak" points="-85,-40 -135,-20 -85,0" />
+    <circle class="pelican-eye" cx="-60" cy="-50" r="5" />
+    <line class="bike-frame" x1="-70" y1="40" x2="100" y2="40" stroke-width="10" />
+    <line class="bike-frame" x1="100" y1="40" x2="30" y2="-40" stroke-width="10" />
+    <line class="bike-frame" x1="30" y1="-40" x2="-70" y2="40" stroke-width="10" />
+    <line class="bike-frame" x1="30" y1="-40" x2="30" y2="40" stroke-width="10" />
+    <circle class="bike-wheel wheel" cx="-70" cy="40" r="50" />
+    <circle class="bike-wheel wheel" cx="100" cy="40" r="50" />
+    <line class="bike-pedal" x1="30" y1="40" x2="50" y2="35" stroke-width="10">
+      <animateTransform attributeType="XML" attributeName="transform" type="rotate" from="360,30,40" to="0,30,40" dur="8s" repeatCount="indefinite" />
+    </line>
+    <line class="bike-pedal" x1="30" y1="40" x2="10" y2="45" stroke-width="10">
+      <animateTransform attributeType="XML" attributeName="transform" type="rotate" from="360,30,40" to="0,30,40" dur="8s" repeatCount="indefinite" />
+    </line>
+  </g>
+</svg>

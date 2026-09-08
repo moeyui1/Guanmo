@@ -1,0 +1,280 @@
+<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Body gradient -->
+    <radialGradient id="pelicanBody" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#fffde6"/>
+      <stop offset="80%" stop-color="#f7f7e1"/>
+      <stop offset="100%" stop-color="#e2e2cf"/>
+    </radialGradient>
+    <!-- Wing gradient -->
+    <linearGradient id="wingGrad" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#f7f7e1"/>
+      <stop offset="100%" stop-color="#bbb"/>
+    </linearGradient>
+    <!-- Beak gradient -->
+    <linearGradient id="beakGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd06a"/>
+      <stop offset="80%" stop-color="#d2993c"/>
+    </linearGradient>
+    <!-- Leg color -->
+    <linearGradient id="legGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fcbf49"/>
+      <stop offset="100%" stop-color="#b0832e"/>
+    </linearGradient>
+    <!-- Tire gradient -->
+    <linearGradient id="tireGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#222"/>
+      <stop offset="100%" stop-color="#444"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="#b5d4e5"/>
+  <!-- Ground -->
+  <ellipse cx="480" cy="420" rx="390" ry="44" fill="#76c051" />
+
+  <!-- - - - Bicycle - - - -->
+  <!-- Wheels group for animation -->
+  <g>
+    <!-- Rear Wheel -->
+    <g id="rearWheel" style="transform-origin:360px 400px;">
+      <circle cx="360" cy="400" r="60" fill="url(#tireGrad)" stroke="#353535" stroke-width="7" />
+      <circle cx="360" cy="400" r="40" fill="#d1dbf1" stroke="#5d92bb" stroke-width="4"/>
+      <!-- Spokes -->
+      <g id="rearSpokes">
+        <g>
+          <line x1="360" y1="400" x2="360" y2="340" stroke="#879ac0" stroke-width="3"/>
+          <line x1="360" y1="400" x2="400" y2="360" stroke="#879ac0" stroke-width="3"/>
+          <line x1="360" y1="400" x2="360" y2="460" stroke="#879ac0" stroke-width="3"/>
+          <line x1="360" y1="400" x2="320" y2="360" stroke="#879ac0" stroke-width="3"/>
+          <line x1="360" y1="400" x2="320" y2="440" stroke="#879ac0" stroke-width="3"/>
+          <line x1="360" y1="400" x2="400" y2="440" stroke="#879ac0" stroke-width="3"/>
+        </g>
+      </g>
+      <!-- Center -->
+      <circle cx="360" cy="400" r="9" fill="#7593ae" stroke="#30445a" stroke-width="2"/>
+      <!-- Rear Wheel Animation -->
+      <animateTransform attributeName="transform"
+        type="rotate"
+        from="0 360 400"
+        to="360 360 400"
+        dur="8s" repeatCount="indefinite"/>
+    </g>
+    <!-- Front Wheel -->
+    <g id="frontWheel" style="transform-origin:600px 400px;">
+      <circle cx="600" cy="400" r="60" fill="url(#tireGrad)" stroke="#353535" stroke-width="7" />
+      <circle cx="600" cy="400" r="40" fill="#d1dbf1" stroke="#5d92bb" stroke-width="4"/>
+      <!-- Spokes -->
+      <g id="frontSpokes">
+        <g>
+          <line x1="600" y1="400" x2="600" y2="340" stroke="#879ac0" stroke-width="3"/>
+          <line x1="600" y1="400" x2="640" y2="360" stroke="#879ac0" stroke-width="3"/>
+          <line x1="600" y1="400" x2="600" y2="460" stroke="#879ac0" stroke-width="3"/>
+          <line x1="600" y1="400" x2="560" y2="360" stroke="#879ac0" stroke-width="3"/>
+          <line x1="600" y1="400" x2="560" y2="440" stroke="#879ac0" stroke-width="3"/>
+          <line x1="600" y1="400" x2="640" y2="440" stroke="#879ac0" stroke-width="3"/>
+        </g>
+      </g>
+      <!-- Center -->
+      <circle cx="600" cy="400" r="9" fill="#7593ae" stroke="#30445a" stroke-width="2"/>
+      <!-- Front Wheel Animation -->
+      <animateTransform attributeName="transform"
+        type="rotate"
+        from="0 600 400"
+        to="360 600 400"
+        dur="8s" repeatCount="indefinite"/>
+    </g>
+    <!-- Frame -->
+    <g id="frame">
+      <line x1="370" y1="340" x2="420" y2="350" stroke="#375786" stroke-width="10"/>
+      <line x1="420" y1="350" x2="540" y2="360" stroke="#375786" stroke-width="11"/>
+      <line x1="420" y1="350" x2="430" y2="400" stroke="#4d6ca2" stroke-width="8"/>
+      <line x1="430" y1="400" x2="520" y2="399" stroke="#375786" stroke-width="10"/>
+      <line x1="520" y1="399" x2="540" y2="360" stroke="#4d6ca2" stroke-width="7"/>
+      <!-- Seat Tube -->
+      <line x1="420" y1="350" x2="420" y2="300" stroke="#204884" stroke-width="8"/>
+      <!-- Handlebar Stem -->
+      <line x1="540" y1="360" x2="610" y2="330" stroke="#204884" stroke-width="7"/>
+    </g>
+    <!-- Crank + pedal system -->
+    <g id="crankSet">
+      <g id="crank" style="transform-origin:520px 399px;">
+        <circle cx="520" cy="399" r="17" fill="#bdd4df" stroke="#555" stroke-width="4"/>
+        <rect x="519" y="367" width="4" height="32" rx="2" fill="#859bb2"/>
+        <g id="pedal1Group" style="transform-origin:521px 369px;">
+          <rect x="513" y="367" width="16" height="5" rx="2.5" fill="#fcbf49" stroke="#b0832e" stroke-width="1"/>
+        </g>
+        <rect x="519" y="399" width="4" height="32" rx="2" fill="#859bb2"/>
+        <g id="pedal2Group" style="transform-origin:521px 429px;">
+          <rect x="513" y="425" width="16" height="5" rx="2.5" fill="#fcbf49" stroke="#b0832e" stroke-width="1"/>
+        </g>
+        <animateTransform attributeName="transform"
+          type="rotate"
+          from="0 520 399"
+          to="360 520 399"
+          dur="8s" repeatCount="indefinite"/>
+      </g>
+    </g>
+    <!-- Handlebar -->
+    <g id="handlebar">
+      <rect x="609" y="320" width="8" height="24" rx="3" fill="#353535"/>
+      <rect x="615" y="325" width="45" height="6" rx="3" fill="#aaa"/>
+      <rect x="646" y="322" width="13" height="12" rx="5" fill="#353535"/>
+      <rect x="609" y="320" width="5" height="9" rx="2.5" fill="#aaa"/>
+    </g>
+    <!-- Saddle -->
+    <ellipse cx="420" cy="296" rx="22" ry="9" fill="#262924" stroke="#313" stroke-width="2"/>
+  </g>
+
+  <!-- - - - Pelican: BODY (under wings, but above crank/frame) - - - -->
+  <g>
+    <!-- Back thigh for perspective -->
+    <g id="backLeg" style="transform-origin:520px 399px;">
+      <!-- Thigh -->
+      <rect x="505" y="370" width="18" height="50" rx="9" fill="url(#legGrad)" opacity="0.67" />
+      <!-- Shin -->
+      <g style="transform-origin:514px 420px;" >
+        <rect x="509" y="410" width="10" height="36" rx="5" fill="url(#legGrad)" opacity="0.82" />
+        <!-- Toes -->
+        <ellipse cx="514" cy="448" rx="17" ry="7" fill="#fcbf49" opacity="0.8"/>
+        <ellipse cx="518" cy="453" rx="7" ry="3" fill="#fcbf49" opacity="0.7"/>
+      </g>
+      <animateTransform attributeName="transform"
+        type="rotate"
+        values="
+          150 520 399;
+          180 520 399;
+          215 520 399;
+          240 520 399;
+          270 520 399;
+          320 520 399;
+          360 520 399;
+          150 520 399
+        "
+        keyTimes="0;0.13;0.26;0.39;0.52;0.65;0.78;1"
+        dur="8s" repeatCount="indefinite"/>
+    </g>
+    <!-- Body -->
+    <ellipse cx="440" cy="260" rx="75" ry="70" fill="url(#pelicanBody)" stroke="#bbb" stroke-width="2"/>
+    <!-- Belly shadow -->
+    <ellipse cx="480" cy="315" rx="50" ry="30" fill="#e1dea1" fill-opacity="0.28"/>
+    <!-- Tail -->
+    <ellipse cx="355" cy="304" rx="17" ry="28" fill="#b8bcbc" stroke="#687881" stroke-width="2" rotate="-10" />
+  </g>
+
+  <!-- - - - Pelican: WING - - - -->
+  <g id="wingRight" style="transform-origin:480px 230px;">
+    <path d="M430 260 Q485 150 540 250 Q560 295 445 275 Q490 245 470 275 Q450 292 430 260 Z"
+      fill="url(#wingGrad)" stroke="#696a87" stroke-width="3"/>
+    <animateTransform attributeName="transform"
+      type="rotate"
+      values="
+        6 480 230;
+        14 480 230;
+        0 480 230;
+        6 480 230"
+      keyTimes="0;0.2;0.85;1"
+      dur="3.8s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- - - - Pelican: NECK & HEAD - - - -->
+  <g>
+    <!-- Neck -->
+    <path d="
+      M456 200
+      Q495 170 553 220
+      Q545 195 490 180
+      Q460 184 456 200
+      Z"
+      fill="url(#pelicanBody)" stroke="#b6b690" stroke-width="2"/>
+    <!-- Head -->
+    <ellipse cx="557" cy="210" rx="41" ry="32" fill="url(#pelicanBody)" stroke="#bbb" stroke-width="2"/>
+    <!-- Crown -->
+    <ellipse cx="565" cy="185" rx="9" ry="9" fill="#f6efab" fill-opacity="0.39"/>
+    <ellipse cx="571" cy="184" rx="6" ry="6" fill="#fff9c0" fill-opacity="0.29"/>
+    <!-- Beak Top -->
+    <path d="
+      M598 206 
+      Q628 204 655 225
+      Q677 238 646 249
+      Q618 257 598 206
+      Z"
+      fill="url(#beakGrad)" stroke="#e58c2c" stroke-width="3"/>
+    <!-- Beak Bottom -->
+    <path d="
+      M598 214 
+      Q618 224 652 245 
+      Q677 260 625 256 
+      Q614 257 598 214
+      Z"
+      fill="#ffc132" stroke="#e58c2c" stroke-width="2"/>
+    <!-- Throat pouch -->
+    <path d="
+      M599 214 
+      Q607 250 586 243 
+      Q560 239 601 214
+      Z"
+      fill="#ffc46e" opacity="0.47"/>
+    <!-- Nostril & Smile -->
+    <ellipse cx="622" cy="223" rx="3" ry="2" fill="#ac7b1a" opacity="0.52"/>
+    <path d="M635 237 Q642 242 652 241" stroke="#ca961e" stroke-width="2" fill="none"/>
+    <!-- Eye -->
+    <ellipse cx="573" cy="205" rx="10" ry="10" fill="#fff"/>
+    <ellipse cx="577" cy="207" rx="5" ry="5" fill="#393939"/>
+    <ellipse cx="578" cy="206" rx="2" ry="2" fill="#fff"/>
+    <!-- Brows -->
+    <path d="M567 199 Q573 193 580 200" stroke="#aaa55d" stroke-width="3" fill="none"/>
+  </g>
+
+  <!-- - - - Pelican: Front Leg (pedaling foot) - - - -->
+  <g id="frontLeg" style="transform-origin:520px 399px;">
+    <!-- Thigh -->
+    <rect x="510" y="375" width="18" height="52" rx="9" fill="url(#legGrad)" />
+    <!-- Shin -->
+    <g id="shinFoot" style="transform-origin:519px 426px;">
+      <rect x="514" y="420" width="10" height="30" rx="5" fill="url(#legGrad)" />
+      <!-- Foot on pedal -->
+      <ellipse id="foot" cx="519" cy="451" rx="16" ry="7" fill="#fcbf49" />
+      <ellipse cx="522" cy="454" rx="7" ry="3" fill="#fcbf49" opacity="0.72"/>
+      <!-- Claws -->
+      <ellipse cx="530" cy="454" rx="3" ry="2" fill="#d69f36"/>
+      <ellipse cx="515" cy="460" rx="3" ry="1.2" fill="#b0832e"/>
+    </g>
+    <!-- Leg/crank rotating -->
+    <animateTransform attributeName="transform"
+      type="rotate"
+      from="0 520 399"
+      to="360 520 399"
+      dur="8s" repeatCount="indefinite"/>
+    <!-- Shin/"ankle" follows pedal crank offset -->
+    <animateTransform attributeName="transform"
+      type="rotate"
+      values="
+        0 519 426;
+        14 519 426;
+        36 519 426;
+        71 519 426;
+        100 519 426;
+        180 519 426;
+        0 519 426"
+      keyTimes="0;0.14;0.32;0.53;0.71;0.84;1"
+      dur="8s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- - - - Pelican: Over-Wing Top "shoulder" - - - -->
+  <ellipse cx="480" cy="235" rx="26" ry="25" fill="url(#pelicanBody)" opacity="0.93"/>
+  <ellipse cx="470" cy="245" rx="18" ry="10" fill="#eaeaed" opacity="0.19"/>
+
+  <!-- - - - Basket with Fish - - - -->
+  <g>
+    <rect x="650" y="271" width="48" height="28" rx="10" fill="#fae3a8" stroke="#c6b484" stroke-width="3"/>
+    <ellipse cx="675" cy="272" rx="18" ry="6" fill="#ded39f" opacity="0.52"/>
+    <!-- Fish -->
+    <ellipse cx="670" cy="284" rx="9" ry="4" fill="#a9c7d0"/>
+    <ellipse cx="683" cy="283" rx="8" ry="3" fill="#b0e7b3"/>
+    <ellipse cx="691" cy="283" rx="8" ry="3" fill="#92c6c5"/>
+    <ellipse cx="663" cy="285" rx="4" ry="2" fill="#5fa399"/>
+    <!-- Fish eyes -->
+    <ellipse cx="674" cy="283" rx="1.3" ry="1.3" fill="#223"/>
+    <ellipse cx="682" cy="282" rx="1.3" ry="1.3" fill="#223"/>
+    <ellipse cx="690" cy="282" rx="1.3" ry="1.3" fill="#223"/>
+  </g>
+</svg>

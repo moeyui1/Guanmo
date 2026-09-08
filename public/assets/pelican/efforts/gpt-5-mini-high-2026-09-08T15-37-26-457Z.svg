@@ -1,0 +1,253 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#b9e6ff"/>
+      <stop offset="0.6" stop-color="#eaf6ff"/>
+      <stop offset="1" stop-color="#fffefa"/>
+    </linearGradient>
+
+    <linearGradient id="groundGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#dfe9ef"/>
+      <stop offset="1" stop-color="#cbd7dd"/>
+    </linearGradient>
+
+    <radialGradient id="sunGrad" cx="0.3" cy="0.2">
+      <stop offset="0" stop-color="#fff7d6"/>
+      <stop offset="1" stop-color="#ffd77a" stop-opacity="0.85"/>
+    </radialGradient>
+
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <style>
+    .frame { stroke: #2e3b46; stroke-width:10; stroke-linecap:round; stroke-linejoin:round; fill:none; }
+    .tire { fill:#0f1720; stroke:#1b2430; stroke-width:6; }
+    .rim { fill:#f6fbff; stroke:#b6c6cf; stroke-width:4; }
+    .spoke { stroke:#d6e0e6; stroke-width:3; stroke-linecap:round; }
+    .chainring { fill:#e6eef3; stroke:#a9b9c3; stroke-width:2; }
+    .pedal { fill:#ffb156; stroke:#c76a10; stroke-width:2; }
+    .seat { fill:#2b3d49; stroke:#172027; stroke-width:2; }
+    .handle { stroke:#2e3b46; stroke-width:8; stroke-linecap:round; }
+    .pel-body { fill:#ffffff; stroke:#e6e6e6; stroke-width:2; }
+    .pel-wing { fill:#f3f5f6; stroke:#e0e4e6; stroke-width:1.5; }
+    .beak { fill:#ffd26a; stroke:#e09b2a; stroke-width:2; }
+    .eye { fill:#111217; }
+    .feet { fill:#ff9e46; stroke:#c76a12; stroke-width:2; }
+    .shadow { fill:#000; opacity:0.08; filter:url(#softShadow); }
+  </style>
+
+  <!-- Background -->
+  <rect width="960" height="540" fill="url(#skyGrad)"/>
+  <circle cx="120" cy="100" r="60" fill="url(#sunGrad)" opacity="0.95"/>
+  <path d="M0 440 C180 470 300 460 480 480 C660 500 820 470 960 480 L960 540 L0 540 Z" fill="url(#groundGrad)"/>
+
+  <!-- Soft ground shadow under wheels -->
+  <ellipse cx="340" cy="440" rx="95" ry="12" class="shadow"/>
+  <ellipse cx="620" cy="440" rx="95" ry="12" class="shadow"/>
+
+  <!-- Bicycle & Pelican Group -->
+  <g id="scene">
+
+    <!-- Bicycle Frame -->
+    <g id="bikeFrame">
+      <!-- Rear to crank tube -->
+      <path d="M340 360 L460 320" class="frame"/>
+      <!-- Crank to front tube -->
+      <path d="M460 320 L600 290" class="frame"/>
+      <!-- Top tube seat to handlebar area -->
+      <path d="M430 260 L580 275" class="frame"/>
+      <!-- Seat post -->
+      <path d="M430 260 L460 320" class="frame"/>
+      <!-- Fork to front wheel -->
+      <path d="M600 290 L620 360" class="frame"/>
+      <!-- Seat -->
+      <g transform="translate(410,246)">
+        <rect x="0" y="0" width="40" height="16" rx="6" class="seat"/>
+        <rect x="8" y="-6" width="24" height="8" rx="4" fill="#41545b" opacity="0.2"/>
+      </g>
+
+      <!-- Handlebars -->
+      <g transform="translate(600,270)">
+        <path d="M0 0 q24 -8 36 6" class="handle"/>
+        <path d="M12 -2 q-6 -10 -22 -12" class="handle"/>
+        <circle cx="36" cy="6" r="6" fill="#37464f"/>
+      </g>
+    </g>
+
+    <!-- Wheels -->
+    <!-- Rear Wheel Group -->
+    <g id="rearWheel" transform="translate(0,0)">
+      <!-- rotate group for wheel -->
+      <g>
+        <circle cx="340" cy="360" r="80" class="tire"/>
+        <circle cx="340" cy="360" r="62" class="rim"/>
+        <!-- spokes group -->
+        <g id="rearSpokes">
+          <!-- draw 12 spokes by rotating a line -->
+          <g transform="translate(340,360)">
+            <g class="spoke" >
+              <line x1="0" y1="0" x2="0" y2="-62"/>
+              <use href="#spoke" />
+            </g>
+            <!-- duplicate spokes at angles -->
+            <g class="spokes">
+              <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(30)"/>
+              <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(60)"/>
+              <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(90)"/>
+              <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(120)"/>
+              <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(150)"/>
+              <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(180)"/>
+              <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(210)"/>
+              <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(240)"/>
+              <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(270)"/>
+              <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(300)"/>
+              <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(330)"/>
+            </g>
+          </g>
+        </g>
+      </g>
+
+      <!-- wheel rotation -->
+      <animateTransform attributeName="transform" type="rotate"
+        from="0 340 360" to="-2880 340 360" dur="8s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Front Wheel Group -->
+    <g id="frontWheel">
+      <g>
+        <circle cx="620" cy="360" r="80" class="tire"/>
+        <circle cx="620" cy="360" r="62" class="rim"/>
+        <g id="frontSpokes">
+          <g transform="translate(620,360)">
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(20)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(40)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(60)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(80)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(100)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(120)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(140)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(160)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(180)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(200)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(220)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(240)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(260)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(280)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(300)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(320)"/>
+            <line x1="0" y1="0" x2="0" y2="-62" class="spoke" transform="rotate(340)"/>
+          </g>
+        </g>
+      </g>
+
+      <animateTransform attributeName="transform" type="rotate"
+        from="0 620 360" to="-2880 620 360" dur="8s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Crank and Pedals Group (rotates, driving pedals/feet) -->
+    <g id="crankGroup">
+      <!-- crank center -->
+      <circle cx="480" cy="340" r="14" class="chainring"/>
+      <circle cx="480" cy="340" r="30" fill="none" stroke="#cfd8de" stroke-width="3"/>
+
+      <!-- pedal arms and pedals (drawn horizontally, rotate around crank center) -->
+      <g id="crankArms" transform="rotate(0 480 340)">
+        <!-- right arm -->
+        <line x1="480" y1="340" x2="516" y2="340" stroke="#2e3b46" stroke-width="6" stroke-linecap="round"/>
+        <rect x="514" y="332" width="18" height="12" rx="3" class="pedal" transform="rotate(0 523 338)"/>
+        <!-- foot attached to pedal -->
+        <path d="M532 340 q8 6 4 12 q-8 4 -14 -2 q2 -6 10 -10" fill="#ffb06a" stroke="#c76a10" stroke-width="1.5" opacity="0.98"/>
+
+        <!-- left arm -->
+        <line x1="480" y1="340" x2="444" y2="340" stroke="#2e3b46" stroke-width="6" stroke-linecap="round"/>
+        <rect x="420" y="332" width="18" height="12" rx="3" class="pedal" transform="rotate(0 429 338)"/>
+        <path d="M426 340 q-8 6 -4 12 q8 4 14 -2 q-2 -6 -10 -10" fill="#ffb06a" stroke="#c76a10" stroke-width="1.5" opacity="0.98"/>
+      </g>
+
+      <!-- rotate the entire crank assembly to pedal -->
+      <animateTransform attributeName="transform" type="rotate"
+        from="0 480 340" to="-2880 480 340" dur="8s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Pelican (sitting on seat) -->
+    <g id="pelican" transform="translate(0,0)">
+      <!-- body bobbing (gentle up and down) -->
+      <animateTransform attributeName="transform" type="translate"
+        values="0 -6; 0 0; 0 -6" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite"/>
+
+      <!-- body -->
+      <g transform="translate(370,200)">
+        <!-- body ellipse -->
+        <ellipse cx="60" cy="80" rx="70" ry="52" class="pel-body"/>
+        <!-- belly shading -->
+        <path d="M10 100 q50 24 100 0 q-24 36 -100 0" fill="#f7f7f5" opacity="0.9"/>
+
+        <!-- wing with slight flap -->
+        <g id="wing" transform="translate(16,60)">
+          <path d="M0 20 q38 -36 82 -14 q-6 18 -36 34 q-28 14 -46 -20" class="pel-wing"/>
+          <animateTransform attributeName="transform" type="rotate"
+            values="2 40 20; -6 40 20; 2 40 20" keyTimes="0;0.5;1" dur="6s" repeatCount="indefinite"/>
+        </g>
+
+        <!-- tail -->
+        <path d="M12 88 q-6 12 6 18 q6 -6 -6 -18" fill="#f0f2f3" stroke="#e0e3e6" stroke-width="1"/>
+
+        <!-- seat contact shadow -->
+        <ellipse cx="60" cy="56" rx="36" ry="10" fill="#000" opacity="0.06"/>
+
+        <!-- neck and head -->
+        <g id="neckHead" transform="translate(90,10)">
+          <!-- neck -->
+          <path d="M0 40 q12 -20 34 -20 q-10 18 -6 36 q-18 4 -28 -16" fill="#ffffff" stroke="#e9e9e9" stroke-width="2"/>
+          <!-- head -->
+          <g id="head" transform="translate(24,2)">
+            <ellipse cx="22" cy="36" rx="24" ry="20" class="pel-body"/>
+            <!-- beak -->
+            <path d="M40 36 q60 6 82 28 q6 8 -6 12 q-18 -2 -40 -18 q-26 4 -36 -10 q8 -8 0 -12" class="beak"/>
+            <!-- beak lower pouch -->
+            <path d="M60 55 q32 18 58 4 q4 4 -10 12 q-30 8 -56 -10" fill="#ffc978" stroke="#d68819" stroke-width="1.2" opacity="0.95"/>
+
+            <!-- eye -->
+            <circle cx="16" cy="30" r="4" class="eye"/>
+            <circle cx="14" cy="28" r="1.2" fill="#ffffff" opacity="0.9"/>
+          </g>
+
+          <!-- subtle head nod -->
+          <animateTransform xlink:href="#head" attributeName="transform" type="rotate"
+            values="0 24 24; 6 24 24; 0 24 24" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite"/>
+        </g>
+
+        <!-- legs (two) - hip anchors near seat -->
+        <!-- left leg (near viewer) -->
+        <g id="leftLeg" transform="translate(30,100)">
+          <!-- hip pivot at (0,0) -->
+          <path d="M0 0 q18 40 26 64 q6 18 -10 12" fill="#fff" stroke="#e6e6e6" stroke-width="2"/>
+          <circle cx="28" cy="76" r="6" class="feet"/>
+        </g>
+
+        <!-- right leg (far) -->
+        <g id="rightLeg" transform="translate(90,100)">
+          <path d="M0 0 q18 40 26 64 q6 18 -10 12" fill="#fff" stroke="#e6e6e6" stroke-width="2"/>
+          <circle cx="28" cy="76" r="6" class="feet"/>
+        </g>
+
+        <!-- animate legs to mimic pedaling (oscillating, out of phase) -->
+        <animateTransform xlink:href="#leftLeg" attributeName="transform" type="rotate"
+          values="35 30 0; -35 30 0; 35 30 0" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite"/>
+        <animateTransform xlink:href="#rightLeg" attributeName="transform" type="rotate"
+          values="-35 90 0; 35 90 0; -35 90 0" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite"/>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- small decorative details -->
+  <g opacity="0.45">
+    <path d="M160 120 q40 12 80 -8" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.12"/>
+    <path d="M240 90 q40 8 86 -10" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.08"/>
+  </g>
+
+</svg>

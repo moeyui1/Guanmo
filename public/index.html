@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f4">
+  <meta name="description" content="同一道题，不同模型。浏览 SVG 作品，比较模型与思考强度。">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src 'self'; object-src 'none'; base-uri 'self'">
+  <title>观模 · SVG 模型画廊</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到作品</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#/" aria-label="观模首页"><span class="brand-mark" aria-hidden="true">观</span><span>观模<span class="brand-en">SVG GALLERY</span></span></a>
+      <nav aria-label="主导航"><a id="nav-gallery" href="#/">作品画廊</a><a id="nav-compare" href="#/compare">高级比较 <span aria-hidden="true">↗</span></a></nav>
+      <span class="header-note"><i></i> 不同模型，同题作画</span>
+    </div>
+  </header>
+  <main id="main" class="page" tabindex="-1"><div class="loading">正在打开画廊…</div></main>
+  <footer class="site-footer"><span>观模 <span class="footer-dot">·</span> 看作品，自己判断。</span><span id="footer-count"></span></footer>
+  <div id="selection-tray" class="selection-tray" hidden></div>
+  <dialog id="art-dialog" aria-label="作品大图"></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

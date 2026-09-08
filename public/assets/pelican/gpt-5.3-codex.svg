@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fd3ff"/>
+      <stop offset="100%" stop-color="#dff3ff"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#77b85f"/>
+      <stop offset="100%" stop-color="#4c8f3f"/>
+    </linearGradient>
+    <style>
+      .frame { stroke: #2b3a42; stroke-width: 8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .metal { stroke: #5f6f7a; stroke-width: 5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .wheel-rim { fill: #202a30; }
+      .wheel-inner { fill: #f1f5f8; stroke: #202a30; stroke-width: 4; }
+      .spoke { stroke: #7b8e9a; stroke-width: 2.5; stroke-linecap: round; }
+      .pelican-white { fill: #fdfdfd; }
+      .pelican-shade { fill: #e8edf0; }
+      .pelican-beak { fill: #f5b544; }
+      .pelican-leg { stroke: #cc8a2c; stroke-width: 10; stroke-linecap: round; fill: none; }
+      .road-mark {
+        stroke: #f4f4f4;
+        stroke-width: 8;
+        stroke-linecap: round;
+        stroke-dasharray: 32 28;
+        animation: roadMove 8s linear infinite;
+      }
+      @keyframes roadMove {
+        from { stroke-dashoffset: 0; }
+        to { stroke-dashoffset: -360; }
+      }
+      #pelicanBob {
+        animation: bob 2s ease-in-out infinite;
+        transform-origin: 480px 260px;
+      }
+      @keyframes bob {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-3px) rotate(-0.6deg); }
+      }
+      #wingFlap {
+        transform-origin: 485px 255px;
+        animation: flap 2s ease-in-out infinite;
+      }
+      @keyframes flap {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(-6deg); }
+      }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="540" fill="url(#sky)"/>
+
+  <g opacity="0.55">
+    <ellipse cx="180" cy="130" rx="84" ry="30" fill="#ffffff"/>
+    <ellipse cx="250" cy="130" rx="54" ry="24" fill="#ffffff"/>
+    <ellipse cx="750" cy="95" rx="92" ry="34" fill="#ffffff"/>
+    <ellipse cx="820" cy="100" rx="58" ry="24" fill="#ffffff"/>
+  </g>
+
+  <path d="M0 360 C140 300 280 300 420 360 C560 420 700 420 960 350 L960 540 L0 540 Z" fill="url(#ground)"/>
+  <rect x="0" y="420" width="960" height="120" fill="#4b4f56"/>
+  <line x1="0" y1="478" x2="960" y2="478" class="road-mark"/>
+
+  <g id="bike" transform="translate(0,0)">
+    <g id="rearWheel">
+      <circle cx="300" cy="390" r="96" class="wheel-rim"/>
+      <circle cx="300" cy="390" r="72" class="wheel-inner"/>
+      <g>
+        <line x1="300" y1="390" x2="300" y2="318" class="spoke"/>
+        <line x1="300" y1="390" x2="351" y2="339" class="spoke"/>
+        <line x1="300" y1="390" x2="372" y2="390" class="spoke"/>
+        <line x1="300" y1="390" x2="351" y2="441" class="spoke"/>
+        <line x1="300" y1="390" x2="300" y2="462" class="spoke"/>
+        <line x1="300" y1="390" x2="249" y2="441" class="spoke"/>
+        <line x1="300" y1="390" x2="228" y2="390" class="spoke"/>
+        <line x1="300" y1="390" x2="249" y2="339" class="spoke"/>
+      </g>
+      <circle cx="300" cy="390" r="10" fill="#2f3b44"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 300 390" to="360 300 390" dur="8s" repeatCount="indefinite"/>
+    </g>
+
+    <g id="frontWheel">
+      <circle cx="660" cy="390" r="96" class="wheel-rim"/>
+      <circle cx="660" cy="390" r="72" class="wheel-inner"/>
+      <g>
+        <line x1="660" y1="390" x2="660" y2="318" class="spoke"/>
+        <line x1="660" y1="390" x2="711" y2="339" class="spoke"/>
+        <line x1="660" y1="390" x2="732" y2="390" class="spoke"/>
+        <line x1="660" y1="390" x2="711" y2="441" class="spoke"/>
+        <line x1="660" y1="390" x2="660" y2="462" class="spoke"/>
+        <line x1="660" y1="390" x2="609" y2="441" class="spoke"/>
+        <line x1="660" y1="390" x2="588" y2="390" class="spoke"/>
+        <line x1="660" y1="390" x2="609" y2="339" class="spoke"/>
+      </g>
+      <circle cx="660" cy="390" r="10" fill="#2f3b44"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 660 390" to="360 660 390" dur="8s" repeatCount="indefinite"/>
+    </g>
+
+    <path d="M300 390 L455 300 L610 310 L480 368 L300 390 Z" class="frame"/>
+    <line x1="455" y1="300" x2="480" y2="368" class="frame"/>
+    <line x1="610" y1="310" x2="660" y2="390" class="frame"/>
+    <line x1="455" y1="300" x2="300" y2="390" class="frame"/>
+
+    <rect x="435" y="286" width="44" height="10" rx="5" fill="#2f3b44"/>
+    <path d="M610 310 L635 280 L600 276" class="metal"/>
+    <circle cx="602" cy="278" r="5" fill="#2f3b44"/>
+
+    <circle cx="480" cy="368" r="26" fill="#2f3b44"/>
+    <circle cx="480" cy="368" r="17" fill="#647986"/>
+    <circle cx="300" cy="390" r="16" fill="none" stroke="#2f3b44" stroke-width="5"/>
+
+    <line x1="300" y1="372" x2="480" y2="350" stroke="#3b454d" stroke-width="4"/>
+    <line x1="300" y1="408" x2="480" y2="386" stroke="#3b454d" stroke-width="4"/>
+
+    <g id="crankset">
+      <line x1="480" y1="368" x2="524" y2="368" stroke="#1f2b32" stroke-width="6" stroke-linecap="round"/>
+      <line x1="480" y1="368" x2="436" y2="368" stroke="#1f2b32" stroke-width="6" stroke-linecap="round"/>
+
+      <g transform="translate(524 368)">
+        <rect x="-12" y="-5" width="24" height="10" rx="3" fill="#1d252b"/>
+        <path d="M-2 -2 C8 -8 18 -2 20 6 C13 11 2 11 -7 7 C-8 2 -6 0 -2 -2 Z" class="pelican-beak"/>
+      </g>
+      <g transform="translate(436 368)">
+        <rect x="-12" y="-5" width="24" height="10" rx="3" fill="#1d252b"/>
+        <path d="M2 -2 C-8 -8 -18 -2 -20 6 C-13 11 -2 11 7 7 C8 2 6 0 2 -2 Z" class="pelican-beak"/>
+      </g>
+
+      <animateTransform attributeName="transform" type="rotate" from="0 480 368" to="360 480 368" dur="8s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <g id="pelicanBob">
+    <path d="M355 248 C330 235 328 215 344 205 C372 216 386 238 389 260 C376 260 364 256 355 248 Z" class="pelican-shade"/>
+
+    <ellipse cx="470" cy="245" rx="118" ry="72" class="pelican-white"/>
+    <ellipse cx="452" cy="264" rx="76" ry="42" class="pelican-shade"/>
+
+    <g id="wingFlap">
+      <path d="M435 226 C495 196 548 218 546 260 C508 280 448 274 418 244 C418 236 425 230 435 226 Z" class="pelican-shade"/>
+    </g>
+
+    <path d="M542 228 C574 187 616 174 649 192 C650 212 626 234 589 243 C566 247 547 242 542 228 Z" class="pelican-white"/>
+    <circle cx="654" cy="204" r="33" class="pelican-white"/>
+    <circle cx="664" cy="201" r="5" fill="#1a2228"/>
+
+    <path d="M676 207 L782 224 L676 238 C690 227 690 216 676 207 Z" class="pelican-beak"/>
+    <path d="M676 224 C706 233 720 247 711 258 C686 258 666 244 663 229 Z" fill="#e39a35"/>
+
+    <path d="M644 178 C651 166 664 160 678 161 C671 171 661 177 644 178 Z" class="pelican-shade"/>
+
+    <line x1="500" y1="301" x2="501" y2="340" class="pelican-leg"/>
+    <line x1="470" y1="301" x2="469" y2="340" class="pelican-leg"/>
+  </g>
+</svg>

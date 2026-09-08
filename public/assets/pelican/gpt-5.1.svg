@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#86c5ff"/>
+      <stop offset="60%" stop-color="#cfe9ff"/>
+      <stop offset="100%" stop-color="#fdf7d4"/>
+    </linearGradient>
+    <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#73b46b"/>
+      <stop offset="100%" stop-color="#4e8b4a"/>
+    </linearGradient>
+    <radialGradient id="sunGrad" cx="0.2" cy="0.15" r="0.15">
+      <stop offset="0%" stop-color="#ffeaa0"/>
+      <stop offset="100%" stop-color="#ffcc55"/>
+    </radialGradient>
+    <style>
+      .pelican-body { fill:#f7f6f2; stroke:#c4c2b8; stroke-width:3; }
+      .pelican-wing { fill:#e5e4de; stroke:#bcbab0; stroke-width:3; }
+      .pelican-beak { fill:#f4a623; stroke:#c57a1a; stroke-width:3; }
+      .pelican-leg { fill:#f3d57a; stroke:#c9aa42; stroke-width:3; }
+      .pelican-foot { fill:#f4a623; stroke:#c57a1a; stroke-width:2; }
+      .bike-frame { fill:none; stroke:#264b8f; stroke-width:8; stroke-linecap:round; stroke-linejoin:round; }
+      .bike-detail { fill:none; stroke:#264b8f; stroke-width:5; }
+      .wheel-rim { fill:none; stroke:#333; stroke-width:8; }
+      .wheel-tire { fill:none; stroke:#111; stroke-width:14; }
+      .wheel-spoke { stroke:#666; stroke-width:3; }
+      .ground-line { fill:none; stroke:#2f6b32; stroke-width:6; stroke-linecap:round; }
+      .cloud { fill:#ffffff; stroke:#d5ecff; stroke-width:2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="960" height="540" fill="url(#skyGrad)"/>
+  <rect x="0" y="360" width="960" height="180" fill="url(#groundGrad)"/>
+  <circle cx="160" cy="80" r="60" fill="url(#sunGrad)" opacity="0.9"/>
+
+  <!-- Distant hills -->
+  <ellipse cx="200" cy="380" rx="260" ry="80" fill="#6eaf6a" opacity="0.9"/>
+  <ellipse cx="760" cy="390" rx="280" ry="90" fill="#5b9c5a" opacity="0.9"/>
+
+  <!-- Path -->
+  <path d="M40 400 C220 380 360 420 520 405 C680 390 820 415 920 400" class="ground-line"/>
+
+  <!-- Clouds -->
+  <g transform="translate(620,90)">
+    <ellipse cx="0" cy="0" rx="55" ry="32" class="cloud"/>
+    <ellipse cx="40" cy="-10" rx="45" ry="28" class="cloud"/>
+    <ellipse cx="-40" cy="-8" rx="40" ry="26" class="cloud"/>
+  </g>
+  <g transform="translate(320,140) scale(0.9)">
+    <ellipse cx="0" cy="0" rx="45" ry="28" class="cloud"/>
+    <ellipse cx="35" cy="-8" rx="35" ry="22" class="cloud"/>
+    <ellipse cx="-30" cy="-6" rx="32" ry="20" class="cloud"/>
+  </g>
+
+  <!-- Bicycle -->
+  <g id="bicycle">
+    <!-- Rear wheel -->
+    <g id="rearWheel" transform="translate(320,360)">
+      <circle r="80" class="wheel-tire"/>
+      <circle r="64" class="wheel-rim"/>
+      <!-- Spokes -->
+      <line x1="0" y1="-64" x2="0" y2="64" class="wheel-spoke"/>
+      <line x1="-64" y1="0" x2="64" y2="0" class="wheel-spoke"/>
+      <line x1="-45" y1="-45" x2="45" y2="45" class="wheel-spoke"/>
+      <line x1="-45" y1="45" x2="45" y2="-45" class="wheel-spoke"/>
+      <circle r="7" fill="#777"/>
+      <animateTransform attributeName="transform" type="rotate"
+        from="0 0 0" to="2880 0 0" dur="8s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Front wheel -->
+    <g id="frontWheel" transform="translate(640,360)">
+      <circle r="80" class="wheel-tire"/>
+      <circle r="64" class="wheel-rim"/>
+      <!-- Spokes -->
+      <line x1="0" y1="-64" x2="0" y2="64" class="wheel-spoke"/>
+      <line x1="-64" y1="0" x2="64" y2="0" class="wheel-spoke"/>
+      <line x1="-45" y1="-45" x2="45" y2="45" class="wheel-spoke"/>
+      <line x1="-45" y1="45" x2="45" y2="-45" class="wheel-spoke"/>
+      <circle r="7" fill="#777"/>
+      <animateTransform attributeName="transform" type="rotate"
+        from="0 0 0" to="2880 0 0" dur="8s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Frame -->
+    <g id="frame">
+      <!-- Main triangle -->
+      <path d="M320 360 L450 300 L360 260 Z" class="bike-frame"/>
+      <!-- Chain stay & seat stay -->
+      <path d="M320 360 L450 340 L640 360" class="bike-frame"/>
+      <path d="M360 260 L480 220 L640 360" class="bike-frame"/>
+      <!-- Seat tube -->
+      <path d="M360 260 L450 340" class="bike-frame"/>
+      <!-- Head tube & handlebar -->
+      <path d="M640 360 L620 260" class="bike-frame"/>
+      <path d="M600 240 L650 240" class="bike-frame"/>
+      <circle cx="450" cy="340" r="10" fill="#264b8f"/>
+      <!-- Seat -->
+      <path d="M440 230 L488 230 L470 240 L442 240 Z" fill="#333"/>
+    </g>
+
+    <!-- Crank, pedals and feet -->
+    <g id="crankSet" transform="translate(480,320)">
+      <!-- Crank arm -->
+      <line x1="0" y1="0" x2="36" y2="0" class="bike-detail"/>
+      <line x1="0" y1="0" x2="-36" y2="0" class="bike-detail"/>
+      <circle r="14" fill="#264b8f"/>
+      <!-- Pedals with feet -->
+      <g id="rightPedalFoot" transform="translate(36,0)">
+        <rect x="-5" y="-18" width="10" height="36" fill="#333" rx="3"/>
+        <!-- Pelican foot on pedal -->
+        <ellipse cx="0" cy="18" rx="14" ry="8" class="pelican-foot"/>
+      </g>
+      <g id="leftPedalFoot" transform="translate(-36,0)">
+        <rect x="-5" y="-18" width="10" height="36" fill="#333" rx="3"/>
+        <ellipse cx="0" cy="-18" rx="14" ry="8" class="pelican-foot"/>
+      </g>
+      <animateTransform attributeName="transform" type="rotate"
+        from="0 0 0" to="2880 0 0" dur="8s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- Pelican -->
+  <g id="pelican" transform="translate(0,0)">
+    <!-- Body -->
+    <ellipse cx="480" cy="260" rx="90" ry="55" class="pelican-body"/>
+    <!-- Wing -->
+    <path d="M460 240 C420 250 410 280 430 305 C450 330 490 330 510 310 C490 300 475 280 470 260 Z" class="pelican-wing"/>
+    <!-- Tail -->
+    <path d="M400 260 L370 250 L372 270 Z" fill="#e5e4de" stroke="#bcbab0" stroke-width="3"/>
+    <!-- Neck -->
+    <path d="M505 240 C520 210 520 180 505 150 C500 140 495 135 490 132 C488 150 490 170 494 185 C498 200 500 215 498 232 Z"
+          class="pelican-body"/>
+    <!-- Head -->
+    <ellipse cx="488" cy="130" rx="32" ry="26" class="pelican-body"/>
+    <!-- Eye -->
+    <circle cx="494" cy="124" r="5" fill="#222"/>
+    <circle cx="494" cy="124" r="2" fill="#ffffff"/>
+    <!-- Beak -->
+    <path d="M500 130 L560 140 L560 150 L500 152 Z" class="pelican-beak"/>
+    <path d="M500 152 C530 170 550 178 565 176 C556 166 552 154 560 140 L500 130 Z" fill="#f7c15a" stroke="#c57a1a" stroke-width="3"/>
+
+    <!-- Legs -->
+    <g id="legs">
+      <!-- Right leg -->
+      <path d="M480 260 L480 305 L480 320" class="pelican-leg"/>
+      <!-- Left leg -->
+      <path d="M470 260 L470 305 L472 320" class="pelican-leg"/>
+    </g>
+  </g>
+</svg>

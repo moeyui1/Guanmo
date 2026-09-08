@@ -1,0 +1,332 @@
+<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- Gradients for visual appeal -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a7d8f5"/>
+      <stop offset="100%" stop-color="#edf7fa"/>
+    </linearGradient>
+    <radialGradient id="sunGrad" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fffde4"/>
+      <stop offset="80%" stop-color="#ffe791"/>
+      <stop offset="100%" stop-color="#ffefaf" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="legGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fae2a0"/>
+      <stop offset="100%" stop-color="#e1963c"/>
+    </linearGradient>
+    <linearGradient id="pelicanBelly" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7fafd"/>
+      <stop offset="100%" stop-color="#e4eaef"/>
+    </linearGradient>
+    <linearGradient id="beakGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd87d"/>
+      <stop offset="100%" stop-color="#fcc03e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect x="0" y="0" width="960" height="540" fill="url(#skyGrad)"/>
+
+  <!-- Sun -->
+  <circle cx="850" cy="90" r="56" fill="url(#sunGrad)" opacity="0.7"/>
+
+  <!-- Simple ground -->
+  <rect x="0" y="400" width="960" height="140" fill="#b0e295"/>
+
+  <!-- Shadow beneath the bike -->
+  <ellipse cx="480" cy="438" rx="100" ry="18" fill="#708f6e" opacity="0.22"/>
+
+  <!-- BICYCLE GROUP -->
+  <g id="bicycle">
+    <!-- Wheels -->
+    <g id="rearWheel" transform="translate(380,420)">
+      <circle r="58" fill="#eee" stroke="#576777" stroke-width="7"/>
+      <circle r="52" fill="none" stroke="#b2b7ba" stroke-width="2"/>
+      <!-- 10 Spokes -->
+      <g id="spokes">
+        <g>
+          <line x1="0" y1="0" x2="0" y2="-52" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="0" y2="52" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="51" y2="-17" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="-51" y2="17" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="17" y2="51" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="-17" y2="-51" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="43" y2="36" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="-43" y2="-36" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="36" y2="-43" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="-36" y2="43" stroke="#7483a1" stroke-width="2"/>
+        </g>
+      </g>
+      <!-- Animating rear wheel rotation -->
+      <animateTransform attributeName="transform" type="rotate"
+        from="0 0 0" to="360 0 0"
+        dur="8s" repeatCount="indefinite"/>
+    </g>
+    <g id="frontWheel" transform="translate(580,420)">
+      <circle r="58" fill="#eee" stroke="#576777" stroke-width="7"/>
+      <circle r="52" fill="none" stroke="#b2b7ba" stroke-width="2"/>
+      <!-- 10 Spokes -->
+      <g id="spokes2">
+        <g>
+          <line x1="0" y1="0" x2="0" y2="-52" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="0" y2="52" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="51" y2="-17" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="-51" y2="17" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="17" y2="51" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="-17" y2="-51" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="43" y2="36" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="-43" y2="-36" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="36" y2="-43" stroke="#7483a1" stroke-width="2"/>
+        </g>
+        <g>
+          <line x1="0" y1="0" x2="-36" y2="43" stroke="#7483a1" stroke-width="2"/>
+        </g>
+      </g>
+      <!-- Animating front wheel rotation -->
+      <animateTransform attributeName="transform" type="rotate"
+        from="0 0 0" to="360 0 0"
+        dur="8s" repeatCount="indefinite"/>
+    </g>
+    <!-- Frame -->
+    <g>
+      <!-- Main triangle -->
+      <polygon points="380,420 460,340 580,420"
+        fill="none" stroke="#4169a6" stroke-width="12"/>
+      <!-- Top tube (back to seat) -->
+      <line x1="460" y1="340" x2="420" y2="275"
+        stroke="#33486b" stroke-width="10"/>
+      <line x1="420" y1="275" x2="425" y2="312"
+        stroke="#33486b" stroke-width="8"/>
+      <!-- Seat tube -->
+      <line x1="460" y1="340" x2="426" y2="315" stroke="#4169a6" stroke-width="9"/>
+      <!-- Down tube (front fork) -->
+      <line x1="580" y1="420" x2="530" y2="277"
+        stroke="#33486b" stroke-width="10"/>
+      <!-- Fork to wheel -->
+      <line x1="530" y1="277" x2="564" y2="362"
+        stroke="#4169a6" stroke-width="7"/>
+      <!-- Handle bars -->
+      <g>
+        <line x1="530" y1="277" x2="570" y2="220" stroke="#999" stroke-width="9"/>
+        <line x1="570" y1="220" x2="610" y2="205" stroke="#4169a6" stroke-width="7" stroke-linecap="round"/>
+        <ellipse cx="610" cy="205" rx="8" ry="9" fill="#999" stroke="#33486b" stroke-width="2"/>
+      </g>
+      <!-- Seat -->
+      <ellipse cx="420" cy="274" rx="24" ry="8" fill="#474568" stroke="#30304b" stroke-width="2"/>
+      <!-- Crank and pedals -->
+      <g id="pedalGroup">
+        <g>
+          <circle cx="460" cy="420" r="12" fill="#777"/>
+          <!-- Left pedal arm -->
+          <rect x="458" y="420" width="45" height="7" rx="3.5" fill="#4169a6" transform="rotate(0 460 423.5)"/>
+          <rect x="502" y="418" width="16" height="11" rx="4" fill="#eebb54"/>
+          <!-- Right pedal arm -->
+          <rect x="408" y="417" width="45" height="7" rx="3.5" fill="#33486b" transform="rotate(180 460 420)"/>
+          <rect x="394" y="416" width="16" height="11" rx="4" fill="#eebb54"/>
+        </g>
+        <!-- INNER GROUP FOR PEDAL ANIMATION -->
+        <animateTransform attributeName="transform"
+          type="rotate"
+          from="0 460 420"
+          to="360 460 420"
+          dur="8s"
+          repeatCount="indefinite"/>
+      </g>
+      <!-- Chain -->
+      <path d="M 460 420 Q 470 410 490 410 Q 570 420 580 420"
+        fill="none" stroke="#928900" stroke-width="4" stroke-dasharray="5,5"/>
+      <!-- Rear stay -->
+      <line x1="380" y1="420" x2="460" y2="420" stroke="#33486b" stroke-width="7"/>
+    </g>
+  </g>
+
+  <!-- PELICAN GROUP -->
+  <g id="pelican">
+    <!-- Tail feathers -->
+    <g>
+      <ellipse cx="392" cy="301" rx="14" ry="5" fill="#cad6e3"/>
+      <ellipse cx="392" cy="294" rx="10" ry="3" fill="#dde5ee"/>
+      <ellipse cx="384" cy="306" rx="6" ry="2" fill="#9fadba"/>
+    </g>
+    <!-- Body -->
+    <ellipse cx="445" cy="325" rx="57" ry="48" fill="url(#pelicanBelly)" stroke="#b6cadd" stroke-width="3"/>
+
+    <!-- Wing -->
+    <g>
+      <ellipse cx="440" cy="330" rx="30" ry="16" fill="#dae3ec" stroke="#bbc7d7" stroke-width="2"/>
+      <ellipse cx="451" cy="333" rx="19" ry="8.8" fill="#c0cadd" stroke="#a7b3c7" stroke-width="1"/>
+      <ellipse cx="448" cy="343" rx="13" ry="6.4" fill="#a9b5c9" stroke="#959eb3" stroke-width="0.8"/>
+    </g>
+
+    <!-- Lower neck (back part) -->
+    <ellipse cx="467" cy="260" rx="22" ry="41" fill="url(#pelicanBelly)" stroke="#c4cce1" stroke-width="2"
+      transform="rotate(14 467 260)"/>
+
+    <!-- Beak: Lower mandible -->
+    <path
+      d="M 538 250
+         Q 580 282 587 269
+         Q 590 262 542 235
+         Q 532 230 525 239
+         Q 520 246 538 250 Z"
+      fill="url(#beakGrad)" stroke="#e8a323" stroke-width="2"/>
+
+    <!-- Head -->
+    <ellipse cx="502" cy="222" rx="37" ry="35" fill="#f6fafc" stroke="#bbc7d7" stroke-width="2"/>
+    <!-- Eye patch -->
+    <ellipse cx="523" cy="217" rx="10" ry="7" fill="#c7cedc" opacity="0.7" />
+    <!-- Eye -->
+    <ellipse cx="529" cy="217" rx="5.5" ry="6" fill="#fff"/>
+    <ellipse cx="531" cy="218" rx="2.2" ry="3.5" fill="#2a3436"/>
+    <ellipse cx="532.4" cy="216" rx="0.9" ry="1.2" fill="#fff"/>
+    <!-- Eyebrow -->
+    <path d="M 523 208 Q 532 205 539 212" stroke="#888" stroke-width="2" fill="none"/>
+
+    <!-- Beak: Top mandible -->
+    <path
+      d="M 540 233
+         Q 595 234 552 221
+         Q 532 216 526 234
+         L 538 236
+         Q 544 234 540 233 Z"
+      fill="url(#beakGrad)" stroke="#e8a323" stroke-width="2"/>
+    <!-- Beak tip -->
+    <ellipse cx="594" cy="234" rx="5.5" ry="2.5" fill="#db9240" opacity="0.8"/>
+
+    <!-- Upper leg: Left (back) -->
+    <g id="backLeg">
+      <rect x="441" y="375" width="18" height="30" rx="7" fill="url(#legGrad)" stroke="#c78618" stroke-width="2" transform="rotate(14 450 390)"/>
+      <!-- Lower Leg (moves with pedal) -->
+      <g id="backFootAnim">
+        <rect x="445" y="401" width="9" height="38" rx="5" fill="#efc36e" stroke="#ba8106" stroke-width="1.7" transform="rotate(26 449.5 420)"/>
+        <!-- Toes -->
+        <ellipse cx="454" cy="437" rx="14" ry="5" fill="#fae2a0" stroke="#cb993e" stroke-width="1.2" transform="rotate(-9 454 437)"/>
+      </g>
+      <!-- Animate leg with pedal -->
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        values="
+          13 450 375;
+          33 450 375;
+          52 450 375;
+          26 450 375;
+          13 450 375"
+        keyTimes="0;0.25;0.5;0.75;1"
+        dur="8s"
+        repeatCount="indefinite"/>
+    </g>
+    <!-- Upper leg: Right (front pedal) -->
+    <g id="frontLeg">
+      <rect x="457" y="375" width="18" height="30" rx="7" fill="url(#legGrad)" stroke="#c78618" stroke-width="2" transform="rotate(-16 466 390)"/>
+      <!-- Lower Leg (moves with pedal) -->
+      <g id="frontFootAnim">
+        <rect x="461" y="401" width="9" height="38" rx="5" fill="#efc36e" stroke="#ba8106" stroke-width="1.7" transform="rotate(-23 465.5 420)"/>
+        <!-- Toes -->
+        <ellipse cx="471" cy="437" rx="14" ry="5" fill="#fae2a0" stroke="#cb993e" stroke-width="1.2" transform="rotate(9 471 437)"/>
+      </g>
+      <!-- Animate leg with pedal -->
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        values="
+          -16 466 375;
+          -35 466 375;
+          -54 466 375;
+          -21 466 375;
+          -16 466 375"
+        keyTimes="0;0.25;0.5;0.75;1"
+        dur="8s"
+        repeatCount="indefinite"/>
+    </g>
+
+    <!-- Animate feet to pedal rotation -->
+    <g>
+      <!-- Back foot (left) -->
+      <g>
+        <animateTransform attributeName="transform"
+          type="rotate"
+          values="
+            0 454 434;
+            90 454 434;
+            180 454 434;
+            270 454 434;
+            360 454 434"
+          keyTimes="0;0.25;0.5;0.75;1"
+          dur="8s"
+          additive="sum"
+          repeatCount="indefinite"/>
+      </g>
+      <!-- Front foot (right) -->
+      <g>
+        <animateTransform attributeName="transform"
+          type="rotate"
+          values="
+            0 471 434;
+            90 471 434;
+            180 471 434;
+            270 471 434;
+            360 471 434"
+          keyTimes="0;0.25;0.5;0.75;1"
+          dur="8s"
+          additive="sum"
+          repeatCount="indefinite"/>
+      </g>
+    </g>
+
+    <!-- Neck (front part) -->
+    <ellipse cx="492" cy="249" rx="21" ry="45" fill="#fff" stroke="#c4cce1" stroke-width="2"
+      transform="rotate(17 492 249)"/>
+
+    <!-- Cheek highlight -->
+    <ellipse cx="512" cy="237" rx="7" ry="3.5" fill="#fff" opacity="0.7"/>
+    <!-- Nostril -->
+    <ellipse cx="573" cy="228" rx="2.4" ry="1.2" fill="#b49b53" opacity="0.7"/>
+
+    <!-- Flap on beak -->
+    <ellipse cx="549" cy="237" rx="7.3" ry="2" fill="#ffd87d" opacity="0.34"/>
+
+    <!-- Upper arm/finger "holding" handlebar -->
+    <g>
+      <ellipse cx="550" cy="285" rx="16" ry="7" fill="#f9fafb" stroke="#c0c7d7" stroke-width="2"
+        transform="rotate(-16 550 285)"/>
+      <ellipse cx="567" cy="275" rx="7" ry="2" fill="#e6dd94" stroke="#ba8106" stroke-width="1"/>
+      <ellipse cx="569" cy="279" rx="5" ry="1.4" fill="#e6dd94" stroke="#ba8106" stroke-width="1" transform="rotate(12 569 279)"/>
+    </g>
+  </g>
+</svg>
