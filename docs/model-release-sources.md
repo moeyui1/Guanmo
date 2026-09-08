@@ -6,10 +6,14 @@
 |---|---|---|
 | GPT-6 Astra | 2026-09-03 | [官方记录](https://developers.openai.com/api/docs/changelog) |
 | Gemini 3.8 Flash | 2026-09-02 | [官方记录](https://ai.google.dev/gemini-api/docs/changelog) |
+| Gemini 3.7 Flash | 2026-08-13 | [官方记录](https://ai.google.dev/gemini-api/docs/changelog) |
+| Grok 4.6 | 2026-08-12 | [官方记录](https://x.ai/news/grok-4-6) |
+| Gemini 3.6 Flash | 2026-07-21 | [官方记录](https://ai.google.dev/gemini-api/docs/changelog) |
 | Grok 4.5 | 2026-07-16 | [官方记录](https://x.ai/news/grok-4-5) |
 | GPT-5.6 Sol | 2026-07-09 | [官方记录](https://developers.openai.com/api/docs/changelog) |
 | GPT-5.6 Terra | 2026-07-09 | [官方记录](https://developers.openai.com/api/docs/changelog) |
 | GPT-5.6 Luna | 2026-07-09 | [官方记录](https://developers.openai.com/api/docs/changelog) |
+| Gemini 3.5 Flash | 2026-05-19 | [官方记录](https://ai.google.dev/gemini-api/docs/changelog) |
 | GPT-5.5 | 2026-04-23 | [官方记录](https://developers.openai.com/codex/changelog) |
 | GPT-5.4 | 2026-03-05 | [官方记录](https://developers.openai.com/api/docs/changelog) |
 | GPT-5.3 Codex | 2026-02-05 | [官方记录](https://developers.openai.com/codex/changelog) |

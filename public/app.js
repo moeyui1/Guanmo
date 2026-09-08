@@ -25,6 +25,8 @@ const effortName = level => ({default:'默认',unspecified:'未标注',none:'无
 const effort = sample => sample.reasoning || 'default';
 const modelKey = sample => JSON.stringify([sample.provider || '其他', sample.model]);
 const unique = values => [...new Set(values)];
+const effortOrder=['default','unspecified','none','minimal','low','medium','high','xhigh','max','ultra'];
+const orderedEfforts=values=>unique(values).sort((a,b)=>(effortOrder.includes(a)?effortOrder.indexOf(a):999)-(effortOrder.includes(b)?effortOrder.indexOf(b):999));
 let data;
 const state = { mode:'gallery', topic:null, query:'', provider:'all', selected:new Set(), panels:[], promptOpen:false, cardSamples:new Map() };
 let replaySerial = 0, toastTimer;
@@ -56,7 +58,7 @@ function sampleLabel(sample) {
   const siblings=state.topic.samples.filter(s=>modelKey(s)===modelKey(sample) && effort(s)===effort(sample));
   return `样本 ${siblings.findIndex(s=>s.id===sample.id)+1}`;
 }
-function baseline(topic = state.topic) { return topic.samples.filter(s => s.home !== false && ['default','unspecified'].includes(effort(s))); }
+function baseline(topic = state.topic) { return topic.samples.filter(s => s.home===true || (s.home!==false && ['default','unspecified'].includes(effort(s)))); }
 function topicHref(mode, topicId, ids) {
   const params = new URLSearchParams({topic:topicId});
   if (ids?.length) params.set('samples',ids.join(','));
@@ -88,7 +90,7 @@ function promptHTML() { return `<section id="prompt-panel" class="prompt-panel"$
 
 function renderGallery() {
   const all = data.topics.flatMap(topic => topic.samples);
-  main.innerHTML = `<section class="hero"><div><div class="eyebrow">A SMALL COLLECTION OF MACHINE IMAGINATION</div><h1>同一道题，不同想象。</h1><p>先看各模型的默认表现，再把感兴趣的作品放在一起比较。</p></div><div class="hero-side"><div class="stat"><strong>${data.topics.length.toString().padStart(2,'0')}</strong><span>道绘画题目</span></div><div class="stat"><strong>${unique(all.map(modelKey)).length.toString().padStart(2,'0')}</strong><span>个模型 / 来源</span></div><div class="stat"><strong>${all.length.toString().padStart(2,'0')}</strong><span>份 SVG 作品</span></div></div></section>
+  main.innerHTML = `<section class="hero"><div><div class="eyebrow">A SMALL COLLECTION OF MACHINE IMAGINATION</div><h1>同一道题，不同想象。</h1><p>切换思考深度，或将感兴趣的作品放在一起比较。</p></div><div class="hero-side"><div class="stat"><strong>${data.topics.length.toString().padStart(2,'0')}</strong><span>道绘画题目</span></div><div class="stat"><strong>${unique(all.map(modelKey)).length.toString().padStart(2,'0')}</strong><span>个模型 / 来源</span></div><div class="stat"><strong>${all.length.toString().padStart(2,'0')}</strong><span>份 SVG 作品</span></div></div></section>
     <div class="topic-nav" aria-label="选择题目">${data.topics.map((topic,i) => `<button class="topic-button${topic.id === state.topic.id ? ' active' : ''}" data-topic="${esc(topic.id)}" aria-pressed="${topic.id === state.topic.id}">${icon(topic.icon || (i ? 'leaf' : 'grid'))}<span>${esc(topic.title)}</span><span class="count">${baseline(topic).length}</span></button>`).join('')}</div>
     <div class="topic-heading"><h2>${esc(state.topic.title)} <span class="pill">可切换思考深度</span></h2><div class="topic-links"><button class="text-button" data-action="prompt" aria-expanded="${state.promptOpen}" aria-controls="prompt-panel">${icon('file')} 看提示词</button><a class="text-button advanced-link" href="${topicHref('compare',state.topic.id)}">高级比较 ${icon('arrow')}</a></div></div>
     ${promptHTML()}
@@ -108,7 +110,7 @@ function renderCards() {
 }
 function cardHTML(base,index=0) {
   const sample=sampleById(state.cardSamples.get(base.id)) || base;
-  const levels=unique([effort(base),...state.topic.samples.filter(s=>modelKey(s)===modelKey(base)).map(effort)]);
+  const levels=orderedEfforts([effort(base),...state.topic.samples.filter(s=>modelKey(s)===modelKey(base)).map(effort)]);
   return `<article class="art-card${state.selected.has(sample.id) ? ' selected' : ''}" data-card-id="${esc(sample.id)}" data-home-id="${esc(base.id)}"><button class="art-frame" data-open="${esc(sample.id)}" aria-label="放大 ${esc(sample.model)} 的作品">${image(sample,index<6)}<span class="expand-hint">${icon('expand')}</span></button><div class="card-meta"><div><div class="model-line"><span class="vendor-dot${sample.provider === 'OpenAI' ? '' : ' other'}"></span><h3>${esc(sample.model)}</h3></div><div class="card-subline"><span>${esc(sample.provider || '其他')}</span><span class="separator">/</span>${levels.length>1 ? `<select class="card-effort" data-card-effort="${esc(base.id)}" aria-label="${esc(sample.model)} 思考深度">${options(levels.map(level=>[level,effortName(level)]),effort(sample))}</select>` : `<span class="effort-tag">${esc(effortName(effort(sample)))}</span>`}</div></div><button class="choose-button" data-choose="${esc(sample.id)}" aria-pressed="${state.selected.has(sample.id)}" aria-label="${state.selected.has(sample.id) ? '取消' : '加入'}对比：${esc(sample.model)}">${icon(state.selected.has(sample.id) ? 'check' : 'plus')}</button></div></article>`;
 }
 function toggleSelection(id) {
@@ -158,7 +160,7 @@ function renderCompare() {
 function panelHTML(sample,index) {
   const models=[...new Map(state.topic.samples.map(s=>[modelKey(s),s])).values()];
   const sameModel=state.topic.samples.filter(s=>modelKey(s)===modelKey(sample));
-  const levels=unique(sameModel.map(effort));
+  const levels=orderedEfforts(sameModel.map(effort));
   const variants=sameModel.filter(s=>effort(s)===effort(sample));
   return `<section class="compare-panel"><div class="panel-controls"><label>模型<select data-panel-model="${index}" aria-label="第 ${index+1} 栏模型">${options(models.map(s=>[modelKey(s),`${s.model} · ${s.provider || '其他'}`]),modelKey(sample))}</select></label><label>思考强度<select data-panel-effort="${index}" aria-label="第 ${index+1} 栏思考强度">${options(levels.map(l=>[l,effortName(l)]),effort(sample))}</select></label>${variants.length>1 ? `<label>样本<select data-panel-variant="${index}" aria-label="第 ${index+1} 栏样本">${options(variants.map((s,i)=>[s.id,sampleLabel(s)]),sample.id)}</select></label>` : ''}<button class="icon-button remove-panel" data-remove-panel="${index}" aria-label="移除第 ${index+1} 栏"${state.panels.length===1 ? ' disabled' : ''}>${icon('close')}</button></div><button class="art-frame" data-open="${esc(sample.id)}" aria-label="放大 ${esc(sample.model)} 的作品">${image(sample,true)}</button><div class="panel-footer"><span class="note">${esc(`${effortName(effort(sample))} · ${sampleLabel(sample)}`)}</span><a href="${esc(assetURL(sample))}" download="${esc(sample.id)}.svg">${icon('download')} SVG</a></div></section>`;
 }

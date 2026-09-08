@@ -1,0 +1,324 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3E7CA0"/>
+      <stop offset="42%" stop-color="#7EB7D0"/>
+      <stop offset="72%" stop-color="#F0C48A"/>
+      <stop offset="100%" stop-color="#F6D9A8"/>
+    </linearGradient>
+    <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4FB0C6"/>
+      <stop offset="45%" stop-color="#2F7FA3"/>
+      <stop offset="100%" stop-color="#1F5F86"/>
+    </linearGradient>
+    <linearGradient id="beach" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E6C98B"/>
+      <stop offset="100%" stop-color="#C9A468"/>
+    </linearGradient>
+    <radialGradient id="bodyR" cx="38%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#FFFEFB"/>
+      <stop offset="62%" stop-color="#F1EBE0"/>
+      <stop offset="100%" stop-color="#C9BBA8"/>
+    </radialGradient>
+    <linearGradient id="beakG" x1="0" y1="0" x2="1" y2="0.35">
+      <stop offset="0%" stop-color="#FFE27A"/>
+      <stop offset="48%" stop-color="#F0B429"/>
+      <stop offset="100%" stop-color="#C98414"/>
+    </linearGradient>
+    <linearGradient id="pouchG" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0%" stop-color="#F7C64A"/>
+      <stop offset="100%" stop-color="#E0892E"/>
+    </linearGradient>
+    <linearGradient id="wingG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFEFB"/>
+      <stop offset="60%" stop-color="#E6DCCA"/>
+      <stop offset="100%" stop-color="#A89880"/>
+    </linearGradient>
+    <linearGradient id="frameG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5A7DA8"/>
+      <stop offset="100%" stop-color="#2C4668"/>
+    </linearGradient>
+    <linearGradient id="plankG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D2B07A"/>
+      <stop offset="100%" stop-color="#B08950"/>
+    </linearGradient>
+    <radialGradient id="sunG" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF4B0"/>
+      <stop offset="45%" stop-color="#FFD45C"/>
+      <stop offset="100%" stop-color="#F0A020"/>
+    </radialGradient>
+    <pattern id="planks" x="0" y="0" width="40" height="90" patternUnits="userSpaceOnUse">
+      <rect width="37" height="90" fill="url(#plankG)"/>
+      <rect x="37" width="3" height="90" fill="#8A6232"/>
+      <path d="M 4 10 L 33 10 M 6 40 L 30 40 M 5 70 L 32 70" stroke="#C49A5C" stroke-width="1" opacity="0.45"/>
+      <animate attributeName="x" from="0" to="-960" dur="8s" repeatCount="indefinite"/>
+    </pattern>
+    <pattern id="foam" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
+      <path d="M0 12 Q 15 4 30 12 T 60 12 T 90 12 T 120 12" fill="none" stroke="#D7F2F6" stroke-width="2.2" opacity="0.55"/>
+      <animate attributeName="x" from="0" to="-960" dur="8s" repeatCount="indefinite"/>
+    </pattern>
+    <pattern id="foam2" x="40" y="0" width="160" height="18" patternUnits="userSpaceOnUse">
+      <path d="M0 10 Q 20 2 40 10 T 80 10 T 120 10 T 160 10" fill="none" stroke="#F2FBFC" stroke-width="1.6" opacity="0.35"/>
+      <animate attributeName="x" from="0" to="-480" dur="8s" repeatCount="indefinite"/>
+    </pattern>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="soft" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="5" flood-color="#3A2A12" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <style>
+    .spinW { animation: spinW 8s linear infinite; }
+    .spinC { animation: spinC 8s linear infinite; }
+    .spinP { animation: spinP 8s linear infinite; }
+    .bob { animation: bob 1s ease-in-out infinite; }
+    .blink { animation: blink 8s ease-in-out infinite; transform-origin: 522px 194px; }
+    .pouch { animation: pouch 2s ease-in-out infinite; }
+    .wing { animation: wing 1s ease-in-out infinite; transform-origin: 448px 298px; }
+    .sway1 { animation: sway 2s ease-in-out infinite; transform-origin: 70px 530px; }
+    .sway2 { animation: sway 2s ease-in-out infinite 0.4s; transform-origin: 180px 532px; }
+    .sway3 { animation: sway 2s ease-in-out infinite 0.9s; transform-origin: 820px 528px; }
+    .sway4 { animation: sway 2s ease-in-out infinite 0.2s; transform-origin: 900px 534px; }
+    .cloud { animation: cloud 8s linear infinite; }
+    .pulse { animation: pulse 8s ease-in-out infinite; }
+    .chain { stroke-dasharray: 5 4; animation: chain 0.5s linear infinite; }
+    @keyframes spinW { from { transform: rotate(0deg); } to { transform: rotate(1440deg); } }
+    @keyframes spinC { from { transform: rotate(0deg); } to { transform: rotate(1440deg); } }
+    @keyframes spinP { from { transform: rotate(0deg); } to { transform: rotate(-1440deg); } }
+    @keyframes bob { 0%,100% { transform: translate(0,0); } 50% { transform: translate(0,4px); } }
+    @keyframes blink { 0%,90%,96%,100% { transform: scaleY(1); } 93% { transform: scaleY(0.08); } }
+    @keyframes pouch { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(1px,2px) rotate(1.2deg); } }
+    @keyframes wing { 0%,100% { transform: rotate(0deg); } 50% { transform: rotate(3deg); } }
+    @keyframes sway { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(5deg); } }
+    @keyframes cloud { from { transform: translate(0,0); } to { transform: translate(-960px,0); } }
+    @keyframes pulse { 0%,100% { opacity: 0.22; } 50% { opacity: 0.4; } }
+    @keyframes chain { to { stroke-dashoffset: -18; } }
+  </style>
+  <rect width="960" height="540" fill="url(#sky)"/>
+  <g filter="url(#glow)">
+    <circle class="pulse" cx="168" cy="86" r="78" fill="#FFD56A"/>
+    <circle cx="168" cy="86" r="46" fill="url(#sunG)"/>
+  </g>
+  <g class="cloud">
+    <g fill="#F7FBFC" opacity="0.92">
+      <g transform="translate(80 58)">
+        <ellipse cx="40" cy="22" rx="38" ry="16"/>
+        <ellipse cx="18" cy="26" rx="22" ry="12"/>
+        <ellipse cx="62" cy="24" rx="26" ry="14"/>
+      </g>
+      <g transform="translate(310 36)">
+        <ellipse cx="50" cy="24" rx="48" ry="18"/>
+        <ellipse cx="22" cy="28" rx="24" ry="13"/>
+        <ellipse cx="78" cy="26" rx="28" ry="15"/>
+      </g>
+      <g transform="translate(560 70)">
+        <ellipse cx="36" cy="18" rx="34" ry="14"/>
+        <ellipse cx="14" cy="22" rx="18" ry="10"/>
+        <ellipse cx="58" cy="20" rx="22" ry="12"/>
+      </g>
+      <g transform="translate(790 44)">
+        <ellipse cx="44" cy="20" rx="40" ry="16"/>
+        <ellipse cx="16" cy="24" rx="20" ry="11"/>
+        <ellipse cx="70" cy="22" rx="24" ry="13"/>
+      </g>
+    </g>
+    <g fill="#F7FBFC" opacity="0.92" transform="translate(960 0)">
+      <g transform="translate(80 58)">
+        <ellipse cx="40" cy="22" rx="38" ry="16"/>
+        <ellipse cx="18" cy="26" rx="22" ry="12"/>
+        <ellipse cx="62" cy="24" rx="26" ry="14"/>
+      </g>
+      <g transform="translate(310 36)">
+        <ellipse cx="50" cy="24" rx="48" ry="18"/>
+        <ellipse cx="22" cy="28" rx="24" ry="13"/>
+        <ellipse cx="78" cy="26" rx="28" ry="15"/>
+      </g>
+      <g transform="translate(560 70)">
+        <ellipse cx="36" cy="18" rx="34" ry="14"/>
+        <ellipse cx="14" cy="22" rx="18" ry="10"/>
+        <ellipse cx="58" cy="20" rx="22" ry="12"/>
+      </g>
+      <g transform="translate(790 44)">
+        <ellipse cx="44" cy="20" rx="40" ry="16"/>
+        <ellipse cx="16" cy="24" rx="20" ry="11"/>
+        <ellipse cx="70" cy="22" rx="24" ry="13"/>
+      </g>
+    </g>
+  </g>
+  <path d="M0 268 C 90 250 140 278 220 262 C 310 244 360 270 455 258 C 540 248 600 272 960 255 L 960 330 L 0 330 Z" fill="#8EAE7A"/>
+  <path d="M0 286 C 120 270 180 298 280 280 C 390 258 470 292 600 274 C 720 258 820 288 960 270 L 960 338 L 0 338 Z" fill="#6F9466"/>
+  <rect x="0" y="318" width="960" height="112" fill="url(#ocean)"/>
+  <rect x="0" y="324" width="960" height="20" fill="url(#foam)"/>
+  <rect x="0" y="348" width="960" height="18" fill="url(#foam2)"/>
+  <rect x="0" y="372" width="960" height="18" fill="url(#foam)" opacity="0.65"/>
+  <path d="M0 318 C 180 308 360 326 540 314 C 720 302 840 322 960 312 L 960 328 L 0 328 Z" fill="#8FD0DC" opacity="0.35"/>
+  <path d="M0 412 C 160 396 320 420 480 404 C 640 388 800 414 960 400 L 960 470 L 0 470 Z" fill="url(#beach)"/>
+  <rect x="0" y="454" width="960" height="86" fill="url(#planks)"/>
+  <rect x="0" y="454" width="960" height="8" fill="#9A7040"/>
+  <rect x="0" y="528" width="960" height="12" fill="#8A6232"/>
+  <ellipse cx="490" cy="474" rx="128" ry="12" fill="#3A2A12" opacity="0.22"/>
+  <g class="sway1" fill="#4F7A48">
+    <path d="M70 530 C 66 500 74 478 62 452 C 80 476 78 502 76 530 Z"/>
+    <path d="M78 530 C 84 505 78 482 92 458 C 86 484 92 508 86 530 Z"/>
+  </g>
+  <g class="sway2" fill="#5C8A52">
+    <path d="M180 532 C 174 506 186 484 170 460 C 190 482 188 508 188 532 Z"/>
+    <path d="M188 532 C 196 508 190 486 206 464 C 198 488 204 510 196 532 Z"/>
+  </g>
+  <g class="sway3" fill="#4F7A48">
+    <path d="M820 528 C 814 500 824 478 808 452 C 828 476 826 504 828 528 Z"/>
+    <path d="M828 528 C 836 506 830 484 846 460 C 838 486 844 508 836 528 Z"/>
+  </g>
+  <g class="sway4" fill="#5C8A52">
+    <path d="M900 534 C 896 510 906 490 892 468 C 910 490 908 512 908 534 Z"/>
+    <path d="M908 534 C 916 512 910 492 924 472 C 916 494 922 514 916 534 Z"/>
+  </g>
+  <g filter="url(#soft)">
+    <g transform="translate(385 418)">
+      <g class="spinW">
+        <g stroke="#C9CED4" stroke-width="2.1" opacity="0.95">
+          <line x1="0" y1="-41" x2="0" y2="41"/>
+          <line x1="-41" y1="0" x2="41" y2="0"/>
+          <line x1="-29" y1="-29" x2="29" y2="29"/>
+          <line x1="29" y1="-29" x2="-29" y2="29"/>
+          <line x1="-15.7" y1="-37.9" x2="15.7" y2="37.9"/>
+          <line x1="15.7" y1="-37.9" x2="-15.7" y2="37.9"/>
+          <line x1="-37.9" y1="-15.7" x2="37.9" y2="15.7"/>
+          <line x1="37.9" y1="-15.7" x2="-37.9" y2="15.7"/>
+        </g>
+        <circle r="47" fill="none" stroke="#1C1C1C" stroke-width="12"/>
+        <circle r="40.5" fill="none" stroke="#D8DDE2" stroke-width="3.2"/>
+        <circle r="38.5" fill="none" stroke="#8A9098" stroke-width="1"/>
+        <circle r="9.5" fill="#6A7180" stroke="#2E3340" stroke-width="2"/>
+        <circle r="3.2" fill="#1A1A1A"/>
+      </g>
+    </g>
+    <g stroke="url(#frameG)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M385 418 L465 416"/>
+      <path d="M385 418 L414 342"/>
+      <path d="M414 342 L465 416"/>
+      <path d="M414 342 L548 348"/>
+      <path d="M465 416 L548 348"/>
+      <path d="M548 348 L595 418"/>
+    </g>
+    <g stroke="#1E334C" stroke-width="4.5" stroke-linecap="round" fill="none" opacity="0.55">
+      <path d="M385 418 L465 416"/>
+      <path d="M414 342 L465 416"/>
+      <path d="M465 416 L548 348"/>
+    </g>
+    <path class="chain" d="M465 416 m -20 0 a 20 20 0 1 0 40 0 a 20 20 0 1 0 -40 0 L 385 418 m -8 0 a 8 8 0 1 0 16 0 a 8 8 0 1 0 -16 0" fill="none" stroke="#2A2A2A" stroke-width="2.4" opacity="0.8"/>
+    <g transform="translate(414 336)">
+      <ellipse cx="6" cy="2" rx="18" ry="7" fill="#6B3E24"/>
+      <ellipse cx="4" cy="-1" rx="14" ry="4.5" fill="#8A5534"/>
+    </g>
+    <g fill="none" stroke="#2C4668" stroke-width="8" stroke-linecap="round">
+      <path d="M548 348 L562 312"/>
+    </g>
+    <path d="M538 318 C 548 298 590 296 604 318" fill="none" stroke="#2C4668" stroke-width="7.5" stroke-linecap="round"/>
+    <path d="M538 318 C 548 298 590 296 604 318" fill="none" stroke="#C9A36A" stroke-width="5" stroke-linecap="round" stroke-dasharray="0 14 22 200"/>
+    <circle cx="540" cy="318" r="5" fill="#C9A36A"/>
+    <circle cx="602" cy="318" r="5" fill="#C9A36A"/>
+    <g transform="translate(508 392)">
+      <rect x="-7" y="-12" width="14" height="26" rx="4" fill="#3A8F6E"/>
+      <rect x="-5" y="-16" width="10" height="6" rx="2" fill="#2C6B54"/>
+    </g>
+    <path fill="none" stroke="#C9843A" stroke-width="13" stroke-linecap="round" opacity="0.78">
+      <animate attributeName="d" dur="2s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"
+        values="M 424 348 Q 436 362 465 388;
+                M 424 348 Q 478 382 495 416;
+                M 424 348 Q 436 408 465 448;
+                M 424 348 Q 408 382 435 416;
+                M 424 348 Q 436 362 465 388"/>
+    </path>
+    <g class="bob">
+      <path d="M352 312 C 338 298 332 318 348 328 C 356 334 372 326 378 318 Z" fill="url(#bodyR)"/>
+      <ellipse cx="422" cy="304" rx="58" ry="44" fill="url(#bodyR)" transform="rotate(-14 422 304)"/>
+      <path d="M455 292 C 488 272 510 236 526 202" fill="none" stroke="#F4EEE4" stroke-width="30" stroke-linecap="round"/>
+      <path d="M455 292 C 488 272 510 236 526 202" fill="none" stroke="#D4C8B6" stroke-width="30" stroke-linecap="round" opacity="0.28"/>
+      <circle cx="532" cy="196" r="21" fill="#F7F1E8"/>
+      <circle cx="532" cy="196" r="21" fill="#C9BBA8" opacity="0.18"/>
+      <g class="pouch" transform-origin="548px 214px">
+        <path d="M548 208 C 590 214 640 224 678 214 C 662 252 608 262 568 240 C 552 230 546 218 548 208 Z" fill="url(#pouchG)"/>
+        <path d="M552 214 C 590 220 636 228 672 218" fill="none" stroke="#E8A03A" stroke-width="1.5" opacity="0.5"/>
+      </g>
+      <path d="M546 190 C 590 178 650 186 692 202 C 698 204 697 212 690 212 C 650 198 592 192 548 202 Z" fill="url(#beakG)"/>
+      <path d="M690 202 C 702 198 708 208 696 214 C 690 216 686 210 690 202 Z" fill="#C98414"/>
+      <path d="M548 202 C 590 198 650 204 688 212" fill="none" stroke="#D4921A" stroke-width="2.2" opacity="0.7"/>
+      <ellipse cx="568" cy="196" rx="4.5" ry="2.2" fill="#C98414" opacity="0.55"/>
+      <g class="blink">
+        <circle cx="522" cy="194" r="4.6" fill="#1A1714"/>
+        <circle cx="520.6" cy="192.6" r="1.6" fill="#FBF8F2"/>
+        <path d="M514 188 Q 522 184 530 188" fill="none" stroke="#C9BBA8" stroke-width="1.6" stroke-linecap="round"/>
+      </g>
+      <path d="M400 276 C 418 262 448 268 458 286 C 430 278 412 284 400 276 Z" fill="#EFE8DC"/>
+    </g>
+    <path fill="none" stroke="#E8953A" stroke-width="14" stroke-linecap="round">
+      <animate attributeName="d" dur="2s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"
+        values="M 432 350 Q 444 408 465 448;
+                M 432 350 Q 412 384 435 416;
+                M 432 350 Q 444 362 465 388;
+                M 432 350 Q 482 384 495 416;
+                M 432 350 Q 444 408 465 448"/>
+    </path>
+    <g transform="translate(465 416)">
+      <g class="spinC">
+        <circle r="17" fill="#3A3F48" stroke="#1E2228" stroke-width="3"/>
+        <circle r="21.5" fill="none" stroke="#2A2E34" stroke-width="4" stroke-dasharray="2.2 3.6"/>
+        <rect x="-4.2" y="0" width="8.4" height="30" rx="2.4" fill="#2A2E34"/>
+        <rect x="-4.2" y="-30" width="8.4" height="30" rx="2.4" fill="#1E2228"/>
+        <g transform="translate(0 30)">
+          <g class="spinP">
+            <rect x="-13" y="-3.4" width="26" height="6.8" rx="1.8" fill="#5C4030"/>
+            <path d="M -2 -1 L 16 2 L 20 8 L 12 11 L 8 6 L 4 13 L -1 6 L -8 12 L -14 7 L -8 1 Z" fill="#E8953A" stroke="#C4742E" stroke-width="1"/>
+          </g>
+        </g>
+        <g transform="translate(0 -30)">
+          <g class="spinP">
+            <rect x="-13" y="-3.4" width="26" height="6.8" rx="1.8" fill="#4A3428"/>
+            <path d="M -2 -1 L 16 2 L 20 8 L 12 11 L 8 6 L 4 13 L -1 6 L -8 12 L -14 7 L -8 1 Z" fill="#D48432" stroke="#B46826" stroke-width="1"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g class="bob">
+      <g class="wing">
+        <path d="M448 292 C 492 304 536 318 568 322 C 572 326 566 334 558 334 C 522 328 486 316 446 308 C 440 300 442 292 448 292 Z" fill="url(#wingG)"/>
+        <path d="M470 308 C 510 318 548 328 566 330" fill="none" stroke="#A89880" stroke-width="1.4" opacity="0.7"/>
+        <path d="M462 314 C 504 324 540 332 560 333" fill="none" stroke="#8F7F68" stroke-width="2.2" opacity="0.45"/>
+        <path d="M478 300 C 518 312 552 322 570 324" fill="none" stroke="#F7F1E8" stroke-width="2" opacity="0.55"/>
+      </g>
+    </g>
+    <g transform="translate(595 418)">
+      <g class="spinW">
+        <g stroke="#C9CED4" stroke-width="2.1" opacity="0.95">
+          <line x1="0" y1="-41" x2="0" y2="41"/>
+          <line x1="-41" y1="0" x2="41" y2="0"/>
+          <line x1="-29" y1="-29" x2="29" y2="29"/>
+          <line x1="29" y1="-29" x2="-29" y2="29"/>
+          <line x1="-15.7" y1="-37.9" x2="15.7" y2="37.9"/>
+          <line x1="15.7" y1="-37.9" x2="-15.7" y2="37.9"/>
+          <line x1="-37.9" y1="-15.7" x2="37.9" y2="15.7"/>
+          <line x1="37.9" y1="-15.7" x2="-37.9" y2="15.7"/>
+        </g>
+        <circle r="47" fill="none" stroke="#1C1C1C" stroke-width="12"/>
+        <circle r="40.5" fill="none" stroke="#D8DDE2" stroke-width="3.2"/>
+        <circle r="38.5" fill="none" stroke="#8A9098" stroke-width="1"/>
+        <circle r="9.5" fill="#6A7180" stroke="#2E3340" stroke-width="2"/>
+        <circle r="3.2" fill="#1A1A1A"/>
+      </g>
+    </g>
+  </g>
+  <g class="sway1" fill="#3E6A3C" opacity="0.9">
+    <path d="M28 540 C 22 512 34 490 16 466 C 40 492 38 518 36 540 Z"/>
+    <path d="M40 540 C 50 516 42 492 58 470 C 48 496 56 518 48 540 Z"/>
+  </g>
+  <g class="sway4" fill="#3E6A3C" opacity="0.9">
+    <path d="M940 540 C 934 514 946 492 928 470 C 950 494 948 518 948 540 Z"/>
+    <path d="M950 540 C 960 518 952 496 968 474 C 958 498 966 520 958 540 Z"/>
+  </g>
+</svg>
