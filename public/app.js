@@ -28,7 +28,8 @@ const unique = values => [...new Set(values)];
 const effortOrder=['default','unspecified','none','minimal','low','medium','high','xhigh','max','ultra'];
 const orderedEfforts=values=>unique(values).sort((a,b)=>(effortOrder.includes(a)?effortOrder.indexOf(a):999)-(effortOrder.includes(b)?effortOrder.indexOf(b):999));
 let data;
-const state = { mode:'gallery', topic:null, query:'', provider:'all', selected:new Set(), panels:[], promptOpen:false, cardSamples:new Map() };
+const PAGE_SIZE=12;
+const state = { mode:'gallery', topic:null, query:'', provider:'all', selected:new Set(), panels:[], promptOpen:false, cardSamples:new Map(), page:1, pageCount:1 };
 let replaySerial = 0, toastTimer;
 
 function toast(message) {
@@ -70,7 +71,7 @@ function route() {
   const [pathname, search = ''] = hash.split('?');
   const params = new URLSearchParams(search);
   const topic = data.topics.find(t => t.id === params.get('topic')) || data.topics[0];
-  if (state.topic?.id !== topic.id) { state.selected.clear(); state.cardSamples.clear(); state.query=''; state.provider='all'; state.promptOpen=false; }
+  if (state.topic?.id !== topic.id) { state.selected.clear(); state.cardSamples.clear(); state.query=''; state.provider='all'; state.promptOpen=false; state.page=1; }
   state.topic = topic; state.mode = pathname === '/compare' ? 'compare' : 'gallery';
   if (dialog.open) dialog.close();
   document.querySelector('#nav-gallery').classList.toggle('active',state.mode === 'gallery');
@@ -95,18 +96,31 @@ function renderGallery() {
     <div class="topic-heading"><h2>${esc(state.topic.title)} <span class="pill">可切换思考深度</span></h2><div class="topic-links"><button class="text-button" data-action="prompt" aria-expanded="${state.promptOpen}" aria-controls="prompt-panel">${icon('file')} 看提示词</button><a class="text-button advanced-link" href="${topicHref('compare',state.topic.id)}">高级比较 ${icon('arrow')}</a></div></div>
     ${promptHTML()}
     <div class="toolbar"><label class="search-box">${icon('search')}<input id="model-search" type="search" placeholder="搜索模型或提供方" aria-label="搜索模型或提供方" value="${esc(state.query)}"></label><select id="provider-filter" class="filter-select" aria-label="提供方">${options([['all','全部提供方'],...unique(baseline().map(s=>s.provider || '其他')).map(v=>[v,v])],state.provider)}</select><button class="button replay-button" data-action="replay">${icon('replay')} 全部重播</button><span class="toolbar-summary" id="result-count"></span></div>
-    <div class="gallery-grid" id="gallery-grid"></div><div class="browse-note"><span>点击作品放大查看，点击右下角「＋」加入对比。</span><a href="${topicHref('compare',state.topic.id)}">并排比较与更多样本 ${icon('arrow')}</a></div>`;
-  document.querySelector('#model-search').addEventListener('input',event => { state.query=event.target.value; renderCards(); });
-  document.querySelector('#provider-filter').addEventListener('change',event => { state.provider=event.target.value; renderCards(); });
+    <div class="gallery-grid" id="gallery-grid"></div><nav id="gallery-pagination" class="pagination" aria-label="作品分页" hidden></nav><div class="browse-note"><span>点击作品放大查看，点击右下角「＋」加入对比。</span><a href="${topicHref('compare',state.topic.id)}">并排比较与更多样本 ${icon('arrow')}</a></div>`;
+  document.querySelector('#model-search').addEventListener('input',event => { state.query=event.target.value; state.page=1; renderCards(); });
+  document.querySelector('#provider-filter').addEventListener('change',event => { state.provider=event.target.value; state.page=1; renderCards(); });
   renderCards();
 }
 function renderCards() {
   const needle = state.query.trim().toLocaleLowerCase();
   const base = baseline();
   const samples = base.filter(sample => (state.provider === 'all' || (sample.provider || '其他') === state.provider) && `${sample.model} ${sample.provider || ''}`.toLocaleLowerCase().includes(needle));
-  document.querySelector('#result-count').innerHTML = `<strong>${samples.length}</strong> / ${base.length} 份作品`;
-  document.querySelector('#gallery-grid').innerHTML = samples.length ? samples.map((sample,index) => cardHTML(sample,index)).join('') : `<div class="empty-state"><h3>${base.length ? '没有找到匹配的作品' : '这个题目还没有默认强度的作品'}</h3><p>${base.length ? '换个模型名称，或试试其他提供方。' : '可以到高级比较查看已收录的其它样本。'}</p>${base.length ? '<button class="button" data-action="clear-filters">清除筛选</button>' : `<a class="button" href="${topicHref('compare',state.topic.id)}">高级比较</a>`}</div>`;
+  state.pageCount=Math.max(1,Math.ceil(samples.length/PAGE_SIZE));
+  state.page=Math.min(Math.max(1,state.page),state.pageCount);
+  const start=(state.page-1)*PAGE_SIZE;
+  const visible=samples.slice(start,start+PAGE_SIZE);
+  document.querySelector('#result-count').innerHTML = samples.length ? `<strong>${start+1}–${start+visible.length}</strong> / ${samples.length} 份作品` : '0 份作品';
+  document.querySelector('#gallery-grid').innerHTML = samples.length ? visible.map((sample,index) => cardHTML(sample,index)).join('') : `<div class="empty-state"><h3>${base.length ? '没有找到匹配的作品' : '这个题目还没有默认强度的作品'}</h3><p>${base.length ? '换个模型名称，或试试其他提供方。' : '可以到高级比较查看已收录的其它样本。'}</p>${base.length ? '<button class="button" data-action="clear-filters">清除筛选</button>' : `<a class="button" href="${topicHref('compare',state.topic.id)}">高级比较</a>`}</div>`;
+  renderPagination();
   wireImages();
+}
+function renderPagination() {
+  const pagination=document.querySelector('#gallery-pagination');
+  pagination.hidden=state.pageCount<2;
+  if(pagination.hidden){pagination.innerHTML='';return;}
+  const pages=unique([1,state.page-1,state.page,state.page+1,state.pageCount]).filter(n=>n>=1 && n<=state.pageCount).sort((a,b)=>a-b);
+  const numbers=pages.map((n,i)=>`${i && n-pages[i-1]>1?'<span class="page-gap" aria-hidden="true">…</span>':''}<button class="page-number" data-page="${n}" aria-label="第 ${n} 页"${n===state.page?' aria-current="page"':''}>${n}</button>`).join('');
+  pagination.innerHTML=`<button class="button" data-page="${state.page-1}"${state.page===1?' disabled':''}>上一页</button>${numbers}<button class="button" data-page="${state.page+1}"${state.page===state.pageCount?' disabled':''}>下一页</button>`;
 }
 function cardHTML(base,index=0) {
   const sample=sampleById(state.cardSamples.get(base.id)) || base;
@@ -193,6 +207,13 @@ document.addEventListener('change',event=>{
 
 document.addEventListener('click',event=>{
   const button=event.target.closest('button,a');if(!button)return;
+  if(button.dataset.page!==undefined){
+    const page=Number(button.dataset.page);
+    if(button.disabled || page===state.page || page<1 || page>state.pageCount)return;
+    state.page=page;renderCards();
+    const heading=main.querySelector('.topic-heading h2');heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});
+    return;
+  }
   if(button.dataset.topic){location.hash=topicHref('gallery',button.dataset.topic);return;}
   if(button.dataset.open){openArt(button.dataset.open);return;}
   if(button.dataset.choose){toggleSelection(button.dataset.choose);return;}
@@ -205,7 +226,7 @@ document.addEventListener('click',event=>{
     case 'replay-dialog':replay(dialog);break;
     case 'close-dialog':dialog.close();break;
     case 'clear-selection':state.selected.clear();updateSelectionButtons();renderTray();break;
-    case 'clear-filters':state.query='';state.provider='all';renderGallery();break;
+    case 'clear-filters':state.query='';state.provider='all';state.page=1;renderGallery();break;
     case 'add-panel':if(state.panels.length<4){const next=state.topic.samples.find(s=>!state.panels.includes(s.id)) || state.topic.samples[0];state.panels.push(next.id);syncPanels();}break;
     case 'share':history.replaceState(null,'',topicHref('compare',state.topic.id,state.panels));copy(location.href,'比较链接已复制');break;
   }
