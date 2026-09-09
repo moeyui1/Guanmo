@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="340"
+     viewBox="0 0 800 340" role="img" aria-labelledby="title desc">
+  <title id="title">三花猫滑着滑板从右向左前进</title>
+  <desc id="desc">白底、橘色和黑色花纹的小猫，踩着蓝色滑板，迎风向左滑行。</desc>
+
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#dff3ff"/>
+      <stop offset="1" stop-color="#fff9ef"/>
+    </linearGradient>
+    <clipPath id="body">
+      <ellipse cx="129" cy="199" rx="58" ry="33"/>
+    </clipPath>
+    <clipPath id="head">
+      <path d="M35 167 L31 123 L61 139 Q78 133 91 141
+               L112 122 L109 171 Q109 199 73 201 Q37 200 35 167Z"/>
+    </clipPath>
+  </defs>
+
+  <rect width="800" height="340" rx="20" fill="url(#sky)"/>
+  <circle cx="683" cy="61" r="28" fill="#ffdc88"/>
+  <g fill="#fff" opacity=".85">
+    <path d="M100 85 Q85 63 110 58 Q118 31 145 52 Q171 45 179 67
+             Q204 69 194 85Z"/>
+    <path d="M415 108 Q400 86 426 82 Q444 54 465 80
+             Q492  seventy 501 108Z" visibility="hidden"/>
+    <path d="M415 108 Q400 86 426 82 Q444 54 465 80 Q493 77 501 108Z"/>
+  </g>
+  <path d="M0 267 Q180 247 360 264 T800 258 V340 H0Z" fill="#dcebcf"/>
+  <path d="M0 284 H800" stroke="#a8bba1" stroke-width="3"/>
+  <path d="M0 314 H800" stroke="#fff" stroke-width="3"
+        stroke-dasharray="35 30" opacity=".8"/>
+
+  <g transform="translate(800 0)">
+    <animateTransform attributeName="transform" type="translate"
+                      from="800 0" to="-260 0" dur="7s"
+                      repeatCount="indefinite"/>
+
+    <ellipse cx="116" cy="281" rx="103" ry="7" fill="#61776b" opacity=".16"/>
+
+    <!-- 滑板与逆时针转动的轮子 -->
+    <g stroke="#293744" stroke-width="3" stroke-linecap="round">
+      <path d="M28 253 Q15 252 12 244 M28 253 H191 Q206 253 213 242"
+            fill="none" stroke="#176c91" stroke-width="8"/>
+      <path d="M56 256 L61 266 M162 256 L157 266" fill="none"/>
+      <g transform="translate(62 271)">
+        <circle r="11" fill="#ffc467"/>
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+                            from="0" to="-360" dur=".55s"
+                            repeatCount="indefinite"/>
+          <path d="M-7 0 H7 M0-7 V7" stroke="#c57e37" stroke-width="2"/>
+        </g>
+        <circle r="3" fill="#293744" stroke="none"/>
+      </g>
+      <g transform="translate(158 271)">
+        <circle r="11" fill="#ffc467"/>
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+                            from="0" to="-360" dur=".55s"
+                            repeatCount="indefinite"/>
+          <path d="M-7 0 H7 M0-7 V7" stroke="#c57e37" stroke-width="2"/>
+        </g>
+        <circle r="3" fill="#293744" stroke="none"/>
+      </g>
+    </g>
+
+    <g stroke="#34363e" stroke-width="3" stroke-linejoin="round"
+       stroke-linecap="round">
+      <animateTransform attributeName="transform" type="translate"
+                        values="0 0;0 -3;0 0" dur=".65s"
+                        repeatCount="indefinite"/>
+
+      <!-- 翘起的橘色尾巴 -->
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+                          values="-4 174 193;7 174 193;-4 174 193"
+                          dur="1.1s" repeatCount="indefinite"/>
+        <path d="M175 193 Q216 185 216 148 Q217 132 231 138"
+              fill="none" stroke-width="17"/>
+        <path d="M175 193 Q216 185 216 148 Q217 132 231 138"
+              fill="none" stroke="#e99845" stroke-width="11"/>
+        <path d="M218 139 Q223 133 231 138"
+              fill="none" stroke-width="11"/>
+      </g>
+
+      <path d="M88 213 L82 244 Q82 250 68 248 L60 248
+               Q55 242 68 237 L69 211"
+            fill="#fffaf2"/>
+      <path d="M163 212 L174 239 Q184 239 183 248
+               H162 L144 220"
+            fill="#fffaf2"/>
+
+      <ellipse cx="129" cy="199" rx="58" ry="33" fill="#fffaf2"/>
+      <g clip-path="url(#body)" stroke="none">
+        <path d="M92 165 Q119 161 131 183 Q136 202 117 212
+                 Q94 215 88 194Z" fill="#e99845"/>
+        <path d="M147 163 Q188 161 194 192 Q178 210 161 199
+                 Q147 187 147 163Z" fill="#34363e"/>
+        <ellipse cx="176" cy="220" rx="18" ry="13" fill="#e99845"/>
+      </g>
+
+      <path d="M35 167 L31 123 L61 139 Q78 133 91 141
+               L112 122 L109 171 Q109 199 73 201 Q37 200 35 167Z"
+            fill="#fffaf2"/>
+      <g clip-path="url(#head)" stroke="none">
+        <path d="M24 118 H68 L66 162 Q47 178 28 168Z" fill="#e99845"/>
+        <path d="M80 128 L119 116 L120 179
+                 Q99 187 88 169Z" fill="#34363e"/>
+      </g>
+      <path d="M38 135 L42 154 L53 145 M103 135 L96 145 L103 155"
+            fill="#f5adab" stroke="none"/>
+
+      <path d="M43 173 Q49 166 56 172 M79 172 Q85 166 91 172"
+            fill="none"/>
+      <path d="M60 179 L69 179 L64 184Z" fill="#e78f94" stroke="none"/>
+      <path d="M64 184 Q60 191 55 186 M64 184 Q69 191 74 186"
+            fill="none" stroke-width="2"/>
+      <path d="M44 183 L21 179 M44 189 L19 192 M88 183 L112 179
+               M87 189 L112 193"
+            fill="none" stroke-width="2"/>
+
+      <path d="M93 203 Q124 202 144 211 L126 217 L142 227
+               Q111 221 92 209Z"
+            fill="#ef6b65" stroke="none"/>
+    </g>
+
+    <g fill="none" stroke="#8db5ca" stroke-width="3"
+       stroke-linecap="round">
+      <path d="M221 212 H248 M230 226 H257 M217 239 H237"/>
+      <animate attributeName="opacity" values=".25;.8;.25"
+               dur=".65s" repeatCount="indefinite"/>
+    </g>
+  </g>
+</svg>

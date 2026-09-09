@@ -20,5 +20,12 @@ for (const topic of data.topics) {
     await fs.access(asset);
   }
 }
-await fs.cp(source, path.join(root, 'dist'), { recursive: true });
+const target=path.resolve(root,'dist');
+if(path.dirname(target)!==root)throw new Error('Build output must remain inside the project');
+try{
+  const [actualRoot,actualTarget]=await Promise.all([fs.realpath(root),fs.realpath(target)]);
+  if(!actualTarget.startsWith(actualRoot+path.sep))throw new Error('Build output resolves outside the project');
+}catch(error){if(error.code!=='ENOENT')throw error;}
+await fs.rm(target,{recursive:true,force:true});
+await fs.cp(source, target, { recursive: true });
 console.log(`Built ${data.topics.length} topics and ${ids.size} samples into dist/.`);

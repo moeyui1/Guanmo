@@ -46,7 +46,8 @@ function assetURL(sample, fresh = false) {
   return url.href;
 }
 function image(sample, eager = false) {
-  return `<img src="${esc(assetURL(sample))}" alt="${esc(modelName(sample))} · ${esc(topicTitle(state.topic))}" loading="${eager ? 'eager' : 'lazy'}" decoding="async" data-art-id="${esc(sample.id)}">`;
+  const fit=(sample.presentation?.fit || state.topic.presentation?.fit)==='cover'?'fit-cover':'fit-contain';
+  return `<img class="${fit}" src="${esc(assetURL(sample))}" alt="${esc(modelName(sample))} · ${esc(topicTitle(state.topic))}" loading="${eager ? 'eager' : 'lazy'}" decoding="async" data-art-id="${esc(sample.id)}">`;
 }
 function wireImages(scope = main) {
   scope.querySelectorAll('img[data-art-id]').forEach(img => {
@@ -73,7 +74,7 @@ function route() {
   const hash = location.hash.slice(1) || '/';
   const [pathname, search = ''] = hash.split('?');
   const params = new URLSearchParams(search);
-  const topic = data.topics.find(t => t.id === params.get('topic')) || data.topics[0];
+  const topic = data.topics.find(t => t.id === params.get('topic') || t.aliases?.includes(params.get('topic'))) || data.topics[0];
   if (state.topic?.id !== topic.id) { state.selected.clear(); state.cardSamples.clear(); state.query=''; state.provider='all'; state.promptOpen=false; state.page=1; }
   state.topic = topic; state.mode = pathname === '/compare' ? 'compare' : 'gallery';
   if (dialog.open) dialog.close();
@@ -88,6 +89,7 @@ function route() {
     state.panels = fromURL.length ? fromURL : unique([fallback[0]?.id, fallback.at(-1)?.id].filter(Boolean));
     renderCompare();
   } else renderGallery();
+  if(topic.aliases?.includes(params.get('topic')))history.replaceState(null,'',topicHref(state.mode,topic.id,state.mode==='compare'?state.panels:undefined));
   renderTray();
 }
 function promptHTML() { return `<section id="prompt-panel" class="prompt-panel"${state.promptOpen ? '' : ' hidden'}><div class="prompt-head"><span>${t("这道题的提示词")}</span><button class="text-button" data-action="copy-prompt">${t("复制原文")} ${icon('file')}</button></div><pre>${esc(state.topic.prompt || state.topic.title)}</pre></section>`; }

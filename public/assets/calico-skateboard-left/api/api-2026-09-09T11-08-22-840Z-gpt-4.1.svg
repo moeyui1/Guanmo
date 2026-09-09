@@ -1,0 +1,120 @@
+<svg viewBox="0 0 400 180" width="400" height="180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 滑板阴影 -->
+    <ellipse id="shadow" cx="0" cy="0" rx="36" ry="10" fill="#888" opacity="0.3"/>
+    <!-- 滑板 -->
+    <g id="skateboard">
+      <ellipse cx="0" cy="0" rx="36" ry="10" fill="#464646" stroke="#222" stroke-width="2"/>
+      <circle cx="-24" cy="12" r="7" fill="#181818"/>
+      <circle cx="24" cy="12" r="7" fill="#181818"/>
+      <circle cx="-24" cy="12" r="3" fill="#aaa"/>
+      <circle cx="24" cy="12" r="3" fill="#aaa"/>
+    </g>
+    <!-- 三花猫 -->
+    <g id="tricolor-cat">
+
+      <!-- tail -->
+      <path d="M-39,6 Q-55,18 -44,22 Q-31,25 -33,10"
+        stroke="#e7aa54" stroke-width="6" fill="none"  stroke-linecap="round"/>
+      <!-- body -->
+      <ellipse cx="0" cy="0" rx="25" ry="21" fill="#fff"/>
+      <!-- 花纹 (左耳偏橙) -->
+      <ellipse cx="-14" cy="-15" rx="8" ry="7" fill="#e7aa54" transform="rotate(-19 -14 -15)"/>
+      <!-- 花纹 (身体偏黑) -->
+      <ellipse cx="14" cy="3" rx="8" ry="11" fill="#333" transform="rotate(-5 14 3)"/>
+      <!-- 左耳(橙) -->
+      <polygon points="-22,-26 -29,-40 -12,-33" fill="#e7aa54" stroke="#ad8136" stroke-width="1"/>
+      <!-- 右耳(黑) -->
+      <polygon points="13,-26 19,-41 28,-33" fill="#333" stroke="#222" stroke-width="1"/>
+      <!-- 右脸小橙斑 -->
+      <ellipse cx="14" cy="-7" rx="4" ry="3" fill="#e7aa54" transform="rotate(-12 14 -7)"/>
+      <!-- 头 -->
+      <ellipse cx="0" cy="-17" rx="19" ry="15" fill="#fff" stroke="#222" stroke-width="1"/>
+      <!-- 脸黑斑 -->
+      <ellipse cx="4" cy="-20" rx="5" ry="7" fill="#333" transform="rotate(20 6 -16)"/>
+      <!-- 脸橙斑 -->
+      <ellipse cx="-8" cy="-22" rx="6" ry="5" fill="#e7aa54" transform="rotate(-10 -8 -22)"/>
+      <!-- 眼睛 -->
+      <ellipse cx="-7" cy="-18" rx="2.5" ry="4" fill="#444"/>
+      <ellipse cx="7" cy="-18" rx="2.5" ry="4" fill="#444"/>
+      <!-- 鼻子 -->
+      <ellipse cx="0" cy="-11" rx="2" ry="1.5" fill="#e7b4aa" stroke="#a66" stroke-width="0.7"/>
+      <!-- 嘴 -->
+      <path d="M-1,-8 Q0,-6 1,-8" stroke="#a66" stroke-width="1" fill="none"/>
+      <!-- 胡须 -->
+      <path d="M-4,-8 Q-13,-5 -16,-10" stroke="#bbb" stroke-width="0.9" fill="none"/>
+      <path d="M-4,-10 Q-14,-13 -18,-8" stroke="#bbb" stroke-width="0.8" fill="none"/>
+      <path d="M4,-8 Q13,-5 16,-10" stroke="#bbb" stroke-width="0.9" fill="none"/>
+      <path d="M4,-10 Q14,-13 18,-8" stroke="#bbb" stroke-width="0.8" fill="none"/>
+      <!-- 左前爪 -->
+      <ellipse cx="-12" cy="18" rx="4" ry="5" fill="#fff" stroke="#bbb" stroke-width="0.7"/>
+      <!-- 右前爪 -->
+      <ellipse cx="10" cy="19" rx="4" ry="4.4" fill="#fff" stroke="#bbb" stroke-width="0.7"/>
+      <!-- 后腿 -->
+      <ellipse cx="17" cy="10" rx="4.7" ry="6.5" fill="#fff" stroke="#aaa" stroke-width="0.6"/>
+      <ellipse cx="-16" cy="13" rx="5.3" ry="4.7" fill="#fff" stroke="#aaa" stroke-width="0.6"/>
+    </g>
+    <!-- 滑轮动画（旋转） -->
+    <animateTransform id="rotate-wheels" attributeName="transform" type="rotate" from="0 24 12" to="360 24 12" dur="0.33s" repeatCount="indefinite"/>
+    <animateTransform id="rotate-wheels2" attributeName="transform" type="rotate" from="0 -24 12" to="360 -24 12" dur="0.33s" repeatCount="indefinite"/>
+    <!-- 跳跃（上下浮动） -->
+    <animateTransform id="updown" attributeName="transform" type="translate"
+      values="0,0; 0,-8; 0,0; 0,10; 0,0"
+      keyTimes="0;0.18;0.4;0.65;1"
+      dur="1.3s"
+      repeatCount="indefinite"/>
+  </defs>
+  <rect width="100%" height="100%" fill="#f1f9fe"/>
+
+  <!-- 地面线 -->
+  <rect x="0" y="140" width="400" height="5" fill="#ccddeb"/>
+
+  <!-- 动画组 -->
+  <g>
+    <!-- 滑动动画 -->
+    <animateTransform attributeName="transform" type="translate"
+      from="420 0" to="-120 0" dur="4.5s" repeatCount="indefinite"/>
+    <!-- 阴影 -->
+    <use href="#shadow" x="200" y="144">
+      <animate attributeName="x" values="200; 80" dur="4.5s" repeatCount="indefinite"/>
+    </use>
+    <!-- 滑板和三花猫整体 -->
+    <g>
+      <!-- 上下浮动 -->
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+          values="0,0; 0,-8; 0,0; 0,10; 0,0"
+          keyTimes="0;0.18;0.4;0.65;1"
+          dur="1.3s"
+          repeatCount="indefinite"/>
+        <!-- 滑板 -->
+        <g>
+          <use href="#skateboard"/>
+          <g transform="">
+            <circle cx="-24" cy="12" r="7" fill="#181818">
+              <animateTransform attributeName="transform" type="rotate"
+                from="0 -24 12" to="360 -24 12" dur="0.33s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="24" cy="12" r="7" fill="#181818">
+              <animateTransform attributeName="transform" type="rotate"
+                from="0 24 12" to="360 24 12" dur="0.33s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="-24" cy="12" r="3" fill="#aaa">
+              <animateTransform attributeName="transform" type="rotate"
+                from="0 -24 12" to="360 -24 12" dur="0.33s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="24" cy="12" r="3" fill="#aaa">
+              <animateTransform attributeName="transform" type="rotate"
+                from="0 24 12" to="360 24 12" dur="0.33s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+        </g>
+
+        <!-- 猫 -->
+        <g>
+          <use href="#tricolor-cat"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

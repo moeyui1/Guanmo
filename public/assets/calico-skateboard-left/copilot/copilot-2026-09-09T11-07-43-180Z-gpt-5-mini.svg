@@ -1,0 +1,99 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="900" height="200" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="groundGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#7ec850"/>
+      <stop offset="1" stop-color="#5bb040"/>
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feOffset in="blur" dx="0" dy="4" result="off"/>
+      <feMerge><feMergeNode in="off"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- sky -->
+  <rect width="100%" height="100%" fill="#bfe9ff"/>
+
+  <!-- ground -->
+  <rect y="150" width="100%" height="50" fill="url(#groundGrad)"/>
+
+  <!-- path for motion (invisible) -->
+  <!-- Cat+skateboard group will follow this path from right to left -->
+  <g id="rider" transform="translate(0,0)">
+    <animateMotion dur="6s" repeatCount="indefinite" path="M900 135 L-200 135" rotate="0"/>
+    <!-- slight bobbing -->
+    <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="0 0; 0 -8; 0 0"
+                      dur="0.6s"
+                      repeatCount="indefinite"/>
+    <!-- shadow -->
+    <ellipse cx="70" cy="155" rx="60" ry="10" fill="#000" opacity="0.15" filter="url(#shadow)"/>
+
+    <!-- skateboard -->
+    <g id="skateboard" transform="translate(0,0)">
+      <rect x="0" y="118" rx="7" ry="7" width="140" height="14" fill="#8b4b2e"/>
+      <rect x="10" y="122" rx="6" ry="6" width="120" height="8" fill="#d49b6a"/>
+      <!-- wheels -->
+      <g id="wheel1" transform="translate(25,133)">
+        <circle cx="0" cy="0" r="10" fill="#2b2b2b"/>
+        <circle cx="0" cy="0" r="5" fill="#777"/>
+        <animateTransform attributeName="transform" type="rotate" dur="0.4s"
+                          values="0 0 0; -360 0 0" repeatCount="indefinite"/>
+      </g>
+      <g id="wheel2" transform="translate(115,133)">
+        <circle cx="0" cy="0" r="10" fill="#2b2b2b"/>
+        <circle cx="0" cy="0" r="5" fill="#777"/>
+        <animateTransform attributeName="transform" type="rotate" dur="0.4s"
+                          values="0 0 0; -360 0 0" repeatCount="indefinite"/>
+      </g>
+    </g>
+
+    <!-- cat -->
+    <g id="cat" transform="translate(30,78)">
+      <!-- tail -->
+      <path d="M-8 30 C -18 20, -12 8, -2 4" stroke="#2b2b2b" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <path d="M-6 36 C -16 26, -10 12, -0 8" stroke="#e67e22" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.9"/>
+
+      <!-- body -->
+      <ellipse cx="46" cy="30" rx="40" ry="26" fill="#fff"/>
+      <!-- calico patches -->
+      <path d="M30 20 C 18 18, 12 30, 20 38 C 28 46, 40 40, 30 30 Z" fill="#e67e22"/>
+      <path d="M60 14 C 74 10, 80 22, 72 30 C 66 36, 58 30, 62 22 Z" fill="#2b2b2b"/>
+
+      <!-- head -->
+      <g transform="translate(90,8)">
+        <circle cx="0" cy="18" r="18" fill="#fff"/>
+        <!-- ear left -->
+        <path d="M-12 4 L-20 -8 L-2 2 Z" fill="#fff" stroke="#d9d9d9" stroke-width="0.5"/>
+        <path d="M-12 6 L-18 -4 L-6 6 Z" fill="#2b2b2b" opacity="0.9"/>
+        <!-- ear right -->
+        <path d="M12 4 L20 -8 L2 2 Z" fill="#fff" stroke="#d9d9d9" stroke-width="0.5"/>
+        <path d="M12 6 L18 -4 L6 6 Z" fill="#e67e22" opacity="0.95"/>
+        <!-- eyes -->
+        <ellipse cx="-6" cy="18" rx="3" ry="4" fill="#2b2b2b"/>
+        <ellipse cx="6" cy="18" rx="3" ry="4" fill="#2b2b2b"/>
+        <!-- nose -->
+        <path d="M0 22 L-3 26 L3 26 Z" fill="#ff9fb4"/>
+        <!-- mouth -->
+        <path d="M-3 28 Q 0 30 3 28" stroke="#2b2b2b" stroke-width="1" fill="none"/>
+        <!-- whiskers -->
+        <path d="M-8 24 L-20 22" stroke="#2b2b2b" stroke-width="1"/>
+        <path d="M-8 26 L-20 26" stroke="#2b2b2b" stroke-width="1"/>
+        <path d="M8 24 L20 22" stroke="#2b2b2b" stroke-width="1"/>
+        <path d="M8 26 L20 26" stroke="#2b2b2b" stroke-width="1"/>
+        <!-- small patch on head -->
+        <path d="M-4 4 C -6 2, -2 0, 2 2 C 6 4, 4 8, 0 6 Z" fill="#2b2b2b" opacity="0.95"/>
+      </g>
+
+      <!-- front paw onto skateboard -->
+      <ellipse cx="30" cy="44" rx="8" ry="5" fill="#fff" />
+      <ellipse cx="66" cy="44" rx="8" ry="5" fill="#fff" />
+
+      <!-- subtle breathing -->
+      <animateTransform xlink:href="#cat" attributeName="transform" type="translate"
+                        values="30,78; 30,76; 30,78" dur="1.2s" repeatCount="indefinite"/>
+    </g>
+  </g>
+</svg>
