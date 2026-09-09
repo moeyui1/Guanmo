@@ -491,7 +491,8 @@
           "variant": "早期样本 04",
           "src": "assets/legacy/pelican-on-a-bicycle-animated.svg"
         }
-      ]
+      ],
+      "titleEn": "Pelican riding a bicycle"
     },
     {
       "id": "pelican-left",
@@ -655,7 +656,8 @@
           "home": true,
           "src": "assets/pelican-left/api/api-2026-09-09T02-44-06-217Z-gpt-4o.svg"
         }
-      ]
+      ],
+      "titleEn": "Pelican cycling from right to left"
     }
   ],
   "modelOrder": [

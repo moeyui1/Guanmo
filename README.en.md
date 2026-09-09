@@ -1,0 +1,74 @@
+# Guanmo
+
+[简体中文](README.md) | [English](README.en.md)
+
+One prompt, different models. A manually curated gallery of animated SVG artworks.
+
+The collection currently includes two topics: **Pelican riding a bicycle** and **Pelican cycling from right to left**. The second requires the bird and bicycle to face left and travel across the scene from right to left, and contains only default-reasoning samples.
+
+**Live site: https://moeyui1.github.io/Guanmo/**
+
+- Models are sorted by release date, newest first.
+- The homepage displays 12 artworks per page. Pagination preserves selected artworks and reasoning levels; search and provider filters reset to the first page.
+- Switch between available reasoning levels directly on each homepage card.
+- Compare up to four artworks, including different reasoning levels or repeated samples of the same model.
+- Filter by provider, search, enlarge, download, replay, and share comparison links.
+- No database, backend, or API key required.
+- A GitHub Star link opens the project repository.
+- Switch between Chinese and English. The site remembers your preference and preserves the current topic, page, filters, and comparison selections when you switch.
+
+## Run locally
+
+Requires Node.js 24. No third-party dependencies need to be installed.
+
+```sh
+npm run dev
+```
+
+Open http://127.0.0.1:4173/.
+
+## Add an artwork
+
+Place the SVG under `public/assets/`, then append an entry to the relevant topic's `samples` array in `public/data.json`:
+
+```json
+{
+  "id": "my-model-high-pelican-01",
+  "model": "Model name",
+  "provider": "Provider name",
+  "reasoning": "high",
+  "home": false,
+  "src": "assets/pelican/my-model-high.svg"
+}
+```
+
+Each `id` must be unique. A sample appears as a homepage card when its reasoning level is `default` or `unspecified` and `home` is not `false`. Setting `home: true` explicitly makes any reasoning level the initial artwork for that card. For a model with only low, middle, and high levels, set Medium to `home: true` and the other two to `false`.
+
+Other levels for the same provider and model appear automatically in the card's dropdown, ordered from lowest to highest. Repeated samples are available in Advanced compare and are numbered in collection order. New providers and reasoning labels require no changes to the page code.
+
+When adding a model, add its release date and source to `modelReleases`:
+
+```json
+{
+  "model": "Model name",
+  "provider": "Provider name",
+  "releaseDate": "2026-09-02",
+  "source": "https://example.com/official-announcement"
+}
+```
+
+Dates support `YYYY-MM-DD` and `YYYY-MM`. Models without a date appear last. Models released on the same day follow the stable order in `modelOrder`. See the [release dates and official sources](docs/model-release-sources.md) (in Chinese). Maintenance notes are not shown on artwork cards.
+
+Topics may include a `titleEn` field for their English name; otherwise, the original name is retained. Interface translations live in `public/i18n.js`. Changing the interface language does not translate the original prompts or modify the SVG artworks.
+
+## Build and deploy
+
+```sh
+npm run build
+```
+
+The build validates samples, asset paths, and release dates, then writes the static site to `dist/`. GitHub Actions automatically builds and deploys GitHub Pages whenever changes are pushed to `main`. You can also run **Deploy GitHub Pages** manually from the Actions tab.
+
+Assets use relative paths and navigation uses URL hashes, so the site works under the GitHub Pages `/Guanmo/` project path and comparison links can be refreshed or shared.
+
+SVGs are loaded as images. The repository contains only the site code and collected artworks; local generation sessions, logs, and configuration are not uploaded.

@@ -12,18 +12,18 @@
   <script src="app.js" type="module"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">跳到作品</a>
+  <a class="skip-link" href="#main" data-i18n="跳到作品">跳到作品</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="#/" aria-label="观模首页"><span class="brand-mark" aria-hidden="true">观</span><span>观模<span class="brand-en">SVG GALLERY</span></span></a>
-      <nav aria-label="主导航"><a id="nav-gallery" href="#/">作品画廊</a><a id="nav-compare" href="#/compare">高级比较 <span aria-hidden="true">↗</span></a></nav>
-      <a class="github-star" href="https://github.com/moeyui1/Guanmo" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 上为观模 Star（新标签页）"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3L3 9.6l6.2-.9Z"/></svg><span>GitHub</span><strong>Star</strong></a>
+      <a class="brand" href="#/" data-i18n-aria="观模首页" aria-label="观模首页"><span class="brand-mark" aria-hidden="true">观</span><span><span data-i18n="观模">观模</span><span class="brand-en">SVG GALLERY</span></span></a>
+      <nav data-i18n-aria="主导航" aria-label="主导航"><a id="nav-gallery" href="#/" data-i18n="作品画廊">作品画廊</a><a id="nav-compare" href="#/compare"><span data-i18n="高级比较">高级比较</span> <span aria-hidden="true">↗</span></a></nav>
+      <div class="header-actions"><button id="language-toggle" class="language-toggle" type="button" data-action="language" aria-label="切换为英文">English</button><a class="github-star" href="https://github.com/moeyui1/Guanmo" target="_blank" rel="noopener noreferrer" data-i18n-aria="在 GitHub 上为观模 Star（新标签页）" aria-label="在 GitHub 上为观模 Star（新标签页）"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3L3 9.6l6.2-.9Z"/></svg><span>GitHub</span><strong>Star</strong></a></div>
     </div>
   </header>
-  <main id="main" class="page" tabindex="-1"><div class="loading">正在打开画廊…</div></main>
-  <footer class="site-footer"><span>观模 <span class="footer-dot">·</span> 看作品，自己判断。</span><span id="footer-count"></span></footer>
+  <main id="main" class="page" tabindex="-1"><div class="loading" data-i18n="正在打开画廊…">正在打开画廊…</div></main>
+  <footer class="site-footer"><span><span data-i18n="观模">观模</span> <span class="footer-dot">·</span> <span data-i18n="看作品，自己判断。">看作品，自己判断。</span></span><span id="footer-count"></span></footer>
   <div id="selection-tray" class="selection-tray" hidden></div>
-  <dialog id="art-dialog" aria-label="作品大图"></dialog>
+  <dialog id="art-dialog" data-i18n-aria="作品大图" aria-label="作品大图"></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
