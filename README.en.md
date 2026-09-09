@@ -4,7 +4,7 @@
 
 One prompt, different models. A manually curated gallery of animated SVG artworks.
 
-The collection currently includes two topics: **Pelican riding a bicycle** and **Pelican cycling from right to left**. The second requires the bird and bicycle to face left and travel across the scene from right to left, and contains only default-reasoning samples.
+The collection currently includes three topics: **Pelican riding a bicycle**, **Pelican cycling from right to left**, and **Calico cat gliding right to left on a kick scooter**. The latter two require the subject to face left and travel across the scene from right to left, and contain only default-reasoning samples. The calico-cat topic initially features the GPT family. The full prompt for each topic is available on the site.
 
 **Live site: https://moeyui1.github.io/Guanmo/**
 

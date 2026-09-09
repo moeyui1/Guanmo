@@ -658,6 +658,111 @@
         }
       ],
       "titleEn": "Pelican cycling from right to left"
+    },
+    {
+      "id": "calico-scooter-left",
+      "title": "三花猫踩着滑板车从右到左滑行",
+      "titleEn": "Calico cat gliding right to left on a kick scooter",
+      "icon": "back",
+      "prompt": "Create an original animated SVG of a calico cat standing on a kick scooter and gliding from right to left across the scene.\n\nUse a 960 by 540 canvas (viewBox=\"0 0 960 540\"). Show the complete cat and kick scooter clearly. The cat must have clearly visible white, orange, and black fur patches. The kick scooter should have a standing deck, handlebars, and two wheels. The cat and scooter must face left and visibly travel from the right side of the canvas to the left side, changing position relative to the scene rather than staying in place. Make the scene visually appealing and the gliding motion convincing, with rotating wheels and a balanced stance on the deck. The animation should loop seamlessly every 8 seconds and start automatically.\n\nMake the SVG fully self-contained. Use only SVG shapes, inline CSS, and/or native SVG animation (SMIL). Do not use JavaScript, external assets, external fonts, links to external resources, or embedded raster images. Do not include a model name, watermark, or explanatory text in the artwork.\n\nReturn only the complete SVG source, starting with <svg and ending with </svg>, without Markdown fences or commentary.",
+      "samples": [
+        {
+          "id": "calico-scooter-left-copilot-2026-09-09T10-30-06-479Z-gpt-6-astra",
+          "model": "GPT-6 Astra",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/calico-scooter-left/copilot/copilot-2026-09-09T10-30-06-479Z-gpt-6-astra.svg"
+        },
+        {
+          "id": "calico-scooter-left-copilot-2026-09-09T10-30-06-491Z-gpt-5.6-sol",
+          "model": "GPT-5.6 Sol",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/calico-scooter-left/copilot/copilot-2026-09-09T10-30-06-491Z-gpt-5.6-sol.svg"
+        },
+        {
+          "id": "calico-scooter-left-copilot-2026-09-09T10-30-06-497Z-gpt-5.6-terra",
+          "model": "GPT-5.6 Terra",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/calico-scooter-left/copilot/copilot-2026-09-09T10-30-06-497Z-gpt-5.6-terra.svg"
+        },
+        {
+          "id": "calico-scooter-left-copilot-2026-09-09T10-30-06-507Z-gpt-5.6-luna",
+          "model": "GPT-5.6 Luna",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/calico-scooter-left/copilot/copilot-2026-09-09T10-30-06-507Z-gpt-5.6-luna.svg"
+        },
+        {
+          "id": "calico-scooter-left-copilot-2026-09-09T10-31-26-278Z-gpt-5.5",
+          "model": "GPT-5.5",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/calico-scooter-left/copilot/copilot-2026-09-09T10-31-26-278Z-gpt-5.5.svg"
+        },
+        {
+          "id": "calico-scooter-left-copilot-2026-09-09T10-32-22-241Z-gpt-5.4",
+          "model": "GPT-5.4",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/calico-scooter-left/copilot/copilot-2026-09-09T10-32-22-241Z-gpt-5.4.svg"
+        },
+        {
+          "id": "calico-scooter-left-copilot-2026-09-09T10-32-45-148Z-gpt-5.3-codex",
+          "model": "GPT-5.3 Codex",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/calico-scooter-left/copilot/copilot-2026-09-09T10-32-45-148Z-gpt-5.3-codex.svg"
+        },
+        {
+          "id": "calico-scooter-left-copilot-2026-09-09T10-32-59-746Z-gpt-5-mini",
+          "model": "GPT-5 mini",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/calico-scooter-left/copilot/copilot-2026-09-09T10-32-59-746Z-gpt-5-mini.svg"
+        },
+        {
+          "id": "calico-scooter-left-api-2026-09-09T10-33-41-566Z-gpt-4.1",
+          "model": "GPT-4.1",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "src": "assets/calico-scooter-left/api/api-2026-09-09T10-33-41-566Z-gpt-4.1.svg"
+        },
+        {
+          "id": "calico-scooter-left-api-2026-09-09T10-38-54-628Z-gpt-4o",
+          "model": "GPT-4o",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "src": "assets/calico-scooter-left/api/api-2026-09-09T10-38-54-628Z-gpt-4o.svg"
+        }
+      ]
     }
   ],
   "modelOrder": [
