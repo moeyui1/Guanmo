@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Animated pelican riding a bicycle">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#72cdea"/>
+      <stop offset=".62" stop-color="#c5eff0"/>
+      <stop offset=".63" stop-color="#f5dfae"/>
+      <stop offset="1" stop-color="#e7b96f"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#4fb5c7"/>
+      <stop offset="1" stop-color="#167c9e"/>
+    </linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#5b6670"/>
+      <stop offset="1" stop-color="#303d48"/>
+    </linearGradient>
+    <linearGradient id="bill" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#f7bb54"/>
+      <stop offset="1" stop-color="#d97936"/>
+    </linearGradient>
+    <linearGradient id="feather" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#fffdf2"/>
+      <stop offset=".55" stop-color="#e8e7db"/>
+      <stop offset="1" stop-color="#b8c4c5"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="540" fill="url(#sky)"/>
+  <circle cx="792" cy="93" r="47" fill="#fff6be" opacity=".92"/>
+  <g fill="#fff" opacity=".72">
+    <path d="M102 113c16-25 49-24 62 0 25-14 51 3 48 20H74c-4-11 8-20 28-20z"/>
+    <path d="M439 74c11-18 35-18 45 0 19-11 39 3 36 16h-99c-3-9 6-16 18-16z"/>
+    <path d="M691 164c12-19 37-18 47 1 19-12 42 1 39 17H652c-3-10 10-18 39-18z"/>
+  </g>
+
+  <path d="M0 248c90-22 174 13 264-4 115-22 204 16 308-4 120-23 224 10 388-4v126H0z" fill="url(#sea)"/>
+  <g fill="none" stroke="#d7ffff" stroke-linecap="round" opacity=".65">
+    <path d="M45 286h92M257 277h56M485 296h104M739 274h73M881 310h46" stroke-width="4"/>
+    <path d="M133 327h126M388 335h71M605 320h128M787 350h88" stroke-width="3"/>
+  </g>
+  <g fill="#688e83" opacity=".8">
+    <path d="M0 298l39-63 17 63 34-43 25 43 39-74 24 74z"/>
+    <path d="M685 299l38-74 20 74 36-49 23 49 31-68 29 68z"/>
+  </g>
+
+  <rect y="352" width="960" height="188" fill="url(#road)"/>
+  <path d="M0 352h960" stroke="#f7df9f" stroke-width="6"/>
+  <path d="M0 371h960" stroke="#a8c8c1" stroke-width="2" opacity=".65"/>
+  <g stroke="#f9dfa0" stroke-width="7" stroke-linecap="round">
+    <path d="M35 465h62M201 465h62M367 465h62M533 465h62M699 465h62M865 465h62"/>
+  </g>
+  <g opacity=".3" fill="#182834">
+    <ellipse cx="106" cy="505" rx="80" ry="8"/>
+    <ellipse cx="431" cy="505" rx="95" ry="8"/>
+    <ellipse cx="765" cy="505" rx="74" ry="8"/>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="1100 0;-300 0" dur="8s" repeatCount="indefinite"/>
+    <ellipse cx="117" cy="420" rx="129" ry="13" fill="#172831" opacity=".28" filter="url(#shadow)"/>
+
+    <g stroke="#263c50" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="32" cy="390" r="58" stroke-width="7"/>
+      <circle cx="205" cy="390" r="58" stroke-width="7"/>
+      <path d="M32 390L92 290 143 390H32L108 390 169 288 205 390 143 390 169 288"/>
+      <path d="M92 290h-23M169 288l18-27h29"/>
+      <path d="M183 260h42"/>
+    </g>
+    <g fill="none" stroke="#92d5df" stroke-width="3" opacity=".9">
+      <circle cx="32" cy="390" r="49"/>
+      <circle cx="205" cy="390" r="49"/>
+    </g>
+
+    <g stroke="#536f7d" stroke-width="3" stroke-linecap="round" opacity=".8">
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 32 390" to="-360 32 390" dur="1s" repeatCount="indefinite"/>
+        <path d="M32 337v106M-21 390H85M-5 353l74 74M-5 427l74-74"/>
+        <circle cx="32" cy="390" r="7" fill="#f5ca61"/>
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 205 390" to="-360 205 390" dur="1s" repeatCount="indefinite"/>
+        <path d="M205 337v106M152 390h106M168 353l74 74M168 427l74-74"/>
+        <circle cx="205" cy="390" r="7" fill="#f5ca61"/>
+      </g>
+    </g>
+
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0 108 390;360 108 390" dur="1s" repeatCount="indefinite"/>
+      <circle cx="108" cy="390" r="13" fill="#f4ca55" stroke="#263c50" stroke-width="5"/>
+      <path d="M108 390l26-18M108 390l-26 18" stroke="#263c50" stroke-width="5" stroke-linecap="round"/>
+      <path d="M129 369h16M71 410h16" stroke="#d56b42" stroke-width="7" stroke-linecap="round"/>
+    </g>
+
+    <g>
+      <path d="M144 340c-12 10-16 30-7 42l-30 24 12 13 43-29c11-8 13-23 6-35z" fill="#c3d1d0" stroke="#536f7d" stroke-width="3"/>
+      <path d="M132 365l-27 38" stroke="#f09a54" stroke-width="11" stroke-linecap="round">
+        <animate attributeName="d" values="M132 365l-27 38;M132 365l18 21;M132 365l-27 38" dur="1s" repeatCount="indefinite"/>
+      </path>
+      <path d="M104 402l-16 11" stroke="#d97843" stroke-width="9" stroke-linecap="round">
+        <animate attributeName="d" values="M104 402l-16 11;M150 386l-12-13;M104 402l-16 11" dur="1s" repeatCount="indefinite"/>
+      </path>
+      <path d="M150 349l-8 43" stroke="#f09a54" stroke-width="11" stroke-linecap="round">
+        <animate attributeName="d" values="M150 349l-8 43;M150 349l-44 21;M150 349l-8 43" dur="1s" repeatCount="indefinite"/>
+      </path>
+      <path d="M142 390l-14-10" stroke="#d97843" stroke-width="9" stroke-linecap="round">
+        <animate attributeName="d" values="M142 390l-14-10;M106 370l-16 2;M142 390l-14-10" dur="1s" repeatCount="indefinite"/>
+      </path>
+
+      <path d="M144 220c36-3 68 27 68 71 0 37-18 69-48 79-34 11-75-10-77-51-3-47 20-94 57-99z" fill="url(#feather)" stroke="#536f7d" stroke-width="4"/>
+      <path d="M150 267c35 13 51 47 42 82-16-3-43-22-57-47z" fill="#a8c3c7" opacity=".85"/>
+      <path d="M128 275c8 31 28 58 61 74" fill="none" stroke="#8eaeb3" stroke-width="4" stroke-linecap="round"/>
+      <path d="M103 316c12 28 31 46 61 54" fill="none" stroke="#fffdf1" stroke-width="6" stroke-linecap="round" opacity=".8"/>
+
+      <path d="M126 235c-6-23-17-39-36-48-15-7-34-2-41 12-10 19 5 39 25 44 22 5 36 20 43 35z" fill="url(#feather)" stroke="#536f7d" stroke-width="4"/>
+      <path d="M76 206c-7-29 7-53 28-61 24-10 50 4 53 29l-3 47-35 17z" fill="url(#feather)" stroke="#536f7d" stroke-width="4"/>
+      <path d="M111 158c16-12 34-8 42 10" fill="none" stroke="#fffdf4" stroke-width="7" stroke-linecap="round"/>
+
+      <path d="M79 191c-23 1-45 12-65 29 27 6 55 3 78-8z" fill="url(#bill)" stroke="#a95832" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M16 220c16 5 43 4 62-1-8 20-29 30-48 24-12-4-17-12-14-23z" fill="#e99043" stroke="#a95832" stroke-width="4"/>
+      <path d="M21 221c16 2 37 1 53-2" fill="none" stroke="#7e4636" stroke-width="3" stroke-linecap="round"/>
+
+      <circle cx="95" cy="177" r="8" fill="#263540"/>
+      <circle cx="92" cy="174" r="2.5" fill="#fff"/>
+      <path d="M72 171c8-8 18-10 28-6" fill="none" stroke="#536f7d" stroke-width="4" stroke-linecap="round"/>
+
+      <path d="M159 293c13-1 28-8 37-19" fill="none" stroke="#536f7d" stroke-width="6" stroke-linecap="round"/>
+      <path d="M191 276l-5-12 16 4" fill="#f2ad49" stroke="#a95832" stroke-width="3" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>

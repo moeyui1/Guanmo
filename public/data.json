@@ -492,6 +492,170 @@
           "src": "assets/legacy/pelican-on-a-bicycle-animated.svg"
         }
       ]
+    },
+    {
+      "id": "pelican-left",
+      "title": "鹈鹕从右往左运动",
+      "icon": "back",
+      "prompt": "Create an original animated SVG of a pelican riding a bicycle from right to left across the scene.\n\nUse a 960 by 540 canvas (viewBox=\"0 0 960 540\"). Show the complete pelican and bicycle clearly. The pelican and bicycle must face left and visibly travel from the right side of the canvas to the left side, changing position relative to the scene rather than cycling in place. Make the scene visually appealing and the cycling motion convincing, with rotating wheels and pedaling feet. The animation should loop seamlessly every 8 seconds and start automatically.\n\nMake the SVG fully self-contained. Use only SVG shapes, inline CSS, and/or native SVG animation (SMIL). Do not use JavaScript, external assets, external fonts, links to external resources, or embedded raster images. Do not include a model name, watermark, or explanatory text in the artwork.\n\nReturn only the complete SVG source, starting with <svg and ending with </svg>, without Markdown fences or commentary.",
+      "samples": [
+        {
+          "id": "pelican-left-copilot-2026-09-09T02-36-06-502Z-gpt-6-astra",
+          "model": "GPT-6 Astra",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican-left/copilot/copilot-2026-09-09T02-36-06-502Z-gpt-6-astra.svg"
+        },
+        {
+          "id": "pelican-left-copilot-2026-09-09T02-36-06-510Z-gemini-3.8-flash",
+          "model": "Gemini 3.8 Flash",
+          "provider": "Google",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican-left/copilot/copilot-2026-09-09T02-36-06-510Z-gemini-3.8-flash.svg"
+        },
+        {
+          "id": "pelican-left-copilot-2026-09-09T02-36-06-528Z-gemini-3.7-flash",
+          "model": "Gemini 3.7 Flash",
+          "provider": "Google",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican-left/copilot/copilot-2026-09-09T02-36-06-528Z-gemini-3.7-flash.svg"
+        },
+        {
+          "id": "pelican-left-copilot-2026-09-09T02-36-06-521Z-grok-4.6",
+          "model": "Grok 4.6",
+          "provider": "xAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican-left/copilot/copilot-2026-09-09T02-36-06-521Z-grok-4.6.svg"
+        },
+        {
+          "id": "pelican-left-copilot-2026-09-09T02-39-24-004Z-gemini-3.6-flash",
+          "model": "Gemini 3.6 Flash",
+          "provider": "Google",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican-left/copilot/copilot-2026-09-09T02-39-24-004Z-gemini-3.6-flash.svg"
+        },
+        {
+          "id": "pelican-left-copilot-2026-09-09T02-39-05-704Z-grok-4.5",
+          "model": "Grok 4.5",
+          "provider": "xAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican-left/copilot/copilot-2026-09-09T02-39-05-704Z-grok-4.5.svg"
+        },
+        {
+          "id": "pelican-left-copilot-2026-09-09T02-30-42-491Z-gpt-5.6-sol",
+          "model": "GPT-5.6 Sol",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican-left/copilot/copilot-2026-09-09T02-30-42-491Z-gpt-5.6-sol.svg"
+        },
+        {
+          "id": "pelican-left-copilot-2026-09-09T02-38-35-311Z-gpt-5.6-terra",
+          "model": "GPT-5.6 Terra",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican-left/copilot/copilot-2026-09-09T02-38-35-311Z-gpt-5.6-terra.svg"
+        },
+        {
+          "id": "pelican-left-copilot-2026-09-09T02-39-07-443Z-gpt-5.6-luna",
+          "model": "GPT-5.6 Luna",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican-left/copilot/copilot-2026-09-09T02-39-07-443Z-gpt-5.6-luna.svg"
+        },
+        {
+          "id": "pelican-left-copilot-2026-09-09T02-40-30-873Z-gemini-3.5-flash",
+          "model": "Gemini 3.5 Flash",
+          "provider": "Google",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "仅转义 CSS 中的 &，原始输出保留",
+          "src": "assets/pelican-left/copilot/copilot-2026-09-09T02-40-30-873Z-gemini-3.5-flash.svg"
+        },
+        {
+          "id": "pelican-left-copilot-2026-09-09T02-39-45-389Z-gpt-5.5",
+          "model": "GPT-5.5",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican-left/copilot/copilot-2026-09-09T02-39-45-389Z-gpt-5.5.svg"
+        },
+        {
+          "id": "pelican-left-copilot-2026-09-09T02-40-41-312Z-gpt-5.4",
+          "model": "GPT-5.4",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican-left/copilot/copilot-2026-09-09T02-40-41-312Z-gpt-5.4.svg"
+        },
+        {
+          "id": "pelican-left-copilot-2026-09-09T02-40-54-071Z-gpt-5.3-codex",
+          "model": "GPT-5.3 Codex",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican-left/copilot/copilot-2026-09-09T02-40-54-071Z-gpt-5.3-codex.svg"
+        },
+        {
+          "id": "pelican-left-copilot-2026-09-09T02-41-50-577Z-gpt-5-mini",
+          "model": "GPT-5 mini",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "variant": "默认 · 样本 1",
+          "note": "Copilot CLI",
+          "src": "assets/pelican-left/copilot/copilot-2026-09-09T02-41-50-577Z-gpt-5-mini.svg"
+        },
+        {
+          "id": "pelican-left-api-2026-09-09T02-44-00-091Z-gpt-4.1",
+          "model": "GPT-4.1",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "src": "assets/pelican-left/api/api-2026-09-09T02-44-00-091Z-gpt-4.1.svg"
+        },
+        {
+          "id": "pelican-left-api-2026-09-09T02-44-06-217Z-gpt-4o",
+          "model": "GPT-4o",
+          "provider": "OpenAI",
+          "reasoning": "default",
+          "home": true,
+          "src": "assets/pelican-left/api/api-2026-09-09T02-44-06-217Z-gpt-4o.svg"
+        }
+      ]
     }
   ],
   "modelOrder": [

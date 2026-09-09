@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <rect width="960" height="540" fill="#87CEEB" />
+  <rect y="450" width="960" height="90" fill="#228B22" />
+
+  <!-- Bicycle and Pelican Group -->
+  <g>
+    <!-- Back Wheel -->
+    <g>
+      <circle cx="0" cy="470" r="40" stroke="#444" stroke-width="5" fill="none" />
+      <circle cx="0" cy="470" r="35" fill="#ddd" />
+      <line x1="0" y1="470" x2="40" y2="470" stroke="#444" stroke-width="3" />
+      <line x1="0" y1="470" x2="0" y2="430" stroke="#444" stroke-width="3" />
+      <line x1="0" y1="470" x2="-40" y2="470" stroke="#444" stroke-width="3" />
+      <line x1="0" y1="470" x2="0" y2="510" stroke="#444" stroke-width="3" />
+    </g>
+
+    <!-- Front Wheel -->
+    <g>
+      <circle cx="140" cy="470" r="40" stroke="#444" stroke-width="5" fill="none" />
+      <circle cx="140" cy="470" r="35" fill="#ddd" />
+      <line x1="140" y1="470" x2="180" y2="470" stroke="#444" stroke-width="3" />
+      <line x1="140" y1="470" x2="140" y2="430" stroke="#444" stroke-width="3" />
+      <line x1="140" y1="470" x2="100" y2="470" stroke="#444" stroke-width="3" />
+      <line x1="140" y1="470" x2="140" y2="510" stroke="#444" stroke-width="3" />
+    </g>
+
+    <!-- Bike Frame -->
+    <line x1="0" y1="470" x2="70" y2="410" stroke="#444" stroke-width="8" />
+    <line x1="70" y1="410" x2="140" y2="470" stroke="#444" stroke-width="8" />
+    <line x1="0" y1="470" x2="140" y2="470" stroke="#444" stroke-width="8" />
+    <line x1="70" y1="410" x2="70" y2="370" stroke="#444" stroke-width="8" />
+
+    <!-- Handlebar -->
+    <line x1="140" y1="470" x2="110" y2="430" stroke="#444" stroke-width="8" />
+    <line x1="110" y1="430" x2="130" y2="420" stroke="#444" stroke-width="5" />
+    <line x1="110" y1="430" x2="100" y2="420" stroke="#444" stroke-width="5" />
+
+    <!-- Seat -->
+    <line x1="70" y1="370" x2="90" y2="370" stroke="#444" stroke-width="5" />
+
+    <!-- Pedal -->
+    <line x1="70" y1="470" x2="90" y2="490" stroke="#444" stroke-width="5" />
+    <line x1="70" y1="470" x2="50" y2="450" stroke="#444" stroke-width="5" />
+
+    <!-- Pelican Body -->
+    <ellipse cx="70" cy="350" rx="30" ry="20" fill="#F4A460" />
+    <ellipse cx="70" cy="330" rx="25" ry="15" fill="#FFDAB9" />
+
+    <!-- Pelican Wing -->
+    <path d="M55 340 Q70 310 85 340 Z" fill="#F4A460" />
+
+    <!-- Pelican Beak -->
+    <path d="M85 330 Q110 320 85 340 Z" fill="#FF8C00" />
+
+    <!-- Pelican Eye -->
+    <circle cx="78" cy="325" r="2" fill="#000" />
+  </g>
+
+  <!-- Animation -->
+  <animateTransform attributeName="transform" type="translate" from="960 0" to="-200 0" dur="8s" repeatCount="indefinite" />
+  <animateTransform attributeName="transform" type="rotate" from="0 0 470" to="360 0 470" dur="0.8s" additive="sum" repeatCount="indefinite" />
+  <animateTransform attributeName="transform" type="rotate" from="0 140 470" to="360 140 470" dur="0.8s" additive="sum" repeatCount="indefinite" />
+</svg>

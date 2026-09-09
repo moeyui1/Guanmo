@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fd7ff"/>
+      <stop offset="62%" stop-color="#d9f5ff"/>
+      <stop offset="100%" stop-color="#fff3c7"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#45b9d9"/>
+      <stop offset="100%" stop-color="#157aa5"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff7a8"/>
+      <stop offset="65%" stop-color="#ffd66b"/>
+      <stop offset="100%" stop-color="#ffb24a"/>
+    </radialGradient>
+    <style>
+      .scene-line { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .wheel-rim { fill: none; stroke: #182536; stroke-width: 7; }
+      .tire { fill: none; stroke: #07121d; stroke-width: 12; }
+      .spoke { stroke: #d8edf6; stroke-width: 2.1; stroke-linecap: round; }
+      .frame { fill: none; stroke: #e0433f; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+      .metal { fill: none; stroke: #22384b; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .pelican-stroke { stroke: #253443; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+
+  <rect width="960" height="540" fill="url(#sky)"/>
+  <circle cx="792" cy="91" r="45" fill="url(#sunGlow)" opacity=".95"/>
+  <g opacity=".62" fill="#ffffff">
+    <ellipse cx="156" cy="86" rx="48" ry="14"/>
+    <ellipse cx="193" cy="82" rx="33" ry="11"/>
+    <ellipse cx="120" cy="90" rx="28" ry="10"/>
+    <ellipse cx="570" cy="126" rx="58" ry="15"/>
+    <ellipse cx="618" cy="121" rx="36" ry="11"/>
+    <ellipse cx="527" cy="130" rx="30" ry="10"/>
+  </g>
+
+  <path d="M0 291 C110 268 177 291 267 276 C378 257 456 287 558 269 C676 248 746 276 960 249 L960 540 L0 540 Z" fill="#5fc58b"/>
+  <path d="M0 331 C122 304 216 329 332 310 C470 287 584 326 717 297 C816 275 882 286 960 270 L960 540 L0 540 Z" fill="#36a56f"/>
+  <rect y="387" width="960" height="153" fill="#eec478"/>
+  <path d="M0 418 C156 399 298 432 450 410 C625 385 765 424 960 402 L960 540 L0 540 Z" fill="url(#water)" opacity=".36"/>
+  <path class="scene-line" d="M35 455 C126 438 217 473 307 454 S479 441 572 456 S763 477 928 449" stroke="#ffffff" stroke-width="4" opacity=".36"/>
+  <path class="scene-line" d="M61 493 C178 476 302 505 419 489 S659 472 850 495" stroke="#ffffff" stroke-width="3" opacity=".28"/>
+  <path d="M0 405 C160 390 318 414 480 397 C642 381 782 407 960 388 L960 438 C769 456 629 424 480 443 C315 463 160 432 0 449 Z" fill="#cf8e48"/>
+  <path class="scene-line" d="M0 405 C160 390 318 414 480 397 C642 381 782 407 960 388" stroke="#8c5f31" stroke-width="5" opacity=".42"/>
+
+  <g opacity=".45" stroke="#8b6a3f" stroke-width="3" stroke-linecap="round">
+    <path d="M96 384 l-22 -31"/>
+    <path d="M123 383 l9 -35"/>
+    <path d="M724 389 l-18 -35"/>
+    <path d="M752 390 l17 -36"/>
+  </g>
+
+  <g id="rider">
+    <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+      values="1130 410; -230 410" keyTimes="0;1" calcMode="linear"/>
+
+    <g id="bicycle">
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0;0 2;0 0" keyTimes="0;.25;.5;.75;1" dur=".55s" repeatCount="indefinite"/>
+        <g transform="translate(-92 0)">
+          <circle r="46" class="tire"/>
+          <circle r="39" class="wheel-rim"/>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-360 0 0" dur=".75s" repeatCount="indefinite"/>
+            <line class="spoke" x1="-34" y1="0" x2="34" y2="0"/>
+            <line class="spoke" x1="0" y1="-34" x2="0" y2="34"/>
+            <line class="spoke" x1="-24" y1="-24" x2="24" y2="24"/>
+            <line class="spoke" x1="-24" y1="24" x2="24" y2="-24"/>
+            <circle r="5" fill="#22384b"/>
+          </g>
+        </g>
+
+        <g transform="translate(92 0)">
+          <circle r="46" class="tire"/>
+          <circle r="39" class="wheel-rim"/>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-360 0 0" dur=".75s" repeatCount="indefinite"/>
+            <line class="spoke" x1="-34" y1="0" x2="34" y2="0"/>
+            <line class="spoke" x1="0" y1="-34" x2="0" y2="34"/>
+            <line class="spoke" x1="-24" y1="-24" x2="24" y2="24"/>
+            <line class="spoke" x1="-24" y1="24" x2="24" y2="-24"/>
+            <circle r="5" fill="#22384b"/>
+          </g>
+        </g>
+
+        <path class="frame" d="M-92 0 L-14 -16 L40 -75 L92 0 L-14 -16 L92 0 M40 -75 L-45 -78 L-92 0"/>
+        <path class="metal" d="M-45 -78 L-66 -107 M-66 -107 L-112 -98 M-112 -98 L-123 -89"/>
+        <path class="metal" d="M40 -75 L50 -101"/>
+        <path d="M25 -106 C39 -113 58 -111 69 -103 C55 -94 37 -94 25 -106 Z" fill="#1c2733"/>
+        <circle cx="-14" cy="-16" r="10" fill="#22384b"/>
+        <g transform="translate(-14 -16)">
+          <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur=".75s" repeatCount="indefinite" additive="sum"/>
+          <line x1="-26" y1="0" x2="26" y2="0" stroke="#22384b" stroke-width="6" stroke-linecap="round"/>
+          <g transform="translate(-30 0)">
+            <ellipse cx="0" cy="0" rx="18" ry="7" fill="#f58b25" stroke="#8b4719" stroke-width="2"/>
+          </g>
+          <g transform="translate(30 0)">
+            <ellipse cx="0" cy="0" rx="18" ry="7" fill="#f58b25" stroke="#8b4719" stroke-width="2"/>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <g id="pelican">
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -5;0 0;0 4;0 0" keyTimes="0;.25;.5;.75;1" dur=".75s" repeatCount="indefinite"/>
+
+      <path d="M12 -143 C52 -144 83 -121 83 -90 C83 -59 48 -42 3 -49 C-38 -55 -67 -80 -62 -111 C-57 -137 -26 -143 12 -143 Z" fill="#f8fbf1" class="pelican-stroke"/>
+      <path d="M38 -137 C65 -123 77 -101 70 -80 C49 -91 28 -97 1 -101 C14 -115 24 -128 38 -137 Z" fill="#dbe5e8" stroke="#84929b" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M-31 -128 C-57 -146 -79 -157 -101 -164 C-106 -149 -99 -134 -80 -125 C-62 -117 -44 -119 -31 -128 Z" fill="#f8fbf1" class="pelican-stroke"/>
+      <path d="M-94 -167 C-110 -181 -106 -199 -88 -207 C-67 -216 -43 -204 -37 -184 C-31 -164 -49 -149 -72 -153 C-80 -154 -88 -159 -94 -167 Z" fill="#f8fbf1" class="pelican-stroke"/>
+      <path d="M-101 -179 C-145 -183 -176 -178 -204 -165 C-176 -151 -140 -144 -96 -150 C-86 -158 -88 -171 -101 -179 Z" fill="#f5a33b" stroke="#8c4b18" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M-105 -164 C-142 -160 -171 -158 -198 -165 C-172 -143 -128 -137 -92 -149 C-91 -155 -96 -161 -105 -164 Z" fill="#ffd07a" stroke="#8c4b18" stroke-width="2.5" stroke-linejoin="round"/>
+      <circle cx="-80" cy="-190" r="5" fill="#102235"/>
+      <circle cx="-82" cy="-192" r="1.7" fill="#ffffff"/>
+      <path d="M-61 -205 C-75 -221 -99 -218 -105 -197" fill="none" stroke="#d6dde0" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-61 -205 C-75 -221 -99 -218 -105 -197" fill="none" stroke="#253443" stroke-width="3" stroke-linecap="round"/>
+
+      <path d="M-11 -58 C-20 -37 -23 -25 -18 -16" fill="none" stroke="#f28b2c" stroke-width="8" stroke-linecap="round"/>
+      <path d="M31 -55 C19 -38 14 -24 17 -14" fill="none" stroke="#f28b2c" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-18 -16 C-28 -14 -37 -12 -45 -8" fill="none" stroke="#8b4719" stroke-width="3" stroke-linecap="round"/>
+      <path d="M17 -14 C26 -12 35 -9 43 -5" fill="none" stroke="#8b4719" stroke-width="3" stroke-linecap="round"/>
+
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="-8 7 -99;6 7 -99;-8 7 -99" dur=".75s" repeatCount="indefinite"/>
+        <path d="M-2 -132 C34 -130 64 -109 68 -84 C44 -95 8 -89 -18 -68 C-39 -88 -33 -119 -2 -132 Z" fill="#eef3ee" stroke="#b9c7ca" stroke-width="2.5"/>
+        <path d="M5 -118 C22 -108 36 -98 47 -84" fill="none" stroke="#c7d2d4" stroke-width="3" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
+</svg>

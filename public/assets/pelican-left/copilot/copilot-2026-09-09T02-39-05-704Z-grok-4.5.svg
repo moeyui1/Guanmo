@@ -1,0 +1,273 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#87CEEB"/>
+      <stop offset="55%" stop-color="#B8E0F0"/>
+      <stop offset="100%" stop-color="#E8F4E8"/>
+    </linearGradient>
+    <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7CB342"/>
+      <stop offset="100%" stop-color="#558B2F"/>
+    </linearGradient>
+    <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#78909C"/>
+      <stop offset="100%" stop-color="#546E7A"/>
+    </linearGradient>
+    <linearGradient id="pelicanBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F5F5F0"/>
+      <stop offset="100%" stop-color="#E8E4D8"/>
+    </linearGradient>
+    <linearGradient id="pouchGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFCC80"/>
+      <stop offset="100%" stop-color="#FFA726"/>
+    </linearGradient>
+    <linearGradient id="wingGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAFAFA"/>
+      <stop offset="100%" stop-color="#CFD8DC"/>
+    </linearGradient>
+    <clipPath id="sceneClip">
+      <rect x="0" y="0" width="960" height="540"/>
+    </clipPath>
+  </defs>
+
+  <rect width="960" height="540" fill="url(#skyGrad)"/>
+
+  <!-- Sun -->
+  <circle cx="820" cy="90" r="48" fill="#FFE082" opacity="0.9"/>
+  <circle cx="820" cy="90" r="36" fill="#FFD54F"/>
+
+  <!-- Distant hills -->
+  <ellipse cx="150" cy="360" rx="220" ry="70" fill="#A5D6A7" opacity="0.7"/>
+  <ellipse cx="420" cy="350" rx="280" ry="80" fill="#81C784" opacity="0.65"/>
+  <ellipse cx="750" cy="365" rx="240" ry="65" fill="#A5D6A7" opacity="0.7"/>
+
+  <!-- Clouds -->
+  <g opacity="0.85">
+    <g>
+      <ellipse cx="180" cy="100" rx="50" ry="22" fill="#fff"/>
+      <ellipse cx="210" cy="90" rx="40" ry="26" fill="#fff"/>
+      <ellipse cx="240" cy="102" rx="45" ry="20" fill="#fff"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 30,5; 0,0" dur="16s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <ellipse cx="520" cy="70" rx="55" ry="24" fill="#fff"/>
+      <ellipse cx="555" cy="58" rx="42" ry="28" fill="#fff"/>
+      <ellipse cx="590" cy="72" rx="48" ry="22" fill="#fff"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -40,8; 0,0" dur="20s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <ellipse cx="780" cy="130" rx="40" ry="18" fill="#fff"/>
+      <ellipse cx="805" cy="120" rx="35" ry="22" fill="#fff"/>
+      <ellipse cx="830" cy="132" rx="38" ry="16" fill="#fff"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 25,-4; 0,0" dur="14s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- Ground -->
+  <rect y="380" width="960" height="160" fill="url(#groundGrad)"/>
+  <!-- Road -->
+  <rect y="420" width="960" height="70" fill="url(#roadGrad)"/>
+  <rect y="452" width="960" height="6" fill="#ECEFF1" opacity="0.7"/>
+  <!-- Road dashes moving rightward relative to left-moving bike -->
+  <g>
+    <g id="dashes">
+      <rect x="0" y="450" width="40" height="8" rx="2" fill="#FFF9C4"/>
+      <rect x="80" y="450" width="40" height="8" rx="2" fill="#FFF9C4"/>
+      <rect x="160" y="450" width="40" height="8" rx="2" fill="#FFF9C4"/>
+      <rect x="240" y="450" width="40" height="8" rx="2" fill="#FFF9C4"/>
+      <rect x="320" y="450" width="40" height="8" rx="2" fill="#FFF9C4"/>
+      <rect x="400" y="450" width="40" height="8" rx="2" fill="#FFF9C4"/>
+      <rect x="480" y="450" width="40" height="8" rx="2" fill="#FFF9C4"/>
+      <rect x="560" y="450" width="40" height="8" rx="2" fill="#FFF9C4"/>
+      <rect x="640" y="450" width="40" height="8" rx="2" fill="#FFF9C4"/>
+      <rect x="720" y="450" width="40" height="8" rx="2" fill="#FFF9C4"/>
+      <rect x="800" y="450" width="40" height="8" rx="2" fill="#FFF9C4"/>
+      <rect x="880" y="450" width="40" height="8" rx="2" fill="#FFF9C4"/>
+      <rect x="960" y="450" width="40" height="8" rx="2" fill="#FFF9C4"/>
+      <rect x="1040" y="450" width="40" height="8" rx="2" fill="#FFF9C4"/>
+    </g>
+    <animateTransform attributeName="transform" type="translate" from="-80 0" to="0 0" dur="0.8s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Grass tufts -->
+  <g fill="#66BB6A">
+    <ellipse cx="60" cy="415" rx="18" ry="8"/>
+    <ellipse cx="200" cy="410" rx="22" ry="9"/>
+    <ellipse cx="380" cy="418" rx="16" ry="7"/>
+    <ellipse cx="560" cy="412" rx="20" ry="8"/>
+    <ellipse cx="720" cy="416" rx="24" ry="9"/>
+    <ellipse cx="900" cy="410" rx="18" ry="7"/>
+  </g>
+
+  <!-- Rider group: travels right to left over 8s -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="1100,0; -280,0" dur="8s" repeatCount="indefinite"/>
+
+    <!-- Bicycle + pelican, facing left, origin near bike center -->
+    <g transform="translate(0, 0)">
+      <!-- Subtle bounce -->
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 0,-3; 0,0; 0,-2; 0,0" dur="0.5s" repeatCount="indefinite" additive="sum"/>
+
+      <!-- Rear wheel -->
+      <g transform="translate(70, 400)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="-360" dur="0.8s" repeatCount="indefinite"/>
+          <circle r="42" fill="none" stroke="#37474F" stroke-width="6"/>
+          <circle r="38" fill="none" stroke="#90A4AE" stroke-width="2"/>
+          <circle r="8" fill="#455A64"/>
+          <g stroke="#546E7A" stroke-width="2.5">
+            <line x1="0" y1="-36" x2="0" y2="36"/>
+            <line x1="-36" y1="0" x2="36" y2="0"/>
+            <line x1="-25" y1="-25" x2="25" y2="25"/>
+            <line x1="25" y1="-25" x2="-25" y2="25"/>
+            <line x1="-12" y1="-34" x2="12" y2="34"/>
+            <line x1="34" y1="-12" x2="-34" y2="12"/>
+          </g>
+          <circle r="12" fill="none" stroke="#607D8B" stroke-width="3"/>
+        </g>
+      </g>
+
+      <!-- Front wheel -->
+      <g transform="translate(-55, 400)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="-360" dur="0.8s" repeatCount="indefinite"/>
+          <circle r="42" fill="none" stroke="#37474F" stroke-width="6"/>
+          <circle r="38" fill="none" stroke="#90A4AE" stroke-width="2"/>
+          <circle r="8" fill="#455A64"/>
+          <g stroke="#546E7A" stroke-width="2.5">
+            <line x1="0" y1="-36" x2="0" y2="36"/>
+            <line x1="-36" y1="0" x2="36" y2="0"/>
+            <line x1="-25" y1="-25" x2="25" y2="25"/>
+            <line x1="25" y1="-25" x2="-25" y2="25"/>
+            <line x1="-12" y1="-34" x2="12" y2="34"/>
+            <line x1="34" y1="-12" x2="-34" y2="12"/>
+          </g>
+          <circle r="12" fill="none" stroke="#607D8B" stroke-width="3"/>
+        </g>
+      </g>
+
+      <!-- Bike frame -->
+      <g stroke="#1565C0" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Main triangle -->
+        <path d="M70,400 L20,320 L-20,400 Z"/>
+        <!-- Top tube / seat to head -->
+        <path d="M20,320 L-40,330"/>
+        <!-- Down tube area already in triangle -->
+        <!-- Seat stays -->
+        <path d="M20,320 L70,400"/>
+        <!-- Chain stays -->
+        <path d="M10,380 L70,400"/>
+        <!-- Fork -->
+        <path d="M-40,330 L-55,400"/>
+        <!-- Handlebar stem -->
+        <path d="M-40,330 L-48,300"/>
+      </g>
+      <!-- Handlebars -->
+      <path d="M-58,298 Q-70,290 -78,305" stroke="#1565C0" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M-48,300 L-30,295" stroke="#1565C0" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <!-- Seat -->
+      <ellipse cx="22" cy="312" rx="18" ry="6" fill="#5D4037" transform="rotate(-15 22 312)"/>
+      <!-- Pedal crank center -->
+      <circle cx="10" cy="380" r="6" fill="#37474F"/>
+
+      <!-- Pedals and feet - rotating -->
+      <g transform="translate(10, 380)">
+        <!-- Crank arm + left foot (outer) -->
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="-360" dur="0.8s" repeatCount="indefinite"/>
+          <line x1="0" y1="0" x2="0" y2="28" stroke="#37474F" stroke-width="4" stroke-linecap="round"/>
+          <rect x="-8" y="24" width="16" height="6" rx="2" fill="#455A64"/>
+          <!-- Pelican foot on pedal -->
+          <g transform="translate(0, 30)">
+            <ellipse cx="0" cy="4" rx="12" ry="6" fill="#FFA726"/>
+            <ellipse cx="-8" cy="2" rx="4" ry="3" fill="#FFB74D"/>
+            <ellipse cx="0" cy="0" rx="4" ry="3" fill="#FFB74D"/>
+            <ellipse cx="8" cy="2" rx="4" ry="3" fill="#FFB74D"/>
+          </g>
+        </g>
+        <!-- Opposite crank + right foot -->
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            from="180" to="-180" dur="0.8s" repeatCount="indefinite"/>
+          <line x1="0" y1="0" x2="0" y2="28" stroke="#546E7A" stroke-width="3.5" stroke-linecap="round"/>
+          <rect x="-8" y="24" width="16" height="6" rx="2" fill="#607D8B"/>
+          <g transform="translate(0, 30)">
+            <ellipse cx="0" cy="4" rx="12" ry="6" fill="#FB8C00"/>
+            <ellipse cx="-8" cy="2" rx="4" ry="3" fill="#FFA726"/>
+            <ellipse cx="0" cy="0" rx="4" ry="3" fill="#FFA726"/>
+            <ellipse cx="8" cy="2" rx="4" ry="3" fill="#FFA726"/>
+          </g>
+        </g>
+      </g>
+
+      <!-- Chain ring hint -->
+      <circle cx="10" cy="380" r="14" fill="none" stroke="#78909C" stroke-width="2"/>
+
+      <!-- Pelican body -->
+      <g>
+        <!-- Legs (upper) connecting to pedals area -->
+        <path d="M25,340 Q15,360 10,375" stroke="#FFF8E1" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <path d="M35,342 Q28,365 18,378" stroke="#FFECB3" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.9"/>
+
+        <!-- Body -->
+        <ellipse cx="35" cy="300" rx="48" ry="36" fill="url(#pelicanBody)"/>
+        <!-- Belly shading -->
+        <ellipse cx="30" cy="310" rx="32" ry="22" fill="#FFFDE7" opacity="0.8"/>
+
+        <!-- Wing -->
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+            values="-8; 6; -8" dur="1s" repeatCount="indefinite" additive="sum"/>
+          <path d="M40,285 Q80,270 95,300 Q70,310 45,305 Z" fill="url(#wingGrad)" stroke="#B0BEC5" stroke-width="1.5"/>
+          <path d="M50,290 Q72,282 85,298" fill="none" stroke="#90A4AE" stroke-width="1" opacity="0.6"/>
+          <path d="M48,298 Q68,292 80,305" fill="none" stroke="#90A4AE" stroke-width="1" opacity="0.5"/>
+        </g>
+
+        <!-- Neck -->
+        <path d="M5,285 Q-25,250 -45,240" stroke="url(#pelicanBody)" stroke-width="22" fill="none" stroke-linecap="round"/>
+        <path d="M5,285 Q-25,250 -45,240" stroke="#FAFAFA" stroke-width="16" fill="none" stroke-linecap="round"/>
+
+        <!-- Head -->
+        <g transform="translate(-55, 230)">
+          <ellipse cx="0" cy="0" rx="22" ry="18" fill="#FFFFFF"/>
+          <!-- Eye -->
+          <circle cx="-8" cy="-4" r="5" fill="#212121"/>
+          <circle cx="-9.5" cy="-5.5" r="2" fill="#FFFFFF"/>
+          <!-- Beak upper -->
+          <path d="M-18,2 Q-50,8 -70,0 Q-55,-8 -20,-6 Z" fill="#FFB300"/>
+          <!-- Beak lower / pouch -->
+          <path d="M-18,4 Q-45,28 -65,8 Q-50,12 -20,8 Z" fill="url(#pouchGrad)"/>
+          <!-- Beak tip line -->
+          <path d="M-55,0 Q-62,4 -68,1" fill="none" stroke="#F57C00" stroke-width="1.5"/>
+        </g>
+
+        <!-- Tail feathers -->
+        <g transform="translate(75, 295)">
+          <path d="M0,0 Q20,-15 35,-5" stroke="#E0E0E0" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M0,5 Q22,0 38,10" stroke="#BDBDBD" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M0,10 Q18,12 32,20" stroke="#E0E0E0" stroke-width="5" fill="none" stroke-linecap="round"/>
+        </g>
+
+        <!-- Crest tuft -->
+        <path d="M-48,215 Q-42,200 -35,212" stroke="#ECEFF1" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M-42,214 Q-38,198 -30,210" stroke="#CFD8DC" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      </g>
+
+      <!-- Front basket optional decorative -->
+      <path d="M-70,340 Q-85,350 -75,365 Q-60,360 -55,348 Z" fill="#8D6E63" opacity="0.85"/>
+      <ellipse cx="-68" cy="348" rx="12" ry="5" fill="#A1887F"/>
+    </g>
+  </g>
+
+  <!-- Foreground grass silhouettes -->
+  <g fill="#33691E" opacity="0.45">
+    <path d="M0,520 Q30,480 50,520 Q70,490 90,530 L0,540 Z"/>
+    <path d="M880,530 Q910,485 940,525 Q955,500 960,540 L880,540 Z"/>
+  </g>
+</svg>

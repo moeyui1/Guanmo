@@ -1,0 +1,246 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#a7def9"/>
+      <stop offset="1" stop-color="#dff3ff"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#6dbb6d"/>
+      <stop offset="1" stop-color="#3d9b3d"/>
+    </linearGradient>
+    <linearGradient id="beakGrad" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffd05b"/>
+      <stop offset="1" stop-color="#ff9f3b"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="540" fill="url(#sky)"/>
+  <!-- Distant hills -->
+  <g opacity="0.9">
+    <path d="M0 380 C120 320 260 380 420 340 C580 300 720 380 960 340 L960 540 L0 540 Z" fill="#b7e5c9"/>
+    <path d="M0 420 C160 370 320 430 480 400 C640 370 800 420 960 400 L960 540 L0 540 Z" fill="#9bd89f"/>
+  </g>
+
+  <!-- Ground strip -->
+  <rect y="380" width="960" height="160" fill="url(#ground)"/>
+  <!-- Road / path -->
+  <rect x="0" y="420" width="960" height="24" fill="#6b6b6b"/>
+  <g fill="#f6f6f6" opacity="0.9">
+    <rect x="10" y="430" width="130" height="4" rx="2"/>
+    <rect x="170" y="430" width="120" height="4" rx="2"/>
+    <rect x="340" y="430" width="140" height="4" rx="2"/>
+    <rect x="520" y="430" width="130" height="4" rx="2"/>
+    <rect x="710" y="430" width="160" height="4" rx="2"/>
+  </g>
+
+  <!-- Decorative clouds -->
+  <g fill="#ffffff" opacity="0.95">
+    <ellipse cx="160" cy="100" rx="56" ry="28"/>
+    <ellipse cx="200" cy="96" rx="40" ry="22"/>
+    <ellipse cx="130" cy="102" rx="34" ry="18"/>
+    <ellipse cx="740" cy="70" rx="64" ry="32"/>
+    <ellipse cx="780" cy="72" rx="42" ry="21"/>
+  </g>
+
+  <!-- Rider + bike group: moves from right to left across the scene -->
+  <g id="riderGroup" transform="translate(1200,220)">
+    <animateTransform attributeName="transform"
+                      type="translate"
+                      from="1200 220" to="-360 220"
+                      dur="8s"
+                      repeatCount="indefinite"
+                      fill="freeze"/>
+
+    <!-- Slight shadow under bike -->
+    <ellipse cx="360" cy="220" rx="220" ry="18" fill="#000" opacity="0.12" filter="url(#soft)"/>
+
+    <!-- Bicycle frame -->
+    <g id="bike">
+      <!-- Wheels: centers at (280,160) and (460,160) relative to riderGroup top-left -->
+      <!-- Rear wheel -->
+      <g transform="translate(280,160)">
+        <g>
+          <!-- rotating group -->
+          <g>
+            <circle r="48" fill="#eef6fb" stroke="#2b3b4a" stroke-width="6"/>
+            <circle r="10" fill="#2b3b4a"/>
+            <!-- spokes -->
+            <g stroke="#2b3b4a" stroke-width="2" stroke-linecap="round">
+              <line x1="0" y1="-48" x2="0" y2="48"/>
+              <line x1="-34" y1="-34" x2="34" y2="34"/>
+              <line x1="34" y1="-34" x2="-34" y2="34"/>
+              <line x1="-48" y1="0" x2="48" y2="0"/>
+            </g>
+            <animateTransform attributeName="transform"
+                              type="rotate"
+                              from="0" to="-360"
+                              dur="2s"
+                              repeatCount="indefinite"/>
+          </g>
+        </g>
+      </g>
+
+      <!-- Front wheel -->
+      <g transform="translate(460,160)">
+        <g>
+          <circle r="48" fill="#eef6fb" stroke="#2b3b4a" stroke-width="6"/>
+          <circle r="10" fill="#2b3b4a"/>
+          <g stroke="#2b3b4a" stroke-width="2" stroke-linecap="round">
+            <line x1="0" y1="-48" x2="0" y2="48"/>
+            <line x1="-34" y1="-34" x2="34" y2="34"/>
+            <line x1="34" y1="-34" x2="-34" y2="34"/>
+            <line x1="-48" y1="0" x2="48" y2="0"/>
+          </g>
+          <animateTransform attributeName="transform"
+                            type="rotate"
+                            from="0" to="-360"
+                            dur="2s"
+                            repeatCount="indefinite"/>
+        </g>
+      </g>
+
+      <!-- Frame lines -->
+      <g stroke="#2b3b4a" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" fill="none">
+        <!-- rear wheel to crank -->
+        <path d="M280 160 L360 160" />
+        <!-- crank to front wheel -->
+        <path d="M360 160 L460 160" />
+        <!-- top tube to seat -->
+        <path d="M300 120 L360 110 L420 120" stroke-width="6"/>
+        <!-- down tube -->
+        <path d="M360 110 L420 120" stroke="#2b3b4a" stroke-width="6" opacity="0.9"/>
+        <!-- seat post -->
+        <path d="M360 92 L360 110" stroke-width="6"/>
+        <!-- handlebar stem -->
+        <path d="M420 120 L446 100" stroke-width="6"/>
+      </g>
+
+      <!-- Seat -->
+      <rect x="344" y="84" width="32" height="10" rx="3" fill="#2b3b4a"/>
+
+      <!-- Handlebars -->
+      <g transform="translate(446,100)">
+        <path d="M0 0 q18 -10 28 0" stroke="#2b3b4a" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <circle cx="28" cy="0" r="6" fill="#2b3b4a"/>
+      </g>
+
+      <!-- Crank and pedals (rotate with wheel) -->
+      <g transform="translate(360,160)">
+        <g>
+          <!-- rotating crank arm group -->
+          <g>
+            <line x1="0" y1="0" x2="22" y2="10" stroke="#444" stroke-width="4" stroke-linecap="round"/>
+            <line x1="0" y1="0" x2="-22" y2="-10" stroke="#444" stroke-width="4" stroke-linecap="round"/>
+            <!-- pedals -->
+            <rect x="18" y="6" width="12" height="6" rx="2" fill="#ffb76b" transform="rotate(0 24 9)"/>
+            <rect x="-30" y="-12" width="12" height="6" rx="2" fill="#ffb76b" transform="rotate(0 -24 -9)"/>
+            <circle r="8" fill="#2b3b4a" opacity="0.6"/>
+            <animateTransform attributeName="transform"
+                              type="rotate"
+                              from="0" to="-360"
+                              dur="2s"
+                              repeatCount="indefinite"/>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- Pelican -->
+    <g id="pelican" transform="translate(320,60)">
+      <!-- body -->
+      <ellipse cx="0" cy="40" rx="60" ry="44" fill="#ffffff" stroke="#d1d9df" stroke-width="3"/>
+      <!-- wing -->
+      <path d="M-10 30 C 10 10, 50 18, 40 40 C 30 70 -20 70 -30 50 Z" fill="#f0f4f7" stroke="#cfd8df" stroke-width="2"/>
+      <!-- tail -->
+      <path d="M-60 36 C -76 30 -84 44 -72 50 C -62 56 -52 48 -60 42 Z" fill="#eef2f5"/>
+      <!-- neck and head -->
+      <path d="M30 0 C 36 -4 44 -6 56 2 C 68 10 64 28 58 32 C56 34 44 36 36 30" fill="#ffffff" stroke="#d1d9df" stroke-width="2"/>
+      <!-- beak -->
+      <path d="M58 4 C 92 0 98 22 62 30 C86 26 82 8 58 4 Z" fill="url(#beakGrad)" stroke="#c8812a" stroke-width="2"/>
+      <!-- lower beak -->
+      <path d="M62 24 C 80 24 86 16 68 14 Z" fill="#ffb76b" opacity="0.9"/>
+      <!-- eye -->
+      <circle cx="50" cy="14" r="6" fill="#fff"/>
+      <circle cx="51" cy="15" r="2.2" fill="#2b3b4a"/>
+      <!-- small cheek -->
+      <ellipse cx="46" cy="22" rx="6" ry="3" fill="#fff" opacity="0.6"/>
+
+      <!-- Head feather -->
+      <path d="M46 -2 C 40 -6 36 -10 34 -6 C 32 -2 36 0 40 0 Z" fill="#ffffff" stroke="#d1d9df" stroke-width="1"/>
+
+      <!-- Legs: thighs anchored near seat, lower legs rotate with crank to simulate pedaling -->
+      <!-- Left thigh (near seat) -->
+      <g transform="translate(360-320,110-60)"> <!-- convert seat coords into pelican local by offsetting -->
+        <!-- seat anchor at (360,110) in riderGroup; pelican group offset was translate(320,60) so seat relative pos: (40,50) -->
+      </g>
+
+      <!-- Simplified legs as two segments animated: hip group rotates slightly and feet follow pedal rotation -->
+      <!-- Hip pivot computed relative to riderGroup: seat at (360,110) => in pelican local it's (40,50) -->
+      <g id="legs" transform="translate(40,50)">
+        <!-- left thigh -->
+        <g id="thighLeft">
+          <path d="M0 0 C -6 18 -8 28 -6 36" stroke="#f6c08a" stroke-width="10" stroke-linecap="round" fill="none" transform="rotate(8)">
+            <animateTransform attributeName="transform" type="rotate" from="8" to="-20" dur="1s" begin="0s" repeatCount="indefinite" additive="replace" />
+          </path>
+        </g>
+        <!-- right thigh -->
+        <g id="thighRight">
+          <path d="M0 0 C 6 18 8 28 6 36" stroke="#f6c08a" stroke-width="10" stroke-linecap="round" fill="none" transform="rotate(-20)">
+            <animateTransform attributeName="transform" type="rotate" from="-20" to="8" dur="1s" begin="0s" repeatCount="indefinite" additive="replace" />
+          </path>
+        </g>
+
+        <!-- Lower legs groups that follow the crank/pedal rotation; pivot around crank center relative to this group:
+             crank relative to riderGroup is at (360,160). Pelican group offset is (320,60). So within legs group (translated to seat at 40,50),
+             crank relative is (360-320,160-60) = (40,100). But legs group is at seat (40,50), so relative crank from this group is (0,50).
+        -->
+        <!-- We'll place pedal rotation around (0,50) -->
+        <g transform="translate(0,50)">
+          <!-- rotating lower assembly -->
+          <g>
+            <!-- left foot (one pedal) at radius -22,-10 -->
+            <g transform="translate(-22,-10)">
+              <rect x="-8" y="-4" width="16" height="8" rx="3" fill="#ffb76b"/>
+            </g>
+            <!-- right foot at +22,+10 -->
+            <g transform="translate(22,10)">
+              <rect x="-8" y="-4" width="16" height="8" rx="3" fill="#ffb76b"/>
+            </g>
+
+            <!-- rod that visually connects pads to crank -->
+            <g stroke="#c47a3a" stroke-width="3" stroke-linecap="round">
+              <line x1="0" y1="0" x2="-22" y2="-10"/>
+              <line x1="0" y1="0" x2="22" y2="10"/>
+            </g>
+
+            <!-- animate rotation of entire pedal system to match crank -->
+            <animateTransform attributeName="transform"
+                              type="rotate"
+                              from="0" to="-360"
+                              dur="2s"
+                              repeatCount="indefinite"/>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- Small accessory: backpack -->
+    <g transform="translate(298,78)">
+      <rect x="-18" y="-6" width="28" height="36" rx="6" fill="#ffdede" stroke="#d8a6a6" stroke-width="2"/>
+      <path d="M-18 6 q12 10 28 0" fill="#ffebeb" opacity="0.9"/>
+    </g>
+
+  </g>
+
+  <!-- Foreground subtle grass blades for depth -->
+  <g fill="#3d9b3d" opacity="0.85">
+    <path d="M80 440 q6 -18 12 -26 q-6 18 -12 26z" />
+    <path d="M160 440 q6 -14 14 -22 q-8 12 -14 22z" />
+    <path d="M920 442 q6 -18 12 -26 q-6 18 -12 26z" />
+  </g>
+
+</svg>
