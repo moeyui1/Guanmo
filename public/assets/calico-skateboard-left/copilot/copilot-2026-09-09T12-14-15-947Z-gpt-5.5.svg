@@ -1,0 +1,256 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" role="img" aria-label="三花猫滑着滑板从右到左前进的SVG动图">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bfe9ff"/>
+      <stop offset="100%" stop-color="#f8fbff"/>
+    </linearGradient>
+
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d8d8d8"/>
+      <stop offset="100%" stop-color="#b9b9b9"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="5" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.25"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .scene {
+        background: #f8fbff;
+      }
+
+      .rider {
+        animation: rideLeft 5.2s linear infinite;
+      }
+
+      .bob {
+        animation: bob 0.55s ease-in-out infinite alternate;
+        transform-origin: 0 0;
+      }
+
+      .tail {
+        animation: tailSwing 0.5s ease-in-out infinite alternate;
+        transform-origin: 184px 106px;
+      }
+
+      .leg-front {
+        animation: frontLeg 0.55s ease-in-out infinite alternate;
+        transform-origin: 126px 174px;
+      }
+
+      .leg-back {
+        animation: backLeg 0.55s ease-in-out infinite alternate;
+        transform-origin: 78px 174px;
+      }
+
+      .wheel {
+        animation: spin 0.45s linear infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+
+      .ground-line {
+        animation: dashMove 0.9s linear infinite;
+      }
+
+      .cloud {
+        animation: cloudDrift 9s linear infinite;
+      }
+
+      .ear-wiggle {
+        animation: earWiggle 0.65s ease-in-out infinite alternate;
+        transform-box: fill-box;
+        transform-origin: bottom center;
+      }
+
+      @keyframes rideLeft {
+        0% {
+          transform: translate(980px, 0);
+        }
+        100% {
+          transform: translate(-300px, 0);
+        }
+      }
+
+      @keyframes bob {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-7px);
+        }
+      }
+
+      @keyframes tailSwing {
+        0% {
+          transform: rotate(-9deg);
+        }
+        100% {
+          transform: rotate(12deg);
+        }
+      }
+
+      @keyframes frontLeg {
+        0% {
+          transform: rotate(-7deg);
+        }
+        100% {
+          transform: rotate(8deg);
+        }
+      }
+
+      @keyframes backLeg {
+        0% {
+          transform: rotate(8deg);
+        }
+        100% {
+          transform: rotate(-8deg);
+        }
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(-360deg);
+        }
+      }
+
+      @keyframes dashMove {
+        from {
+          stroke-dashoffset: 0;
+        }
+        to {
+          stroke-dashoffset: -80;
+        }
+      }
+
+      @keyframes cloudDrift {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-900px);
+        }
+      }
+
+      @keyframes earWiggle {
+        0% {
+          transform: rotate(-2deg);
+        }
+        100% {
+          transform: rotate(3deg);
+        }
+      }
+    </style>
+  </defs>
+
+  <rect class="scene" width="900" height="420" fill="url(#sky)"/>
+
+  <g class="cloud" opacity="0.72">
+    <g transform="translate(80 70)">
+      <ellipse cx="30" cy="22" rx="32" ry="18" fill="#fff"/>
+      <ellipse cx="62" cy="18" rx="38" ry="22" fill="#fff"/>
+      <ellipse cx="98" cy="25" rx="34" ry="17" fill="#fff"/>
+      <rect x="30" y="22" width="70" height="18" rx="9" fill="#fff"/>
+    </g>
+    <g transform="translate(560 95) scale(.82)">
+      <ellipse cx="30" cy="22" rx="32" ry="18" fill="#fff"/>
+      <ellipse cx="62" cy="18" rx="38" ry="22" fill="#fff"/>
+      <ellipse cx="98" cy="25" rx="34" ry="17" fill="#fff"/>
+      <rect x="30" y="22" width="70" height="18" rx="9" fill="#fff"/>
+    </g>
+    <g transform="translate(940 70)">
+      <ellipse cx="30" cy="22" rx="32" ry="18" fill="#fff"/>
+      <ellipse cx="62" cy="18" rx="38" ry="22" fill="#fff"/>
+      <ellipse cx="98" cy="25" rx="34" ry="17" fill="#fff"/>
+      <rect x="30" y="22" width="70" height="18" rx="9" fill="#fff"/>
+    </g>
+    <g transform="translate(1420 95) scale(.82)">
+      <ellipse cx="30" cy="22" rx="32" ry="18" fill="#fff"/>
+      <ellipse cx="62" cy="18" rx="38" ry="22" fill="#fff"/>
+      <ellipse cx="98" cy="25" rx="34" ry="17" fill="#fff"/>
+      <rect x="30" y="22" width="70" height="18" rx="9" fill="#fff"/>
+    </g>
+  </g>
+
+  <rect x="0" y="308" width="900" height="112" fill="url(#road)"/>
+  <line class="ground-line" x1="0" y1="362" x2="900" y2="362" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-dasharray="46 34" opacity="0.85"/>
+  <ellipse cx="450" cy="392" rx="430" ry="16" fill="#8d8d8d" opacity="0.16"/>
+
+  <g class="rider" transform="translate(980 0)">
+    <g class="bob" transform="translate(0 0)" filter="url(#softShadow)">
+      <g transform="translate(0 114)">
+        <ellipse cx="96" cy="199" rx="126" ry="17" fill="#6f6f6f" opacity="0.2"/>
+
+        <g transform="translate(22 170)">
+          <path d="M5 28 C31 8, 157 8, 188 28 C177 44, 22 44, 5 28Z" fill="#7d4cc2"/>
+          <path d="M22 24 C54 13, 138 13, 171 24" fill="none" stroke="#b08cff" stroke-width="5" stroke-linecap="round"/>
+          <circle class="wheel" cx="43" cy="52" r="18" fill="#222"/>
+          <circle class="wheel" cx="151" cy="52" r="18" fill="#222"/>
+          <circle cx="43" cy="52" r="8" fill="#f7f7f7"/>
+          <circle cx="151" cy="52" r="8" fill="#f7f7f7"/>
+          <line x1="43" y1="52" x2="43" y2="35" stroke="#f7f7f7" stroke-width="3" stroke-linecap="round"/>
+          <line x1="43" y1="52" x2="60" y2="52" stroke="#f7f7f7" stroke-width="3" stroke-linecap="round"/>
+          <line x1="151" y1="52" x2="151" y2="35" stroke="#f7f7f7" stroke-width="3" stroke-linecap="round"/>
+          <line x1="151" y1="52" x2="168" y2="52" stroke="#f7f7f7" stroke-width="3" stroke-linecap="round"/>
+        </g>
+
+        <g class="tail">
+          <path d="M176 93 C225 80, 235 123, 202 142 C183 153, 169 139, 184 127 C198 116, 197 101, 176 108" fill="none" stroke="#f28b30" stroke-width="23" stroke-linecap="round"/>
+          <path d="M202 142 C187 151, 172 140, 184 127" fill="none" stroke="#2c2c2c" stroke-width="13" stroke-linecap="round"/>
+        </g>
+
+        <g>
+          <ellipse cx="105" cy="104" rx="77" ry="56" fill="#fff7ef"/>
+          <path d="M48 96 C54 57, 91 43, 119 52 C106 77, 89 92, 48 96Z" fill="#f28b30"/>
+          <path d="M111 51 C141 45, 172 61, 181 101 C152 100, 128 82, 111 51Z" fill="#2c2c2c"/>
+          <path d="M70 145 C93 160, 129 160, 153 145 C146 169, 78 170, 70 145Z" fill="#f28b30" opacity="0.9"/>
+          <ellipse cx="80" cy="105" rx="9" ry="7" fill="#f28b30" opacity="0.75"/>
+          <ellipse cx="145" cy="114" rx="12" ry="8" fill="#2c2c2c" opacity="0.75"/>
+        </g>
+
+        <g class="leg-back">
+          <path d="M78 150 C70 170, 67 184, 76 192" fill="none" stroke="#fff7ef" stroke-width="17" stroke-linecap="round"/>
+          <path d="M76 192 L112 192" fill="none" stroke="#fff7ef" stroke-width="16" stroke-linecap="round"/>
+          <path d="M70 165 C68 174, 68 181, 76 192" fill="none" stroke="#f28b30" stroke-width="9" stroke-linecap="round" opacity="0.85"/>
+        </g>
+
+        <g class="leg-front">
+          <path d="M126 150 C139 170, 147 181, 163 187" fill="none" stroke="#fff7ef" stroke-width="17" stroke-linecap="round"/>
+          <path d="M163 187 L192 178" fill="none" stroke="#fff7ef" stroke-width="16" stroke-linecap="round"/>
+          <path d="M146 176 C154 183, 163 187, 176 184" fill="none" stroke="#2c2c2c" stroke-width="9" stroke-linecap="round" opacity="0.85"/>
+        </g>
+
+        <g transform="translate(21 16)">
+          <path class="ear-wiggle" d="M43 39 L55 3 L77 37 Z" fill="#f28b30"/>
+          <path class="ear-wiggle" d="M118 36 L143 4 L151 45 Z" fill="#2c2c2c"/>
+          <circle cx="93" cy="69" r="55" fill="#fff7ef"/>
+          <path d="M40 72 C43 36, 70 18, 97 17 C89 49, 70 66, 40 72Z" fill="#f28b30"/>
+          <path d="M96 17 C126 17, 149 39, 148 73 C123 68, 106 49, 96 17Z" fill="#2c2c2c"/>
+          <path d="M80 73 Q93 82 106 73" fill="none" stroke="#3d2d2a" stroke-width="4" stroke-linecap="round"/>
+          <ellipse cx="69" cy="61" rx="6" ry="8" fill="#263238"/>
+          <ellipse cx="117" cy="61" rx="6" ry="8" fill="#263238"/>
+          <circle cx="67" cy="58" r="2" fill="#fff"/>
+          <circle cx="115" cy="58" r="2" fill="#fff"/>
+          <path d="M91 75 L98 75 L94.5 81 Z" fill="#ff8aa0"/>
+          <path d="M94 82 C88 91, 78 91, 72 84" fill="none" stroke="#3d2d2a" stroke-width="3" stroke-linecap="round"/>
+          <path d="M95 82 C102 91, 112 91, 118 84" fill="none" stroke="#3d2d2a" stroke-width="3" stroke-linecap="round"/>
+          <line x1="55" y1="78" x2="20" y2="70" stroke="#3d2d2a" stroke-width="3" stroke-linecap="round"/>
+          <line x1="55" y1="87" x2="18" y2="90" stroke="#3d2d2a" stroke-width="3" stroke-linecap="round"/>
+          <line x1="132" y1="78" x2="169" y2="70" stroke="#3d2d2a" stroke-width="3" stroke-linecap="round"/>
+          <line x1="132" y1="87" x2="170" y2="91" stroke="#3d2d2a" stroke-width="3" stroke-linecap="round"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

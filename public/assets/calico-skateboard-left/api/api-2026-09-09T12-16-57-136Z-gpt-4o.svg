@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="500" height="200">
+  <!-- 滑板 -->
+  <g id="skateboard">
+    <rect x="0" y="170" width="120" height="10" rx="5" fill="#A0522D"/>
+    <!-- 轮子 -->
+    <circle cx="20" cy="185" r="10" fill="black"/>
+    <circle cx="100" cy="185" r="10" fill="black"/>
+  </g>
+
+  <!-- 三花猫 -->
+  <g id="calico-cat">
+    <!-- 身体 -->
+    <ellipse cx="60" cy="145" rx="40" ry="25" fill="#f4a261" />
+    <!-- 头 -->
+    <circle cx="60" cy="120" r="20" fill="#f4a261" />
+    <!-- 花纹 -->
+    <path d="M50,115 Q60,105 70,115" stroke="#2a9d8f" stroke-width="2" fill="none" />
+    <circle cx="55" cy="123" r="4" fill="#264653"/>
+    <circle cx="65" cy="123" r="4" fill="#264653"/>
+    <!-- 耳朵 -->
+    <polygon points="48,110 50,95 53,110" fill="#f4a261" />
+    <polygon points="72,110 70,95 66,110" fill="#f4a261" />
+    <!-- 尾巴 -->
+    <path d="M90,145 C110,130 110,155 100,158" stroke="#f4a261" stroke-width="6" fill="none"/>
+  </g>
+
+  <!-- 动画 -->
+  <g>
+    <g>
+      <g transform="translate(500,0)">
+        <g>
+          <!-- 包装滑板和猫 -->
+          <g id="cat-on-skateboard">
+            <use href="#skateboard"/>
+            <use href="#calico-cat"/>
+          </g>
+          <!-- 动画效果从右向左 -->
+          <animateTransform attributeName="transform" type="translate" from="500" to="-120" begin="0s" dur="5s" repeatCount="indefinite"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

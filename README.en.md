@@ -63,7 +63,7 @@ Topics may include a `titleEn` field for their English name; otherwise, the orig
 
 The skateboarding-cat topic uses an open-ended generation process: the Chinese theme is passed verbatim, with only the animated SVG output format specified. Canvas size, duration, and visual style are left to the model. Presentation is standardized afterwards in a 16:9 frame. Set `presentation: {"fit":"cover"}` on a topic or sample to scale proportionally and crop the edges, or `{"fit":"contain"}` to preserve the full scene. Wide moving scenes retain their full travel path. Downloads preserve the generated dimensions and animation; necessary syntax compatibility fixes do not change shapes or motion parameters.
 
-The current calico-cat prompt above is used for the added Gemini and Grok artworks. Earlier GPT artworks used `三花猫滑着滑板从右到左前进`. The actual prompt for each artwork is recorded in `samples[].prompt`.
+All GPT, Gemini, and Grok artworks for the calico-cat topic use the exact Chinese prompt above, default reasoning, and independent sessions. The actual prompt for each artwork is recorded in `samples[].prompt`.
 
 ## Build and deploy
 

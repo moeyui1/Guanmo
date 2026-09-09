@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="800" height="360" viewBox="0 0 800 360"
+     role="img" aria-labelledby="title desc">
+  <title id="title">三花猫滑着滑板从右向左前进</title>
+  <desc id="desc">白色、橘色和黑色相间的三花猫，踩着蓝色滑板向左滑行，尾巴轻轻摇摆，车轮不断旋转。</desc>
+
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#e5f5ff"/>
+      <stop offset="1" stop-color="#fff9ee"/>
+    </linearGradient>
+    <clipPath id="frame">
+      <rect width="800" height="360" rx="24"/>
+    </clipPath>
+    <clipPath id="bodyClip">
+      <ellipse cx="153" cy="170" rx="66" ry="39"/>
+    </clipPath>
+    <clipPath id="headClip">
+      <path d="M43 121 L40 88 L67 104
+               Q81 99 94 109 L112 98 L107 134
+               Q116 160 92 174
+               Q64 187 43 167 Q27 149 43 121Z"/>
+    </clipPath>
+    <g id="wheel">
+      <circle r="14" fill="#303b50"/>
+      <circle r="9" fill="#ffcc71"/>
+      <path d="M0-8V8 M-8 0H8" stroke="#b97437" stroke-width="2.5"/>
+      <circle r="3" fill="#fff5db"/>
+    </g>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="800" height="360" fill="url(#sky)"/>
+    <circle cx="670" cy="65" r="29" fill="#ffdb88"/>
+
+    <g fill="#fff" opacity=".85">
+      <path d="M80 83 Q69 63 91 59 Q97 34 122 46
+               Q143 40 150 63 Q174 64 172 83Z"/>
+      <path d="M400 65 Q393 48 413 44 Q425 22 444 39
+               Q468 32 473 52 Q492 51 493 65Z"/>
+    </g>
+
+    <path d="M0 248 Q135 214 270 246 T540 242 T800 234
+             V360 H0Z" fill="#d9e8d2"/>
+    <path d="M0 269 Q170 248 350 269 T800 265 V360 H0Z"
+          fill="#c4ddbd"/>
+    <rect y="286" width="800" height="74" fill="#ece7de"/>
+    <path d="M0 286H800" stroke="#b5bdad" stroke-width="3"/>
+    <path d="M30 325H104 M185 325H259 M340 325H414
+             M495 325H569 M650 325H724"
+          stroke="#fffdf6" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- 整体位移：从画面右侧进入，向左滑出后循环。 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+                        values="830 32;-300 32"
+                        dur="7s" begin="-1.2s" repeatCount="indefinite"/>
+
+      <ellipse cx="137" cy="254" rx="111" ry="8"
+               fill="#647269" opacity=".17"/>
+
+      <g stroke="#91b2ba" stroke-width="3" stroke-linecap="round">
+        <path d="M251 181H286 M263 193H305 M256 205H282">
+          <animate attributeName="opacity" values=".25;.8;.25"
+                   dur=".65s" repeatCount="indefinite"/>
+        </path>
+      </g>
+
+      <!-- 猫身随滑行轻轻起伏。 -->
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+                          values="0 0;0 -3;0 0"
+                          dur=".6s" repeatCount="indefinite"/>
+
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+                            values="-5 207 169;6 207 169;-5 207 169"
+                            dur="1.2s" repeatCount="indefinite"/>
+          <path d="M207 169 C246 162 254 135 243 119
+                   C233 104 245 91 260 97"
+                fill="none" stroke="#493e3a" stroke-width="21"
+                stroke-linecap="round"/>
+          <path d="M207 169 C231 164 244 152 247 138"
+                fill="none" stroke="#efaa58" stroke-width="14"
+                stroke-linecap="round"/>
+          <path d="M246 111 Q243 96 260 97"
+                fill="none" stroke="#fffaf1" stroke-width="14"
+                stroke-linecap="round"/>
+        </g>
+
+        <path d="M115 185 L110 218 Q111 225 127 223 L138 190
+                 M180 187 L188 219 Q193 226 207 221 L204 181"
+              fill="#eadfce" stroke="#493e3a" stroke-width="3.5"
+              stroke-linejoin="round"/>
+
+        <ellipse cx="153" cy="170" rx="66" ry="39" fill="#fffaf1"/>
+        <g clip-path="url(#bodyClip)">
+          <path d="M115 128 Q143 134 145 158
+                   Q142 179 123 179 Q102 168 100 139Z"
+                fill="#eca052"/>
+          <path d="M168 129 Q210 123 224 157
+                   Q212 178 190 169 Q170 162 168 129Z"
+                fill="#403b3a"/>
+          <path d="M199 179 Q217 172 228 188 L216 214
+                   L183 211 Q177 189 199 179Z"
+                fill="#eca052"/>
+        </g>
+        <ellipse cx="153" cy="170" rx="66" ry="39"
+                 fill="none" stroke="#493e3a" stroke-width="3.5"/>
+
+        <path d="M99 176 Q95 191 94 215
+                 Q88 216 88 221 Q88 227 111 224
+                 L122 188"
+              fill="#fffaf1" stroke="#493e3a" stroke-width="3.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M166 186 Q170 205 172 216
+                 Q166 220 170 224 Q178 228 194 223
+                 L191 198"
+              fill="#fffaf1" stroke="#493e3a" stroke-width="3.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M98 219V223 M105 219V223 M178 220V224 M185 219V223"
+              stroke="#b8a99b" stroke-width="1.5" stroke-linecap="round"/>
+
+        <path d="M43 121 L40 88 L67 104
+                 Q81 99 94 109 L112 98 L107 134
+                 Q116 160 92 174
+                 Q64 187 43 167 Q27 149 43 121Z"
+              fill="#fffaf1"/>
+        <g clip-path="url(#headClip)">
+          <path d="M30 83 L73 97 Q84 116 66 134
+                   Q47 144 30 134Z" fill="#eca052"/>
+          <path d="M83 96 L120 91 L120 153
+                   Q103 155 91 139 Q80 123 83 96Z"
+                fill="#403b3a"/>
+        </g>
+        <path d="M43 121 L40 88 L67 104
+                 Q81 99 94 109 L112 98 L107 134
+                 Q116 160 92 174
+                 Q64 187 43 167 Q27 149 43 121Z"
+              fill="none" stroke="#493e3a" stroke-width="3.5"
+              stroke-linejoin="round"/>
+
+        <path d="M47 100 L49 117 L59 109Z M99 115 L106 108 L103 128Z"
+              fill="#efa3a0"/>
+        <ellipse cx="54" cy="142" rx="6" ry="8" fill="#493e3a"/>
+        <ellipse cx="82" cy="141" rx="6" ry="8" fill="#493e3a"/>
+        <circle cx="52" cy="139" r="2" fill="white"/>
+        <circle cx="80" cy="138" r="2" fill="white"/>
+
+        <path d="M57 153 Q62 150 67 153 L62 158Z" fill="#d58583"/>
+        <path d="M62 158 Q57 166 52 161 M62 158 Q66 164 71 160"
+              fill="none" stroke="#493e3a" stroke-width="2"
+              stroke-linecap="round"/>
+        <ellipse cx="44" cy="156" rx="7" ry="4" fill="#f6c2ae" opacity=".65"/>
+        <ellipse cx="84" cy="156" rx="7" ry="4" fill="#f6c2ae" opacity=".65"/>
+        <path d="M45 155L23 150 M45 161L21 164
+                 M86 154L108 148 M87 161L111 163"
+              stroke="#77665c" stroke-width="1.8" stroke-linecap="round"/>
+
+        <path d="M96 179 Q109 183 119 177"
+              fill="none" stroke="#69aaa9" stroke-width="5"
+              stroke-linecap="round"/>
+      </g>
+
+      <path d="M61 232V241 M203 232V241"
+            stroke="#758292" stroke-width="7" stroke-linecap="round"/>
+
+      <g transform="translate(65 240)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+                            from="0" to="-360" dur=".55s"
+                            repeatCount="indefinite"/>
+          <use href="#wheel"/>
+        </g>
+      </g>
+      <g transform="translate(203 240)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate"
+                            from="0" to="-360" dur=".55s"
+                            repeatCount="indefinite"/>
+          <use href="#wheel"/>
+        </g>
+      </g>
+
+      <path d="M27 219 Q34 229 51 229 H220 Q234 229 243 218
+               L247 222 Q240 237 220 237 H50 Q32 237 23 224Z"
+            fill="#63b9c8" stroke="#384a59" stroke-width="3"
+            stroke-linejoin="round"/>
+      <path d="M47 226H221" stroke="#d1f0e9" stroke-width="3"
+            stroke-linecap="round"/>
+      <path d="M121 231H148" stroke="#ffd18b" stroke-width="3"
+            stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

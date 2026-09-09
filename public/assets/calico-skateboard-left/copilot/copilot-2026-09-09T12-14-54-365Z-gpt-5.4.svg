@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dff4ff"/>
+      <stop offset="100%" stop-color="#fff7ef"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d7d7d7"/>
+      <stop offset="100%" stop-color="#bdbdbd"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="400" fill="url(#sky)"/>
+  <circle cx="690" cy="75" r="34" fill="#fff7c9"/>
+  <g opacity="0.55" fill="#ffffff">
+    <ellipse cx="110" cy="80" rx="54" ry="20"/>
+    <ellipse cx="150" cy="80" rx="34" ry="14"/>
+    <ellipse cx="300" cy="55" rx="48" ry="18"/>
+    <ellipse cx="336" cy="55" rx="30" ry="12"/>
+    <ellipse cx="555" cy="95" rx="58" ry="19"/>
+    <ellipse cx="598" cy="95" rx="36" ry="13"/>
+  </g>
+
+  <rect y="300" width="800" height="100" fill="#f2eadf"/>
+  <rect y="320" width="800" height="80" fill="url(#ground)"/>
+
+  <g opacity="0.22" stroke="#8c8c8c" stroke-width="3" stroke-linecap="round">
+    <path d="M0 345 H800">
+      <animate attributeName="stroke-dasharray" values="18 22; 0 40; 18 22" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-dashoffset" values="0; -40" dur="0.8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g filter="url(#shadow)">
+    <g transform="translate(900 0)">
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="900 0"
+        to="-260 0"
+        dur="8s"
+        repeatCount="indefinite"/>
+
+      <!-- Rider bob -->
+      <g>
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0; 0 -4; 0 0; 0 3; 0 0"
+          dur="0.9s"
+          repeatCount="indefinite"/>
+
+        <!-- Skateboard -->
+        <g>
+          <rect x="0" y="268" rx="12" ry="12" width="150" height="14" fill="#2f7de1"/>
+          <rect x="8" y="271" rx="8" ry="8" width="134" height="5" fill="#7db3ff" opacity="0.7"/>
+          <rect x="24" y="281" width="8" height="14" rx="3" fill="#666"/>
+          <rect x="116" y="281" width="8" height="14" rx="3" fill="#666"/>
+
+          <g>
+            <circle cx="28" cy="298" r="14" fill="#333"/>
+            <circle cx="28" cy="298" r="6" fill="#8ec5ff"/>
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="0 28 298"
+              to="-360 28 298"
+              dur="0.7s"
+              repeatCount="indefinite"/>
+          </g>
+          <g>
+            <circle cx="122" cy="298" r="14" fill="#333"/>
+            <circle cx="122" cy="298" r="6" fill="#8ec5ff"/>
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="0 122 298"
+              to="-360 122 298"
+              dur="0.7s"
+              repeatCount="indefinite"/>
+          </g>
+        </g>
+
+        <!-- Cat -->
+        <g>
+          <!-- tail -->
+          <g transform="translate(143 195)">
+            <path d="M0 40 C32 26, 42 -10, 20 -38" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round"/>
+            <path d="M2 38 C30 26, 40 -8, 20 -38" fill="none" stroke="#2d2d2d" stroke-width="7" stroke-linecap="round" stroke-dasharray="16 22"/>
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              values="0 0 40; 12 0 40; -8 0 40; 0 0 40"
+              dur="1.2s"
+              repeatCount="indefinite"/>
+          </g>
+
+          <!-- body -->
+          <ellipse cx="92" cy="212" rx="58" ry="42" fill="#fffdf8"/>
+          <path d="M53 187 C66 174, 88 170, 107 176 C96 186, 86 201, 82 219 C70 215, 58 204, 53 187" fill="#f0a24a"/>
+          <path d="M101 182 C118 180, 133 189, 142 204 C132 206, 120 214, 114 228 C104 220, 99 201, 101 182" fill="#2b2b2b"/>
+
+          <!-- back leg -->
+          <rect x="108" y="240" width="14" height="32" rx="7" fill="#fffdf8"/>
+          <rect x="112" y="266" width="20" height="8" rx="4" fill="#ffd3cf"/>
+
+          <!-- front leg -->
+          <rect x="64" y="238" width="14" height="34" rx="7" fill="#fffdf8"/>
+          <rect x="52" y="266" width="22" height="8" rx="4" fill="#ffd3cf"/>
+
+          <!-- neck -->
+          <rect x="52" y="182" width="24" height="28" rx="10" fill="#fffdf8"/>
+
+          <!-- head -->
+          <g transform="translate(40 142)">
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              values="0 24 34; -4 24 34; 2 24 34; 0 24 34"
+              dur="1.1s"
+              repeatCount="indefinite"/>
+
+            <path d="M9 20 L20 2 L29 20 Z" fill="#fffdf8"/>
+            <path d="M39 20 L50 2 L58 20 Z" fill="#fffdf8"/>
+            <path d="M15 18 L20 9 L25 18 Z" fill="#f7b3be"/>
+            <path d="M44 18 L49 9 L54 18 Z" fill="#f7b3be"/>
+
+            <circle cx="34" cy="35" r="30" fill="#fffdf8"/>
+            <path d="M10 31 C12 18, 26 9, 38 10 C32 17, 30 28, 31 39 C22 39, 14 36, 10 31" fill="#f0a24a"/>
+            <path d="M34 10 C47 11, 57 21, 61 33 C50 31, 41 37, 37 48 C31 39, 30 22, 34 10" fill="#2b2b2b"/>
+
+            <ellipse cx="25" cy="35" rx="3.5" ry="5" fill="#1d1d1d"/>
+            <ellipse cx="46" cy="35" rx="3.5" ry="5" fill="#1d1d1d"/>
+            <circle cx="26" cy="33" r="1.2" fill="#ffffff"/>
+            <circle cx="47" cy="33" r="1.2" fill="#ffffff"/>
+
+            <path d="M33 43 L39 43 L36 47 Z" fill="#ef8f9a"/>
+            <path d="M36 47 C31 51, 27 52, 24 49" fill="none" stroke="#6a4a4a" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M36 47 C41 51, 45 52, 48 49" fill="none" stroke="#6a4a4a" stroke-width="1.6" stroke-linecap="round"/>
+
+            <g stroke="#7f7f7f" stroke-width="1.6" stroke-linecap="round">
+              <path d="M9 42 L-12 38"/>
+              <path d="M10 47 L-12 48"/>
+              <path d="M10 52 L-10 58"/>
+              <path d="M62 42 L84 38"/>
+              <path d="M62 47 L84 48"/>
+              <path d="M61 52 L81 58"/>
+            </g>
+          </g>
+
+          <!-- paws standing on board -->
+          <rect x="58" y="270" width="20" height="7" rx="3.5" fill="#ffd3cf"/>
+          <rect x="112" y="270" width="20" height="7" rx="3.5" fill="#ffd3cf"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="800" height="450" viewBox="0 0 800 450"
+     role="img" aria-label="一只三花猫滑着滑板从右向左前进">
+
+  <title>三花猫滑板旅行</title>
+  <desc>一只三花猫站在滑板上，从画面右侧滑向左侧，车轮持续转动。</desc>
+
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bfe9ff"/>
+      <stop offset="1" stop-color="#f8fcff"/>
+    </linearGradient>
+
+    <linearGradient id="board" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#ff8a65"/>
+      <stop offset=".5" stop-color="#ffca5c"/>
+      <stop offset="1" stop-color="#ff8a65"/>
+    </linearGradient>
+
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <!-- 天空与地面 -->
+  <rect width="800" height="450" fill="url(#sky)"/>
+  <circle cx="100" cy="85" r="34" fill="#fff4a8" opacity=".9"/>
+  <path d="M0 350 Q130 320 270 348 T540 345 T800 350 V450 H0Z"
+        fill="#c9edbd"/>
+  <path d="M0 355 Q180 330 360 355 T800 350"
+        fill="none" stroke="#8bcf80" stroke-width="4" opacity=".7"/>
+
+  <!-- 云 -->
+  <g fill="#fff" opacity=".75">
+    <path d="M120 130c0-18 15-32 33-32 12 0 23 7 28 18 5-4 12-7 19-7 17 0 30 13 30 30H120Z"/>
+    <path d="M585 105c0-15 12-27 27-27 11 0 20 6 24 15 5-4 10-6 17-6 15 0 27 12 27 27h-95Z"/>
+  </g>
+
+  <!-- 从右向左移动的整体 -->
+  <g>
+    <animateTransform attributeName="transform"
+                      type="translate"
+                      from="900 0" to="-330 0"
+                      dur="9s" repeatCount="indefinite"/>
+
+    <!-- 地面影子 -->
+    <ellipse cx="405" cy="367" rx="115" ry="12"
+             fill="#548b67" opacity=".25" filter="url(#shadow)"/>
+
+    <!-- 滑板 -->
+    <g>
+      <path d="M292 326 Q305 346 330 346 H480 Q505 346 518 326"
+            fill="none" stroke="#4b3b50" stroke-width="7" stroke-linecap="round"/>
+      <path d="M285 318 Q300 329 322 329 H488 Q510 329 525 318"
+            fill="none" stroke="#352b3b" stroke-width="10" stroke-linecap="round"/>
+      <path d="M300 314 H510 Q520 314 525 318 Q510 331 488 331 H322 Q300 331 285 318 Q290 314 300 314Z"
+            fill="url(#board)" stroke="#352b3b" stroke-width="3"/>
+
+      <!-- 滑板车轮 -->
+      <g>
+        <g transform="translate(330 353)">
+          <circle r="15" fill="#34313c"/>
+          <circle r="7" fill="#f5d9a7"/>
+          <path d="M0-12V12M-12 0H12" stroke="#fff" stroke-width="2" opacity=".7"/>
+          <animateTransform attributeName="transform" type="rotate"
+                            from="0 0 0" to="360 0 0"
+                            dur=".55s" repeatCount="indefinite"
+                            additive="sum"/>
+        </g>
+        <g transform="translate(480 353)">
+          <circle r="15" fill="#34313c"/>
+          <circle r="7" fill="#f5d9a7"/>
+          <path d="M0-12V12M-12 0H12" stroke="#fff" stroke-width="2" opacity=".7"/>
+          <animateTransform attributeName="transform" type="rotate"
+                            from="0 0 0" to="360 0 0"
+                            dur=".55s" repeatCount="indefinite"
+                            additive="sum"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- 猫咪，轻微上下起伏 -->
+    <g>
+      <animateTransform attributeName="transform"
+                        type="translate"
+                        values="0 0; 0 -5; 0 0"
+                        dur=".8s" repeatCount="indefinite"/>
+
+      <!-- 尾巴 -->
+      <path d="M326 246 C285 236 278 190 315 176 C340 167 353 187 337 203"
+            fill="none" stroke="#5a3c38" stroke-width="15"
+            stroke-linecap="round"/>
+      <path d="M326 246 C285 236 278 190 315 176 C340 167 353 187 337 203"
+            fill="none" stroke="#c87557" stroke-width="8"
+            stroke-linecap="round"/>
+      <path d="M304 186 Q292 195 297 211"
+            fill="none" stroke="#f1c6a2" stroke-width="7"
+            stroke-linecap="round"/>
+
+      <!-- 身体 -->
+      <ellipse cx="405" cy="252" rx="76" ry="62"
+               fill="#f4e7d3" stroke="#49363a" stroke-width="4"/>
+
+      <!-- 三花斑纹 -->
+      <path d="M355 215 Q375 188 401 202 L412 230 Q383 243 355 231Z"
+            fill="#2f2932"/>
+      <path d="M425 201 Q460 203 475 232 Q456 246 431 232Z"
+            fill="#c86b50"/>
+      <path d="M388 272 Q424 250 461 274 Q443 307 404 307 Q386 300 388 272Z"
+            fill="#bd694f"/>
+      <path d="M345 260 Q360 245 379 256 L376 286 Q351 285 345 260Z"
+            fill="#37303a"/>
+
+      <!-- 后腿 -->
+      <path d="M438 292 L451 326 Q455 337 468 337"
+            fill="none" stroke="#49363a" stroke-width="15"
+            stroke-linecap="round"/>
+      <path d="M438 292 L451 326 Q455 337 468 337"
+            fill="none" stroke="#f4e7d3" stroke-width="9"
+            stroke-linecap="round"/>
+
+      <!-- 前腿 -->
+      <path d="M378 290 L365 323 Q362 336 350 337"
+            fill="none" stroke="#49363a" stroke-width="15"
+            stroke-linecap="round"/>
+      <path d="M378 290 L365 323 Q362 336 350 337"
+            fill="none" stroke="#f4e7d3" stroke-width="9"
+            stroke-linecap="round"/>
+
+      <!-- 头部 -->
+      <path d="M350 188 L348 135 L382 153
+               Q405 143 429 153 L463 135 L458 192
+               Q449 225 405 230 Q360 225 350 188Z"
+            fill="#f4e7d3" stroke="#49363a" stroke-width="4"/>
+
+      <!-- 耳朵内侧 -->
+      <path d="M355 149 L355 174 L377 160Z" fill="#dc8d83"/>
+      <path d="M436 160 L456 148 L454 176Z" fill="#dc8d83"/>
+
+      <!-- 头部三花 -->
+      <path d="M383 153 Q405 139 428 153 L420 183 Q402 190 382 180Z"
+            fill="#c86b50"/>
+      <path d="M351 176 Q360 156 378 155 L388 179 Q374 195 353 193Z"
+            fill="#37303a"/>
+      <path d="M425 154 Q448 151 458 176 L451 197 Q431 189 420 179Z"
+            fill="#37303a"/>
+
+      <!-- 脸 -->
+      <ellipse cx="385" cy="188" rx="7" ry="9" fill="#413342"/>
+      <ellipse cx="425" cy="188" rx="7" ry="9" fill="#413342"/>
+      <circle cx="383" cy="185" r="2.5" fill="#fff"/>
+      <circle cx="423" cy="185" r="2.5" fill="#fff"/>
+      <path d="M401 197 q5 5 10 0" fill="none"
+            stroke="#49363a" stroke-width="3" stroke-linecap="round"/>
+      <path d="M405 201 q-5 9-14 8 M405 201 q5 9 14 8"
+            fill="none" stroke="#49363a" stroke-width="2"
+            stroke-linecap="round"/>
+
+      <!-- 胡须 -->
+      <path d="M373 199 L335 193 M373 205 L332 211
+               M437 199 L475 193 M437 205 L479 211"
+            fill="none" stroke="#49363a" stroke-width="2"
+            stroke-linecap="round"/>
+
+      <!-- 前爪压在滑板上 -->
+      <path d="M365 322 Q374 329 383 322"
+            fill="none" stroke="#49363a" stroke-width="5"
+            stroke-linecap="round"/>
+      <path d="M448 322 Q457 329 466 322"
+            fill="none" stroke="#49363a" stroke-width="5"
+            stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- 速度线 -->
+  <g stroke="#74b6d2" stroke-width="4" stroke-linecap="round" opacity=".7">
+    <path d="M95 285 H190"/>
+    <path d="M150 305 H225"/>
+    <path d="M605 260 H680"/>
+  </g>
+</svg>

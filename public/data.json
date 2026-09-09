@@ -667,15 +667,14 @@
       "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图",
       "samples": [
         {
-          "id": "calico-skateboard-left-copilot-2026-09-09T11-05-56-381Z-gpt-6-astra",
+          "id": "calico-skateboard-left-copilot-2026-09-09T12-13-06-517Z-gpt-6-astra",
           "model": "GPT-6 Astra",
           "provider": "OpenAI",
           "reasoning": "default",
           "home": true,
-          "variant": "默认 · 样本 1",
           "note": "Copilot CLI",
-          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T11-05-56-381Z-gpt-6-astra.svg",
-          "prompt": "三花猫滑着滑板从右到左前进"
+          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T12-13-06-517Z-gpt-6-astra.svg",
+          "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图"
         },
         {
           "id": "calico-skateboard-left-copilot-2026-09-09T11-54-57-342Z-gemini-3.8-flash",
@@ -733,37 +732,34 @@
           "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图"
         },
         {
-          "id": "calico-skateboard-left-copilot-2026-09-09T11-05-56-394Z-gpt-5.6-sol",
+          "id": "calico-skateboard-left-copilot-2026-09-09T12-13-06-531Z-gpt-5.6-sol",
           "model": "GPT-5.6 Sol",
           "provider": "OpenAI",
           "reasoning": "default",
           "home": true,
-          "variant": "默认 · 样本 1",
           "note": "Copilot CLI",
-          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T11-05-56-394Z-gpt-5.6-sol.svg",
-          "prompt": "三花猫滑着滑板从右到左前进"
+          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T12-13-06-531Z-gpt-5.6-sol.svg",
+          "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图"
         },
         {
-          "id": "calico-skateboard-left-copilot-2026-09-09T11-05-56-405Z-gpt-5.6-terra",
+          "id": "calico-skateboard-left-copilot-2026-09-09T12-13-06-531Z-gpt-5.6-terra",
           "model": "GPT-5.6 Terra",
           "provider": "OpenAI",
           "reasoning": "default",
           "home": true,
-          "variant": "默认 · 样本 1",
           "note": "Copilot CLI",
-          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T11-05-56-405Z-gpt-5.6-terra.svg",
-          "prompt": "三花猫滑着滑板从右到左前进"
+          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T12-13-06-531Z-gpt-5.6-terra.svg",
+          "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图"
         },
         {
-          "id": "calico-skateboard-left-copilot-2026-09-09T11-05-56-415Z-gpt-5.6-luna",
+          "id": "calico-skateboard-left-copilot-2026-09-09T12-13-06-549Z-gpt-5.6-luna",
           "model": "GPT-5.6 Luna",
           "provider": "OpenAI",
           "reasoning": "default",
           "home": true,
-          "variant": "默认 · 样本 1",
           "note": "Copilot CLI",
-          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T11-05-56-415Z-gpt-5.6-luna.svg",
-          "prompt": "三花猫滑着滑板从右到左前进"
+          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T12-13-06-549Z-gpt-5.6-luna.svg",
+          "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图"
         },
         {
           "id": "calico-skateboard-left-copilot-2026-09-09T11-54-57-300Z-gemini-3.5-flash",
@@ -777,78 +773,71 @@
           "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图"
         },
         {
-          "id": "calico-skateboard-left-copilot-2026-09-09T11-06-34-841Z-gpt-5.5",
+          "id": "calico-skateboard-left-copilot-2026-09-09T12-14-15-947Z-gpt-5.5",
           "model": "GPT-5.5",
           "provider": "OpenAI",
           "reasoning": "default",
           "home": true,
-          "variant": "默认 · 样本 1",
           "note": "Copilot CLI",
-          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T11-06-34-841Z-gpt-5.5.svg",
-          "prompt": "三花猫滑着滑板从右到左前进"
+          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T12-14-15-947Z-gpt-5.5.svg",
+          "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图"
         },
         {
-          "id": "calico-skateboard-left-copilot-2026-09-09T11-06-54-326Z-gpt-5.4",
+          "id": "calico-skateboard-left-copilot-2026-09-09T12-14-54-365Z-gpt-5.4",
           "model": "GPT-5.4",
           "provider": "OpenAI",
           "reasoning": "default",
           "home": true,
-          "variant": "默认 · 样本 1",
           "note": "Copilot CLI",
-          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T11-06-54-326Z-gpt-5.4.svg",
-          "presentation": {
-            "fit": "contain"
-          },
-          "prompt": "三花猫滑着滑板从右到左前进"
+          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T12-14-54-365Z-gpt-5.4.svg",
+          "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图"
         },
         {
-          "id": "calico-skateboard-left-copilot-2026-09-09T11-07-03-334Z-gpt-5.3-codex",
+          "id": "calico-skateboard-left-copilot-2026-09-09T12-14-57-138Z-gpt-5.3-codex",
           "model": "GPT-5.3 Codex",
           "provider": "OpenAI",
           "reasoning": "default",
           "home": true,
-          "variant": "默认 · 样本 1",
           "note": "Copilot CLI",
-          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T11-07-03-334Z-gpt-5.3-codex.svg",
+          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T12-14-57-138Z-gpt-5.3-codex.svg",
+          "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图",
           "presentation": {
             "fit": "contain"
-          },
-          "prompt": "三花猫滑着滑板从右到左前进"
+          }
         },
         {
-          "id": "calico-skateboard-left-copilot-2026-09-09T11-07-43-180Z-gpt-5-mini",
+          "id": "calico-skateboard-left-copilot-2026-09-09T12-15-30-186Z-gpt-5-mini",
           "model": "GPT-5 mini",
           "provider": "OpenAI",
           "reasoning": "default",
           "home": true,
-          "variant": "默认 · 样本 1",
-          "note": "仅补 xlink 命名空间，原始输出保留",
-          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T11-07-43-180Z-gpt-5-mini.svg",
+          "note": "Copilot CLI",
+          "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T12-15-30-186Z-gpt-5-mini.svg",
+          "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图",
           "presentation": {
             "fit": "contain"
-          },
-          "prompt": "三花猫滑着滑板从右到左前进"
+          }
         },
         {
-          "id": "calico-skateboard-left-api-2026-09-09T11-08-22-840Z-gpt-4.1",
+          "id": "calico-skateboard-left-api-2026-09-09T12-17-05-951Z-gpt-4.1",
           "model": "GPT-4.1",
           "provider": "OpenAI",
           "reasoning": "default",
           "home": true,
-          "src": "assets/calico-skateboard-left/api/api-2026-09-09T11-08-22-840Z-gpt-4.1.svg",
-          "prompt": "三花猫滑着滑板从右到左前进"
+          "src": "assets/calico-skateboard-left/api/api-2026-09-09T12-17-05-951Z-gpt-4.1.svg",
+          "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图"
         },
         {
-          "id": "calico-skateboard-left-api-2026-09-09T11-08-18-037Z-gpt-4o",
+          "id": "calico-skateboard-left-api-2026-09-09T12-16-57-136Z-gpt-4o",
           "model": "GPT-4o",
           "provider": "OpenAI",
           "reasoning": "default",
           "home": true,
-          "src": "assets/calico-skateboard-left/api/api-2026-09-09T11-08-18-037Z-gpt-4o.svg",
+          "src": "assets/calico-skateboard-left/api/api-2026-09-09T12-16-57-136Z-gpt-4o.svg",
+          "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图",
           "presentation": {
             "fit": "contain"
-          },
-          "prompt": "三花猫滑着滑板从右到左前进"
+          }
         }
       ],
       "aliases": [
