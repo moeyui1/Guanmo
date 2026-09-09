@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <!-- 天空 -->
+  <rect width="800" height="400" fill="#cdeafc"/>
+  <rect y="350" width="800" height="50" fill="#e8dcc8"/>
+  <rect y="350" width="800" height="6" fill="#d4c3aa"/>
+
+  <!-- 云（向右飘，衬托向左前进） -->
+  <g fill="#ffffff" opacity="0.9">
+    <g>
+      <ellipse cx="0" cy="70" rx="46" ry="18"/>
+      <ellipse cx="30" cy="60" rx="30" ry="14"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="-120 0; 920 0" dur="7s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <ellipse cx="0" cy="140" rx="38" ry="14"/>
+      <ellipse cx="26" cy="132" rx="24" ry="11"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="-120 0; 920 0" dur="10s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <ellipse cx="0" cy="50" rx="34" ry="12"/>
+      <ellipse cx="22" cy="43" rx="20" ry="9"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="350 0; 920 0; 920 0" dur="10s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- 地面虚线向右掠过 -->
+  <g stroke="#c9b697" stroke-width="5" stroke-linecap="round">
+    <line x1="0" y1="378" x2="46" y2="378">
+      <animate attributeName="x1" values="-60;800" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="-14;846" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="378" x2="46" y2="378">
+      <animate attributeName="x1" values="-380;800" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="-334;846" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="378" x2="46" y2="378">
+      <animate attributeName="x1" values="-700;800" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="-654;846" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- 速度线（跟在猫后面，向右飞逝） -->
+  <g stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.85">
+    <line x1="0" y1="0" x2="70" y2="0">
+      <animate attributeName="transform" type="translate" values="900 210; 380 210" dur="0.5s" repeatCount="indefinite" additive="sum"/>
+    </line>
+    <line x1="0" y1="0" x2="90" y2="0">
+      <animateTransform attributeName="transform" type="translate" values="900 250; 360 250" dur="0.45s" begin="-0.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="0" x2="60" y2="0">
+      <animateTransform attributeName="transform" type="translate" values="900 290; 400 290" dur="0.55s" begin="-0.35s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- 猫 + 滑板整体：从右往左滑行 -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="920 0; -320 0" dur="6s" repeatCount="indefinite"/>
+
+    <!-- 滑板 -->
+    <g>
+      <path d="M -95 330 L 95 330 L 82 318 L -82 318 Z" fill="#f2a541" stroke="#c77f2a" stroke-width="3" stroke-linejoin="round"/>
+      <!-- 板头板尾翘起 -->
+      <path d="M -82 318 Q -108 316 -112 300" fill="none" stroke="#f2a541" stroke-width="9" stroke-linecap="round"/>
+      <path d="M 82 318 Q 108 316 112 300" fill="none" stroke="#f2a541" stroke-width="9" stroke-linecap="round"/>
+      <!-- 桥 -->
+      <rect x="-66" y="333" width="16" height="14" fill="#8a8f98"/>
+      <rect x="50" y="333" width="16" height="14" fill="#8a8f98"/>
+      <!-- 轮子（向后转） -->
+      <g>
+        <circle cx="-58" cy="352" r="13" fill="#ff8c42" stroke="#c96a1e" stroke-width="3"/>
+        <line x1="-58" y1="341" x2="-58" y2="363" stroke="#c96a1e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="-69" y1="352" x2="-47" y2="352" stroke="#c96a1e" stroke-width="3" stroke-linecap="round"/>
+        <animateTransform attributeName="transform" type="rotate"
+          from="0 -58 352" to="-360 -58 352" dur="0.35s" repeatCount="indefinite"/>
+      </g>
+      <g>
+        <circle cx="58" cy="352" r="13" fill="#ff8c42" stroke="#c96a1e" stroke-width="3"/>
+        <line x1="58" y1="341" x2="58" y2="363" stroke="#c96a1e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="47" y1="352" x2="69" y2="352" stroke="#c96a1e" stroke-width="3" stroke-linecap="round"/>
+        <animateTransform attributeName="transform" type="rotate"
+          from="0 58 352" to="-360 58 352" dur="0.35s" repeatCount="indefinite"/>
+      </g>
+    </g>
+
+    <!-- 猫（轻微上下颠簸） -->
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="0 0; 0 -4; 0 0" dur="0.45s" repeatCount="indefinite" additive="sum"/>
+
+      <!-- 尾巴（黑色尖端，摆动） -->
+      <g>
+        <path d="M 42 272 Q 92 260 100 210" fill="none" stroke="#f5f2ea" stroke-width="15" stroke-linecap="round"/>
+        <path d="M 97 226 Q 101 216 100 208" fill="none" stroke="#3a3a3a" stroke-width="15" stroke-linecap="round"/>
+        <animateTransform attributeName="transform" type="rotate"
+          values="0 42 272; -10 42 272; 0 42 272" dur="0.6s" repeatCount="indefinite"/>
+      </g>
+
+      <!-- 后腿 -->
+      <rect x="22" y="290" width="17" height="38" rx="8" fill="#f5f2ea"/>
+      <!-- 前腿（一前撑板，一后收） -->
+      <rect x="-52" y="290" width="17" height="38" rx="8" fill="#f5f2ea"/>
+      <rect x="-14" y="288" width="17" height="40" rx="8" fill="#f7f4ec" transform="rotate(-14 -5 288)"/>
+
+      <!-- 身体：白色 -->
+      <ellipse cx="0" cy="268" rx="52" ry="42" fill="#f5f2ea"/>
+      <!-- 橘色斑块 -->
+      <path d="M -10 226 Q 30 218 48 240 Q 56 262 44 284 Q 20 262 -10 226 Z" fill="#f0a24b"/>
+      <!-- 黑色斑块 -->
+      <path d="M 30 292 Q 50 288 52 272 Q 54 292 44 302 Q 34 302 30 292 Z" fill="#3a3a3a"/>
+      <!-- 胸前橘斑 -->
+      <path d="M -34 288 Q -20 300 -2 296 Q -18 308 -36 300 Z" fill="#f0a24b"/>
+
+      <!-- 头（朝左） -->
+      <g>
+        <!-- 耳朵 -->
+        <path d="M -78 218 L -88 186 L -58 202 Z" fill="#f5f2ea" stroke="#e0d9cb" stroke-width="2"/>
+        <path d="M -82 214 L -85 197 L -68 205 Z" fill="#f0a24b"/>
+        <path d="M -42 204 L -22 182 L -18 214 Z" fill="#3a3a3a"/>
+        <path d="M -40 205 L -28 192 L -26 208 Z" fill="#ffb3c1"/>
+        <!-- 头部 -->
+        <circle cx="-55" cy="226" r="32" fill="#f5f2ea"/>
+        <!-- 头顶橘色斑 -->
+        <path d="M -80 214 Q -68 194 -44 198 Q -60 206 -80 214 Z" fill="#f0a24b"/>
+        <path d="M -86 228 Q -82 210 -70 202 Q -76 216 -78 232 Z" fill="#f0a24b"/>
+        <!-- 眼睛（专注看路） -->
+        <circle cx="-70" cy="222" r="4.5" fill="#3a3a3a"/>
+        <circle cx="-46" cy="220" r="4.5" fill="#3a3a3a"/>
+        <circle cx="-71.5" cy="220.5" r="1.5" fill="#ffffff"/>
+        <circle cx="-47.5" cy="218.5" r="1.5" fill="#ffffff"/>
+        <!-- 鼻子与嘴 -->
+        <path d="M -60 236 l -4 -3 l 8 0 Z" fill="#ffb3c1"/>
+        <path d="M -60 238 Q -63 243 -67 241" fill="none" stroke="#3a3a3a" stroke-width="2" stroke-linecap="round"/>
+        <path d="M -60 238 Q -57 243 -53 241" fill="none" stroke="#3a3a3a" stroke-width="2" stroke-linecap="round"/>
+        <!-- 胡须 -->
+        <g stroke="#c9c2b4" stroke-width="1.8" stroke-linecap="round">
+          <line x1="-84" y1="230" x2="-100" y2="227"/>
+          <line x1="-84" y1="236" x2="-100" y2="238"/>
+          <line x1="-30" y1="230" x2="-16" y2="227"/>
+          <line x1="-30" y1="236" x2="-16" y2="238"/>
+        </g>
+        <!-- 腮红 -->
+        <ellipse cx="-76" cy="234" rx="5" ry="3" fill="#ffc7cf" opacity="0.7"/>
+        <ellipse cx="-36" cy="232" rx="5" ry="3" fill="#ffc7cf" opacity="0.7"/>
+      </g>
+
+      <!-- 项圈 -->
+      <path d="M -30 254 Q -18 264 -6 262" fill="none" stroke="#e35d6a" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="-18" cy="264" r="4" fill="#ffd166"/>
+    </g>
+  </g>
+</svg>

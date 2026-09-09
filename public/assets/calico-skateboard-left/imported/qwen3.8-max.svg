@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <!-- 地面 -->
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a0a0a0"/>
+      <stop offset="100%" stop-color="#707070"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景天空 -->
+  <rect width="800" height="400" fill="#87CEEB"/>
+  
+  <!-- 地面 -->
+  <rect y="320" width="800" height="80" fill="url(#ground)"/>
+  
+  <!-- 地面纹理线条（产生速度感） -->
+  <g>
+    <line x1="0" y1="340" x2="800" y2="340" stroke="#888" stroke-width="1" stroke-dasharray="40,60">
+      <animate attributeName="stroke-dashoffset" from="0" to="100" dur="0.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="360" x2="800" y2="360" stroke="#888" stroke-width="1" stroke-dasharray="30,70">
+      <animate attributeName="stroke-dashoffset" from="0" to="100" dur="0.4s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- 猫咪+滑板整体组，从右向左移动 -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" 
+      from="850,0" to="-200,0" dur="4s" repeatCount="indefinite"/>
+    
+    <!-- 轻微上下浮动模拟滑行颠簸 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0;0,-3;0,0;0,-2;0,0" dur="0.6s" repeatCount="indefinite"/>
+      
+      <!-- 滑板 -->
+      <g transform="translate(0, 295)">
+        <!-- 滑板板面 -->
+        <ellipse cx="0" cy="0" rx="55" ry="8" fill="#D2691E" stroke="#8B4513" stroke-width="2"/>
+        <!-- 滑板轮子 -->
+        <circle cx="-35" cy="10" r="6" fill="#333" stroke="#555" stroke-width="1.5">
+          <animateTransform attributeName="transform" type="rotate" 
+            from="0 -35 10" to="-360 -35 10" dur="0.3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="35" cy="10" r="6" fill="#333" stroke="#555" stroke-width="1.5">
+          <animateTransform attributeName="transform" type="rotate" 
+            from="0 35 10" to="-360 35 10" dur="0.3s" repeatCount="indefinite"/>
+        </circle>
+        <!-- 轮轴 -->
+        <rect x="-40" y="6" width="12" height="4" rx="1" fill="#666"/>
+        <rect x="28" y="6" width="12" height="4" rx="1" fill="#666"/>
+      </g>
+
+      <!-- 三花猫身体 -->
+      <g transform="translate(0, 255)">
+        <!-- 尾巴 -->
+        <path d="M25,10 Q50,-15 45,-30 Q42,-38 35,-32 Q30,-20 20,5" 
+              fill="#FF8C00" stroke="#333" stroke-width="1.5">
+          <animate attributeName="d" 
+            values="M25,10 Q50,-15 45,-30 Q42,-38 35,-32 Q30,-20 20,5;
+                    M25,10 Q55,-10 50,-28 Q48,-36 40,-30 Q32,-18 20,5;
+                    M25,10 Q50,-15 45,-30 Q42,-38 35,-32 Q30,-20 20,5"
+            dur="0.8s" repeatCount="indefinite"/>
+        </path>
+        
+        <!-- 身体（白色底色） -->
+        <ellipse cx="0" cy="10" rx="28" ry="22" fill="#FFF8F0" stroke="#333" stroke-width="1.5"/>
+        <!-- 三花色块-橙色 -->
+        <ellipse cx="-10" cy="5" rx="14" ry="12" fill="#FF8C00" opacity="0.9"/>
+        <!-- 三花色块-黑色 -->
+        <ellipse cx="12" cy="15" rx="12" ry="10" fill="#2a2a2a" opacity="0.85"/>
+        <ellipse cx="-5" cy="20" rx="8" ry="6" fill="#2a2a2a" opacity="0.7"/>
+        
+        <!-- 前腿 -->
+        <rect x="-18" y="25" width="8" height="18" rx="3" fill="#FFF8F0" stroke="#333" stroke-width="1.2"/>
+        <rect x="8" y="25" width="8" height="18" rx="3" fill="#FF8C00" stroke="#333" stroke-width="1.2"/>
+        <!-- 爪子 -->
+        <ellipse cx="-14" cy="43" rx="5" ry="3" fill="#FFF8F0" stroke="#333" stroke-width="1"/>
+        <ellipse cx="12" cy="43" rx="5" ry="3" fill="#FF8C00" stroke="#333" stroke-width="1"/>
+        
+        <!-- 头部 -->
+        <g transform="translate(-5, -18)">
+          <!-- 头（白色） -->
+          <circle cx="0" cy="0" r="18" fill="#FFF8F0" stroke="#333" stroke-width="1.5"/>
+          <!-- 头部三花色块 -->
+          <path d="M-12,-8 Q-8,-16 0,-14 Q5,-12 8,-6 Q4,0 -4,2 Q-10,0 -12,-8Z" fill="#FF8C00"/>
+          <path d="M6,-10 Q12,-14 16,-6 Q14,0 10,2 Q6,-2 6,-10Z" fill="#2a2a2a"/>
+          
+          <!-- 耳朵 -->
+          <polygon points="-14,-12 -18,-28 -6,-18" fill="#FF8C00" stroke="#333" stroke-width="1.5"/>
+          <polygon points="-13,-14 -16,-24 -8,-17" fill="#FFB6C1"/>
+          <polygon points="14,-12 18,-28 6,-18" fill="#2a2a2a" stroke="#333" stroke-width="1.5"/>
+          <polygon points="13,-14 16,-24 8,-17" fill="#FFB6C1"/>
+          
+          <!-- 眼睛 -->
+          <ellipse cx="-6" cy="-2" rx="3.5" ry="4" fill="#4CAF50"/>
+          <ellipse cx="6" cy="-2" rx="3.5" ry="4" fill="#4CAF50"/>
+          <circle cx="-6" cy="-2" r="1.8" fill="#111"/>
+          <circle cx="6" cy="-2" r="1.8" fill="#111"/>
+          <circle cx="-5" cy="-3.5" r="0.8" fill="#fff"/>
+          <circle cx="7" cy="-3.5" r="0.8" fill="#fff"/>
+          
+          <!-- 鼻子和嘴 -->
+          <polygon points="0,4 -2,6 2,6" fill="#FFB6C1"/>
+          <path d="M0,6 Q-3,9 -5,7" fill="none" stroke="#333" stroke-width="0.8"/>
+          <path d="M0,6 Q3,9 5,7" fill="none" stroke="#333" stroke-width="0.8"/>
+          
+          <!-- 胡须 -->
+          <line x1="-8" y1="5" x2="-20" y2="2" stroke="#333" stroke-width="0.6"/>
+          <line x1="-8" y1="7" x2="-20" y2="8" stroke="#333" stroke-width="0.6"/>
+          <line x1="8" y1="5" x2="20" y2="2" stroke="#333" stroke-width="0.6"/>
+          <line x1="8" y1="7" x2="20" y2="8" stroke="#333" stroke-width="0.6"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- 速度线效果 -->
+  <g opacity="0.4">
+    <line x1="700" y1="260" x2="760" y2="260" stroke="#fff" stroke-width="2" stroke-linecap="round">
+      <animate attributeName="x1" values="700;600;700" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="760;660;760" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0;0.4" dur="0.8s" repeatCount="indefinite"/>
+    </line>
+    <line x1="680" y1="280" x2="750" y2="280" stroke="#fff" stroke-width="1.5" stroke-linecap="round">
+      <animate attributeName="x1" values="680;580;680" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="750;650;750" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0;0.3" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+    <line x1="720" y1="240" x2="770" y2="240" stroke="#fff" stroke-width="1.5" stroke-linecap="round">
+      <animate attributeName="x1" values="720;620;720" dur="0.7s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="770;670;770" dur="0.7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.35;0;0.35" dur="0.7s" repeatCount="indefinite"/>
+    </line>
+  </g>
+</svg>

@@ -14,6 +14,7 @@
 | GPT-5.6 Terra | 2026-07-09 | [官方记录](https://developers.openai.com/api/docs/changelog) |
 | GPT-5.6 Luna | 2026-07-09 | [官方记录](https://developers.openai.com/api/docs/changelog) |
 | Gemini 3.5 Flash | 2026-05-19 | [官方记录](https://ai.google.dev/gemini-api/docs/changelog) |
+| DeepSeek V4 Pro | 2026-04-24 | [官方记录](https://api-docs.deepseek.com/updates) |
 | DeepSeek V4 Flash | 2026-04-24 | [官方记录](https://api-docs.deepseek.com/updates) |
 | GPT-5.5 | 2026-04-23 | [官方记录](https://developers.openai.com/codex/changelog) |
 | GPT-5.4 | 2026-03-05 | [官方记录](https://developers.openai.com/api/docs/changelog) |
@@ -34,3 +35,5 @@
 - GPT-5.6 三个型号同日发布，保留 Sol、Terra、Luna 的稳定顺序。缺失日期的模型排最后。
 
 页面仅使用日期排序，不展示这些维护备注。原始网页文本摘录在 private/release-research/。
+
+- Doubao 2.1 Turbo、GLM-5.3、MiniMax M3、Qwen3.8-Max：首发日期暂未确认，按缺失日期规则排在已知日期的模型之后。

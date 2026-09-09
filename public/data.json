@@ -781,6 +781,25 @@
           "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图"
         },
         {
+          "id": "calico-skateboard-left-deepseek-v4-flash",
+          "model": "DeepSeek V4 Flash",
+          "provider": "DeepSeek",
+          "reasoning": "unspecified",
+          "home": true,
+          "src": "assets/calico-skateboard-left/imported/deepseek-v4-flash.svg",
+          "presentation": {
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "calico-skateboard-left-deepseek-v4-pro",
+          "model": "DeepSeek V4 Pro",
+          "provider": "DeepSeek",
+          "reasoning": "unspecified",
+          "home": true,
+          "src": "assets/calico-skateboard-left/imported/deepseek-v4-pro.svg"
+        },
+        {
           "id": "calico-skateboard-left-copilot-2026-09-09T12-14-15-947Z-gpt-5.5",
           "model": "GPT-5.5",
           "provider": "OpenAI",
@@ -846,6 +865,41 @@
           "presentation": {
             "fit": "contain"
           }
+        },
+        {
+          "id": "calico-skateboard-left-doubao-2.1-turbo",
+          "model": "Doubao 2.1 Turbo",
+          "provider": "ByteDance",
+          "reasoning": "unspecified",
+          "home": true,
+          "src": "assets/calico-skateboard-left/imported/doubao-2.1-turbo.svg",
+          "presentation": {
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "calico-skateboard-left-glm5.3",
+          "model": "GLM-5.3",
+          "provider": "Z.ai",
+          "reasoning": "unspecified",
+          "home": true,
+          "src": "assets/calico-skateboard-left/imported/glm5.3.svg"
+        },
+        {
+          "id": "calico-skateboard-left-minimax-m3",
+          "model": "MiniMax M3",
+          "provider": "MiniMax",
+          "reasoning": "unspecified",
+          "home": true,
+          "src": "assets/calico-skateboard-left/imported/minimax-m3.svg"
+        },
+        {
+          "id": "calico-skateboard-left-qwen3.8-max",
+          "model": "Qwen3.8-Max",
+          "provider": "Alibaba",
+          "reasoning": "unspecified",
+          "home": true,
+          "src": "assets/calico-skateboard-left/imported/qwen3.8-max.svg"
         }
       ],
       "aliases": [
@@ -877,6 +931,11 @@
     "GPT-5 mini",
     "GPT-4.1",
     "GPT-4o",
+    "DeepSeek V4 Pro",
+    "Doubao 2.1 Turbo",
+    "GLM-5.3",
+    "MiniMax M3",
+    "Qwen3.8-Max",
     "未标注模型"
   ],
   "modelReleases": [
@@ -996,6 +1055,12 @@
     },
     {
       "model": "DeepSeek V4 Flash",
+      "provider": "DeepSeek",
+      "releaseDate": "2026-04-24",
+      "source": "https://api-docs.deepseek.com/updates"
+    },
+    {
+      "model": "DeepSeek V4 Pro",
       "provider": "DeepSeek",
       "releaseDate": "2026-04-24",
       "source": "https://api-docs.deepseek.com/updates"
