@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#87CEEB"/>
+      <stop offset="100%" stop-color="#E0F7FA"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8BC34A"/>
+      <stop offset="100%" stop-color="#558B2F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#sky)"/>
+  <rect y="320" width="800" height="80" fill="url(#ground)"/>
+  <!-- Road -->
+  <rect y="300" width="800" height="30" fill="#555"/>
+  <g>
+    <rect y="312" width="40" height="6" fill="#FFD54F" rx="2">
+      <animate attributeName="x" values="800;-40" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect y="312" width="40" height="6" fill="#FFD54F" rx="2">
+      <animate attributeName="x" values="960;-40" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect y="312" width="40" height="6" fill="#FFD54F" rx="2">
+      <animate attributeName="x" values="1120;-40" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect y="312" width="40" height="6" fill="#FFD54F" rx="2">
+      <animate attributeName="x" values="1280;-40" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Moving cat group: right to left -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="850,0; -200,0" dur="4s" repeatCount="indefinite"/>
+
+    <!-- Bobbing while skating -->
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 0,-4; 0,0; 0,-3; 0,0" dur="0.5s" repeatCount="indefinite"/>
+
+      <!-- Skateboard -->
+      <g transform="translate(0,250)">
+        <!-- Deck -->
+        <rect x="20" y="20" width="120" height="14" rx="7" fill="#5D4037"/>
+        <rect x="24" y="22" width="112" height="6" rx="3" fill="#8D6E63"/>
+        <!-- Trucks -->
+        <rect x="35" y="34" width="18" height="6" rx="2" fill="#37474F"/>
+        <rect x="107" y="34" width="18" height="6" rx="2" fill="#37474F"/>
+        <!-- Wheels -->
+        <circle cx="44" cy="44" r="10" fill="#212121">
+          <animateTransform attributeName="transform" type="rotate"
+            values="0 44 44; -360 44 44" dur="0.4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="44" cy="44" r="5" fill="#90A4AE"/>
+        <circle cx="116" cy="44" r="10" fill="#212121">
+          <animateTransform attributeName="transform" type="rotate"
+            values="0 116 44; -360 116 44" dur="0.4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="116" cy="44" r="5" fill="#90A4AE"/>
+      </g>
+
+      <!-- Calico cat body -->
+      <g transform="translate(40,160)">
+        <!-- Tail -->
+        <path d="M110,70 Q140,40 155,70 Q145,55 125,75" fill="#F5F5F5" stroke="#E0E0E0" stroke-width="1">
+          <animate attributeName="d"
+            values="M110,70 Q140,40 155,70 Q145,55 125,75;
+                    M110,70 Q145,55 150,85 Q140,60 125,75;
+                    M110,70 Q140,40 155,70 Q145,55 125,75"
+            dur="0.6s" repeatCount="indefinite"/>
+        </path>
+        <ellipse cx="148" cy="58" rx="8" ry="6" fill="#FF9800" transform="rotate(-20 148 58)"/>
+        <ellipse cx="130" cy="52" rx="7" ry="5" fill="#212121" transform="rotate(10 130 52)"/>
+
+        <!-- Hind legs -->
+        <ellipse cx="95" cy="95" rx="14" ry="22" fill="#F5F5F5" transform="rotate(15 95 95)"/>
+        <ellipse cx="100" cy="110" rx="10" ry="8" fill="#FF9800"/>
+        <ellipse cx="75" cy="98" rx="12" ry="20" fill="#F5F5F5" transform="rotate(-10 75 98)"/>
+        <ellipse cx="72" cy="112" rx="9" ry="7" fill="#212121"/>
+
+        <!-- Body -->
+        <ellipse cx="60" cy="70" rx="45" ry="32" fill="#F5F5F5"/>
+        <!-- Calico patches -->
+        <ellipse cx="40" cy="55" rx="18" ry="14" fill="#FF9800" transform="rotate(-20 40 55)"/>
+        <ellipse cx="75" cy="60" rx="16" ry="12" fill="#212121" transform="rotate(15 75 60)"/>
+        <ellipse cx="55" cy="85" rx="14" ry="10" fill="#FF9800" transform="rotate(5 55 85)"/>
+        <ellipse cx="85" cy="80" rx="10" ry="8" fill="#212121"/>
+
+        <!-- Front legs -->
+        <ellipse cx="30" cy="95" rx="11" ry="20" fill="#F5F5F5" transform="rotate(-5 30 95)">
+          <animateTransform attributeName="transform" type="rotate"
+            values="-5 30 95; 8 30 95; -5 30 95" dur="0.5s" repeatCount="indefinite"/>
+        </ellipse>
+        <ellipse cx="28" cy="112" rx="9" ry="7" fill="#FF9800"/>
+        <ellipse cx="48" cy="98" rx="10" ry="18" fill="#F5F5F5" transform="rotate(8 48 98)">
+          <animateTransform attributeName="transform" type="rotate"
+            values="8 48 98; -6 48 98; 8 48 98" dur="0.5s" repeatCount="indefinite"/>
+        </ellipse>
+        <ellipse cx="50" cy="112" rx="8" ry="6" fill="#212121"/>
+
+        <!-- Head -->
+        <g transform="translate(5,25)">
+          <!-- Ears -->
+          <polygon points="8,-5 18,18 0,18" fill="#F5F5F5"/>
+          <polygon points="10,0 16,15 4,15" fill="#FFAB91"/>
+          <polygon points="42,-5 52,18 32,18" fill="#F5F5F5"/>
+          <polygon points="44,0 50,15 38,15" fill="#FFAB91"/>
+          <!-- Orange ear tip -->
+          <polygon points="8,-5 14,5 6,8" fill="#FF9800"/>
+          <!-- Black ear tip -->
+          <polygon points="46,-5 52,5 42,8" fill="#212121"/>
+
+          <!-- Face -->
+          <ellipse cx="28" cy="28" rx="28" ry="24" fill="#F5F5F5"/>
+          <!-- Face patches -->
+          <ellipse cx="14" cy="22" rx="12" ry="10" fill="#FF9800"/>
+          <ellipse cx="40" cy="20" rx="10" ry="9" fill="#212121"/>
+          <ellipse cx="28" cy="38" rx="8" ry="6" fill="#FF9800" opacity="0.7"/>
+
+          <!-- Eyes -->
+          <ellipse cx="18" cy="26" rx="5" ry="6" fill="#fff"/>
+          <ellipse cx="38" cy="26" rx="5" ry="6" fill="#fff"/>
+          <ellipse cx="19" cy="27" rx="2.5" ry="3.5" fill="#2E7D32"/>
+          <ellipse cx="39" cy="27" rx="2.5" ry="3.5" fill="#2E7D32"/>
+          <circle cx="19.5" cy="26" r="1" fill="#fff"/>
+          <circle cx="39.5" cy="26" r="1" fill="#fff"/>
+
+          <!-- Nose -->
+          <ellipse cx="28" cy="36" rx="4" ry="3" fill="#FF8A80"/>
+          <!-- Mouth -->
+          <path d="M28,39 Q22,44 18,42" fill="none" stroke="#5D4037" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M28,39 Q34,44 38,42" fill="none" stroke="#5D4037" stroke-width="1.5" stroke-linecap="round"/>
+
+          <!-- Whiskers -->
+          <line x1="8" y1="34" x2="-8" y2="30" stroke="#9E9E9E" stroke-width="1"/>
+          <line x1="8" y1="38" x2="-6" y2="40" stroke="#9E9E9E" stroke-width="1"/>
+          <line x1="48" y1="34" x2="64" y2="30" stroke="#9E9E9E" stroke-width="1"/>
+          <line x1="48" y1="38" x2="62" y2="40" stroke="#9E9E9E" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Clouds drifting opposite for depth -->
+  <g opacity="0.85">
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="-100,0; 900,0" dur="28s" repeatCount="indefinite"/>
+      <ellipse cx="80" cy="60" rx="40" ry="22" fill="#fff"/>
+      <ellipse cx="110" cy="55" rx="30" ry="20" fill="#fff"/>
+      <ellipse cx="55" cy="55" rx="25" ry="18" fill="#fff"/>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="-200,0; 900,0" dur="35s" repeatCount="indefinite"/>
+      <ellipse cx="200" cy="100" rx="35" ry="18" fill="#fff"/>
+      <ellipse cx="230" cy="95" rx="28" ry="16" fill="#fff"/>
+      <ellipse cx="175" cy="95" rx="22" ry="14" fill="#fff"/>
+    </g>
+  </g>
+</svg>

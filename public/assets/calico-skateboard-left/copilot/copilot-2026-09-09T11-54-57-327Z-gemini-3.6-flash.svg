@@ -1,0 +1,222 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <defs>
+    <!-- 天空背景渐变 -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a1c29" />
+      <stop offset="60%" stop-color="#322443" />
+      <stop offset="100%" stop-color="#5c3d5e" />
+    </linearGradient>
+
+    <!-- 地面渐变 -->
+    <linearGradient id="roadGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#282a36" />
+      <stop offset="100%" stop-color="#181920" />
+    </linearGradient>
+
+    <!-- 滑板板面渐变 -->
+    <linearGradient id="boardGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff758c" />
+      <stop offset="100%" stop-color="#ff7eb3" />
+    </linearGradient>
+
+    <!-- 旋转轮子模板 -->
+    <g id="wheel">
+      <circle cx="0" cy="0" r="14" fill="#f4a261" />
+      <circle cx="0" cy="0" r="10" fill="#e9c46a" />
+      <circle cx="0" cy="0" r="4" fill="#264653" />
+      <line x1="-10" y1="0" x2="10" y2="0" stroke="#264653" stroke-width="2" />
+      <line x1="0" y1="-10" x2="0" y2="10" stroke="#264653" stroke-width="2" />
+    </g>
+  </defs>
+
+  <style>
+    /* 星星闪烁动画 */
+    .star { animation: pulse 2s infinite ease-in-out alternate; }
+    @keyframes pulse {
+      0% { opacity: 0.3; }
+      100% { opacity: 0.9; }
+    }
+
+    /* 从右向左平移动画 */
+    .skater-group {
+      animation: driveLeft 4s linear infinite;
+    }
+    @keyframes driveLeft {
+      0% { transform: translate(900px, 0px); }
+      100% { transform: translate(-350px, 0px); }
+    }
+
+    /* 滑行颠簸动画 */
+    .skater-bob {
+      animation: bob 0.35s infinite alternate ease-in-out;
+    }
+    @keyframes bob {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-4px) rotate(-1.5deg); }
+    }
+
+    /* 轮子旋转动画 */
+    .spinning-wheel {
+      animation: spin 0.25s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(360deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    /* 尾巴摆动 */
+    .tail {
+      transform-origin: 140px 200px;
+      animation: tailWag 0.6s infinite alternate ease-in-out;
+    }
+    @keyframes tailWag {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(18deg); }
+    }
+
+    /* 围巾飘舞 */
+    .scarf {
+      transform-origin: 75px 165px;
+      animation: scarfFlutter 0.25s infinite alternate ease-in-out;
+    }
+    @keyframes scarfFlutter {
+      0% { transform: rotate(0deg) scaleY(1); }
+      100% { transform: rotate(-10deg) scaleY(1.15); }
+    }
+  </style>
+
+  <!-- 夜空背景 -->
+  <rect width="800" height="400" fill="url(#skyGrad)" />
+
+  <!-- 星空与月亮 -->
+  <g class="star">
+    <circle cx="100" cy="50" r="2" fill="#fff" opacity="0.8"/>
+    <circle cx="250" cy="80" r="1.5" fill="#fff" opacity="0.6"/>
+    <circle cx="420" cy="40" r="2.5" fill="#fff" opacity="0.9"/>
+    <circle cx="600" cy="90" r="1.5" fill="#fff" opacity="0.7"/>
+    <circle cx="730" cy="60" r="2" fill="#fff" opacity="0.5"/>
+  </g>
+  <circle cx="680" cy="70" r="32" fill="#ffeaa7" opacity="0.8" />
+  <circle cx="665" cy="60" r="28" fill="#1a1c29" opacity="0.95" />
+
+  <!-- 城市剪影 -->
+  <path d="M0 260 L40 260 L40 230 L70 230 L70 260 L120 260 L120 200 L160 200 L160 260 L230 260 L230 220 L270 220 L270 260 L350 260 L350 190 L390 190 L390 260 L480 260 L480 240 L520 240 L520 260 L600 260 L600 210 L650 210 L650 260 L720 260 L720 235 L760 235 L760 260 L800 260 L800 300 L0 300 Z" fill="#211832" opacity="0.7" />
+
+  <!-- 地面与跑道线 -->
+  <rect y="280" width="800" height="120" fill="url(#roadGrad)" />
+  <line x1="0" y1="280" x2="800" y2="280" stroke="#ff79c6" stroke-width="3" opacity="0.6" />
+  <line x1="0" y1="330" x2="800" y2="330" stroke="#fff" stroke-width="3" stroke-dasharray="60 120" opacity="0.15" />
+  <line x1="0" y1="370" x2="800" y2="370" stroke="#ffb86c" stroke-width="2" stroke-dasharray="40 80" opacity="0.2" />
+
+  <!-- 三花猫滑板主体（从右向左移动） -->
+  <g class="skater-group">
+    <g class="skater-bob" transform="translate(0, 60)">
+      
+      <!-- 速度风线效果 -->
+      <g opacity="0.6">
+        <path d="M 180 210 L 250 210" stroke="#8be9fd" stroke-width="3" stroke-linecap="round" />
+        <path d="M 190 180 L 270 180" stroke="#ff79c6" stroke-width="2" stroke-linecap="round" />
+        <path d="M 170 150 L 240 150" stroke="#8be9fd" stroke-width="2" stroke-linecap="round" />
+      </g>
+
+      <!-- 滑板部分 -->
+      <g id="skateboard">
+        <!-- 阴影 -->
+        <ellipse cx="90" cy="235" rx="75" ry="7" fill="#000" opacity="0.4" />
+        
+        <!-- 板面 -->
+        <path d="M 10 215 C 5 205, 25 218, 50 218 L 130 218 C 155 218, 175 205, 170 215 C 165 224, 145 225, 130 224 L 50 224 C 35 225, 15 224, 10 215 Z" fill="url(#boardGrad)" stroke="#ffb86c" stroke-width="1.5"/>
+        <path d="M 20 217 L 160 217" stroke="#ffffff" stroke-width="1.5" opacity="0.6" />
+
+        <!-- 轮架 -->
+        <rect x="40" y="223" width="12" height="5" fill="#888" />
+        <rect x="120" y="223" width="12" height="5" fill="#888" />
+
+        <!-- 旋转的前后轮 -->
+        <g transform="translate(46, 230)">
+          <g class="spinning-wheel">
+            <use href="#wheel" />
+          </g>
+        </g>
+        <g transform="translate(126, 230)">
+          <g class="spinning-wheel">
+            <use href="#wheel" />
+          </g>
+        </g>
+      </g>
+
+      <!-- 三花猫部分（朝左） -->
+      <g id="calico-cat">
+
+        <!-- 尾巴 -->
+        <g class="tail">
+          <path d="M 135 195 Q 165 190, 160 160 Q 155 145, 170 140 C 175 140, 175 150, 166 163 Q 155 180, 135 200 Z" fill="#f4a261" />
+          <path d="M 152 170 Q 160 160, 168 152 C 172 150, 172 155, 165 165 Z" fill="#2b2d42" />
+          <path d="M 135 195 Q 145 190, 148 180 L 140 188 Z" fill="#ffffff" />
+        </g>
+
+        <!-- 后腿 -->
+        <ellipse cx="125" cy="214" rx="8" ry="6" fill="#f4a261" />
+        <rect x="120" y="200" width="10" height="15" rx="5" fill="#fdfbf7" />
+        
+        <!-- 猫身体（白色底色 + 橘斑 + 黑斑） -->
+        <path d="M 60 170 C 55 140, 90 145, 115 155 C 135 165, 140 185, 135 210 L 70 210 C 60 200, 60 185, 60 170 Z" fill="#fdfbf7" />
+
+        <!-- 花斑 1: 背部橘色 -->
+        <path d="M 95 150 C 110 155, 130 165, 132 180 C 120 185, 100 175, 95 150 Z" fill="#e07a5f" />
+
+        <!-- 花斑 2: 臀部黑色 -->
+        <path d="M 115 180 C 135 185, 133 205, 120 210 C 110 205, 110 190, 115 180 Z" fill="#2b2d42" />
+
+        <!-- 前腿 -->
+        <rect x="65" y="195" width="10" height="20" rx="5" fill="#fdfbf7" />
+        <ellipse cx="70" cy="214" rx="8" ry="5" fill="#fdfbf7" />
+        
+        <!-- 红色飘逸围巾 -->
+        <g class="scarf">
+          <path d="M 75 165 Q 110 165, 135 175 Q 140 180, 125 182 Q 100 175, 75 170 Z" fill="#e76f51" />
+          <path d="M 75 165 Q 120 170, 145 185 Q 140 190, 120 180 Q 95 172, 75 170 Z" fill="#f4a261" />
+        </g>
+
+        <!-- 猫头 -->
+        <g id="head">
+          <!-- 左耳（黑色斑块） -->
+          <path d="M 45 135 L 35 105 L 60 120 Z" fill="#2b2d42" />
+          <path d="M 46 132 L 40 110 L 56 122 Z" fill="#ffb5a7" />
+
+          <!-- 右耳（橘色斑块） -->
+          <path d="M 70 125 L 80 98 L 90 125 Z" fill="#e07a5f" />
+          <path d="M 73 124 L 80 104 L 86 124 Z" fill="#ffb5a7" />
+
+          <!-- 脸型（白色） -->
+          <ellipse cx="62" cy="140" rx="26" ry="22" fill="#fdfbf7" />
+
+          <!-- 面部花斑（橘黑双色） -->
+          <path d="M 62 118 C 75 118, 86 125, 85 138 C 75 140, 65 130, 62 118 Z" fill="#e07a5f" />
+          <path d="M 38 135 C 36 148, 48 158, 55 158 C 48 148, 42 140, 38 135 Z" fill="#2b2d42" />
+
+          <!-- 鼻子 & 嘴巴 & 腮红 -->
+          <polygon points="56,144 60,144 58,147" fill="#ffb5a7" />
+          <path d="M 55 149 Q 58 152, 61 149" stroke="#2b2d42" stroke-width="1.2" fill="none" stroke-linecap="round" />
+          <ellipse cx="43" cy="145" rx="3.5" ry="2" fill="#ff8fa3" opacity="0.6" />
+          <ellipse cx="73" cy="145" rx="3.5" ry="2" fill="#ff8fa3" opacity="0.6" />
+
+          <!-- 胡须 -->
+          <path d="M 42 144 L 25 141 M 41 147 L 26 147 M 42 150 L 28 153" stroke="#2b2d42" stroke-width="1.2" stroke-linecap="round" />
+          <path d="M 72 144 L 88 142 M 73 147 L 89 148 M 72 150 L 86 154" stroke="#2b2d42" stroke-width="1.2" stroke-linecap="round" />
+
+          <!-- 酷炫墨镜 -->
+          <g id="sunglasses">
+            <path d="M 40 134 Q 57 132, 75 134 L 73 143 Q 57 146, 42 143 Z" fill="#111" opacity="0.88" />
+            <path d="M 41 135 L 74 135" stroke="#ff79c6" stroke-width="1.5" />
+            <path d="M 44 136 L 52 142" stroke="#ffffff" stroke-width="1.2" opacity="0.7" stroke-linecap="round" />
+            <path d="M 60 136 L 68 142" stroke="#ffffff" stroke-width="1.2" opacity="0.7" stroke-linecap="round" />
+          </g>
+        </g> <!-- 猫头结束 -->
+
+      </g> <!-- 猫结束 -->
+
+    </g> <!-- 颠簸结束 -->
+  </g> <!-- 主体结束 -->
+
+</svg>

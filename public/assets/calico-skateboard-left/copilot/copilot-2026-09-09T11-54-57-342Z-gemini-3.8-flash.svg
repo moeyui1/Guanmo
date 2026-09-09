@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="100%" height="100%">
+  <defs>
+    <!-- 渐变与阴影 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8F4F8" />
+      <stop offset="60%" stop-color="#FDEFE7" />
+      <stop offset="100%" stop-color="#FED7C3" />
+    </linearGradient>
+
+    <linearGradient id="boardGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5722" />
+      <stop offset="50%" stop-color="#FF9800" />
+      <stop offset="100%" stop-color="#FFC107" />
+    </linearGradient>
+
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.15" />
+    </filter>
+
+    <!-- 车轮组件 -->
+    <g id="wheel">
+      <circle cx="0" cy="0" r="14" fill="#37474F" />
+      <circle cx="0" cy="0" r="10" fill="#ECEFF1" />
+      <circle cx="0" cy="0" r="5" fill="#78909C" />
+      <line x1="0" y1="-9" x2="0" y2="9" stroke="#CFD8DC" stroke-width="2.5" />
+      <line x1="-9" y1="0" x2="9" y2="0" stroke="#CFD8DC" stroke-width="2.5" />
+    </g>
+  </defs>
+
+  <style>
+    /* 滑板猫从右向左无限滑行动画 */
+    @keyframes skateRide {
+      0% {
+        transform: translate3d(850px, 0, 0);
+      }
+      100% {
+        transform: translate3d(-320px, 0, 0);
+      }
+    }
+
+    /* 逆时针高速滚动的车轮 */
+    @keyframes wheelRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(-360deg); }
+    }
+
+    /* 颠簸感微动 */
+    @keyframes boardBob {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      25% { transform: translateY(-2px) rotate(-0.5deg); }
+      75% { transform: translateY(1.5px) rotate(0.5deg); }
+    }
+
+    /* 尾巴迎风摇摆 */
+    @keyframes tailSway {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(14deg); }
+    }
+
+    /* 围巾迎风飘扬 */
+    @keyframes scarfFlutter {
+      0%, 100% { transform: scaleX(1) rotate(0deg); }
+      50% { transform: scaleX(1.15) rotate(-6deg); }
+    }
+
+    /* 地面破风线 */
+    @keyframes dashMove {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 600; }
+    }
+
+    .skater-group {
+      animation: skateRide 4.2s linear infinite;
+    }
+
+    .bob-body {
+      animation: boardBob 0.35s ease-in-out infinite;
+    }
+
+    .spinning-wheel {
+      animation: wheelRotate 0.35s linear infinite;
+    }
+
+    .tail-motion {
+      transform-origin: 165px 155px;
+      animation: tailSway 0.7s ease-in-out infinite;
+    }
+
+    .scarf-motion {
+      transform-origin: 85px 148px;
+      animation: scarfFlutter 0.3s ease-in-out infinite;
+    }
+
+    .speed-line {
+      stroke: #FFFFFF;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 40 80;
+      animation: dashMove 1.2s linear infinite;
+    }
+
+    .ground-line {
+      stroke: #FFAB91;
+      stroke-dasharray: 20 25;
+      animation: dashMove 0.8s linear infinite;
+    }
+  </style>
+
+  <!-- 背景 -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+
+  <!-- 速度流线（背景风速线） -->
+  <line x1="800" y1="80" x2="0" y2="80" class="speed-line" opacity="0.6" />
+  <line x1="800" y1="120" x2="0" y2="120" class="speed-line" opacity="0.4" style="animation-duration: 0.9s;" />
+  <line x1="800" y1="190" x2="0" y2="190" class="speed-line" opacity="0.5" style="animation-duration: 1.5s;" />
+
+  <!-- 路面与地面标线 -->
+  <rect x="0" y="275" width="800" height="85" fill="#546E7A" />
+  <rect x="0" y="275" width="800" height="6" fill="#37474F" />
+  <line x1="0" y1="318" x2="800" y2="318" stroke="#FFE082" stroke-width="4" stroke-dasharray="45 40" class="ground-line" />
+
+  <!-- 主体：三花猫 + 滑板（整体向左行驶） -->
+  <g class="skater-group">
+    <g class="bob-body">
+      <!-- 投影 -->
+      <ellipse cx="105" cy="275" rx="85" ry="8" fill="rgba(38,50,56,0.3)" />
+
+      <!-- 滑板主体 -->
+      <!-- 桥架 (Trucks) -->
+      <rect x="52" y="253" width="16" height="10" rx="2" fill="#78909C" />
+      <rect x="142" y="253" width="16" height="10" rx="2" fill="#78909C" />
+
+      <!-- 车轮 (左轮与右轮) -->
+      <g transform="translate(60, 263)">
+        <g class="spinning-wheel">
+          <use href="#wheel" />
+        </g>
+      </g>
+      <g transform="translate(150, 263)">
+        <g class="spinning-wheel">
+          <use href="#wheel" />
+        </g>
+      </g>
+
+      <!-- 板面 (两端微翘，朝向左方) -->
+      <path d="M 22 245 Q 38 255 58 253 L 152 253 Q 175 255 190 242 C 193 240 188 249 160 258 L 48 258 Q 22 255 22 245 Z" 
+            fill="url(#boardGrad)" filter="url(#shadow)" />
+      <!-- 板面砂纸图案 -->
+      <path d="M 36 248 Q 50 253 65 253 L 145 253 Q 165 253 178 245" stroke="#D84315" stroke-width="2.5" fill="none" stroke-linecap="round" />
+
+      <!-- 角色：三花猫 -->
+      <!-- 猫尾巴（带三花色块） -->
+      <g class="tail-motion">
+        <path d="M 165 155 Q 195 145 200 105 Q 202 85 188 80 Q 178 78 180 95 Q 183 125 155 145 Z" fill="#FFFFFF" />
+        <!-- 尾巴黑斑 -->
+        <path d="M 188 80 Q 178 78 180 95 C 182 108 190 105 198 98 Q 200 88 188 80 Z" fill="#263238" />
+        <!-- 尾巴橘斑 -->
+        <path d="M 183 122 Q 188 135 170 145 L 160 152 Q 175 138 185 125 Z" fill="#E65100" />
+      </g>
+
+      <!-- 后腿与后爪 -->
+      <ellipse cx="145" cy="225" rx="18" ry="24" fill="#FFFFFF" />
+      <path d="M 130 220 Q 148 215 152 235 Q 150 248 135 248 L 125 248 Q 120 238 130 220 Z" fill="#FFFFFF" />
+      <circle cx="132" cy="245" r="4" fill="#FFA726" /> <!-- 后爪橘斑 -->
+
+      <!-- 身体主轮廓（白底三花） -->
+      <path d="M 75 160 C 65 185 70 230 85 244 C 95 247 115 247 130 243 C 145 235 165 210 160 170 C 155 140 120 135 95 142 C 85 146 78 152 75 160 Z" fill="#FFFFFF" />
+
+      <!-- 身体大橘斑 -->
+      <path d="M 115 140 C 135 145 155 165 158 190 C 145 195 130 185 120 175 C 112 165 110 150 115 140 Z" fill="#FF9800" />
+      
+      <!-- 身体黑斑 -->
+      <path d="M 85 195 C 92 185 105 190 108 202 C 110 215 95 232 82 230 C 80 218 80 205 85 195 Z" fill="#37474F" />
+
+      <!-- 前腿与前踏爪（扶板姿态） -->
+      <path d="M 68 185 Q 52 215 50 242 L 68 243 Q 78 220 85 192 Z" fill="#FFFFFF" />
+      <!-- 前右足 -->
+      <ellipse cx="58" cy="243" rx="11" ry="6" fill="#FFFFFF" />
+      <path d="M 53 240 Q 60 238 64 246" stroke="#CFD8DC" stroke-width="1.5" fill="none" />
+
+      <!-- 猫头 -->
+      <circle cx="82" cy="120" r="32" fill="#FFFFFF" />
+
+      <!-- 头顶三花斑纹：左耳黑，右侧脸橘 -->
+      <!-- 头部黑斑（左侧及左耳） -->
+      <path d="M 75 90 C 65 92 56 102 54 116 C 60 124 72 125 76 115 C 78 102 82 92 75 90 Z" fill="#263238" />
+      
+      <!-- 头部橘斑（右额角） -->
+      <path d="M 90 92 C 102 96 110 105 112 118 C 105 125 96 122 92 114 C 88 105 88 95 90 92 Z" fill="#FF9800" />
+
+      <!-- 猫耳朵 -->
+      <!-- 左耳（黑） -->
+      <polygon points="56,102 46,72 74,86" fill="#263238" />
+      <polygon points="57,98 52,78 70,88" fill="#FFAB91" />
+
+      <!-- 右耳（橘白） -->
+      <polygon points="90,88 112,68 114,98" fill="#FF9800" />
+      <polygon points="94,90 108,76 110,96" fill="#FFAB91" />
+
+      <!-- 酷帅防风墨镜（向左疾驰的滑板猫） -->
+      <path d="M 46 118 Q 63 114 80 119 L 85 120 Q 98 114 110 120" stroke="#1A1A1A" stroke-width="3" fill="none" />
+      <!-- 墨镜镜片 -->
+      <path d="M 48 118 Q 62 115 76 120 C 76 132 64 137 52 135 C 46 132 45 124 48 118 Z" fill="#212121" />
+      <path d="M 82 120 Q 96 116 108 121 C 108 132 98 138 88 135 C 82 132 80 125 82 120 Z" fill="#212121" />
+      <!-- 镜片反光高光 -->
+      <polygon points="54,122 64,121 52,132" fill="#00E5FF" opacity="0.8" />
+      <polygon points="88,123 98,122 86,133" fill="#00E5FF" opacity="0.8" />
+
+      <!-- 小巧粉鼻与专注的嘴 -->
+      <polygon points="63,135 68,135 65.5,138" fill="#FF8A80" />
+      <path d="M 65.5 138 Q 63 143 58 141 M 65.5 138 Q 68 143 72 141" stroke="#546E7A" stroke-width="1.5" fill="none" />
+
+      <!-- 左侧迎风胡须 -->
+      <line x1="52" y1="133" x2="28" y2="128" stroke="#37474F" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="50" y1="138" x2="24" y2="139" stroke="#37474F" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="52" y1="142" x2="30" y2="148" stroke="#37474F" stroke-width="1.5" stroke-linecap="round" />
+
+      <!-- 红色飘动领巾 -->
+      <g class="scarf-motion">
+        <path d="M 72 148 Q 90 146 102 153 Q 92 160 74 156 Z" fill="#E53935" />
+        <path d="M 95 150 Q 125 146 142 132 Q 135 152 105 156 Z" fill="#D32F2F" />
+      </g>
+    </g>
+  </g>
+</svg>
