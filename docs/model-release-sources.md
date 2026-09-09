@@ -14,6 +14,7 @@
 | GPT-5.6 Terra | 2026-07-09 | [官方记录](https://developers.openai.com/api/docs/changelog) |
 | GPT-5.6 Luna | 2026-07-09 | [官方记录](https://developers.openai.com/api/docs/changelog) |
 | Gemini 3.5 Flash | 2026-05-19 | [官方记录](https://ai.google.dev/gemini-api/docs/changelog) |
+| DeepSeek V4 Flash | 2026-04-24 | [官方记录](https://api-docs.deepseek.com/updates) |
 | GPT-5.5 | 2026-04-23 | [官方记录](https://developers.openai.com/codex/changelog) |
 | GPT-5.4 | 2026-03-05 | [官方记录](https://developers.openai.com/api/docs/changelog) |
 | GPT-5.3 Codex | 2026-02-05 | [官方记录](https://developers.openai.com/codex/changelog) |
@@ -24,6 +25,7 @@
 | GPT-4.1 | 2025-04-14 | [官方记录](https://developers.openai.com/api/docs/changelog) |
 | GPT-4o | 2024-05-13 | [官方记录](https://developers.openai.com/api/docs/models/gpt-4o) |
 
+- DeepSeek V4 Flash：采用 V4-Pro / V4-Flash 首次公开可用的 2026-04-24，不使用后续更新或 Vision-Exp 的日期。
 - Grok 4.5：发布公告为 2026-07-16，API release notes 写的是 7 月 8 日；本画廊采用公告日期。API 记录：https://docs.x.ai/developers/release-notes 。
 - GPT-5.5：Codex 首发 4 月 23 日，API 开放 4 月 24 日，采用较早的官方可用记录。
 - GPT-5.3 Codex：首发 2 月 5 日，API 开放 2 月 24 日，采用首发记录。
