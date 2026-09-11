@@ -96,7 +96,7 @@ function promptHTML() { return `<section id="prompt-panel" class="prompt-panel"$
 
 function renderGallery() {
   const all = data.topics.flatMap(topic => topic.samples);
-  main.innerHTML = `<section class="hero"><div><div class="eyebrow">A SMALL COLLECTION OF MACHINE IMAGINATION</div><h1>${t("同一道题，不同想象。")}</h1><p>${t("切换思考深度，或将感兴趣的作品放在一起比较。")}</p></div><div class="hero-side"><div class="stat"><strong>${data.topics.length.toString().padStart(2,'0')}</strong><span>${t("道绘画题目")}</span></div><div class="stat"><strong>${unique(all.map(modelKey)).length.toString().padStart(2,'0')}</strong><span>${t("个模型 / 来源")}</span></div><div class="stat"><strong>${all.length.toString().padStart(2,'0')}</strong><span>${t("份 SVG 作品")}</span></div></div></section>
+  main.innerHTML = `<section class="hero"><div><div class="eyebrow">OBSERVE MODEL BEHAVIOR</div><h1>${t("观察模型表现，识别行为风格。")}</h1><p>${t("用 SVG 动画比较模型与思考深度，为中转站掺水检测提供直观线索。")}</p></div><div class="hero-side"><div class="stat"><strong>${data.topics.length.toString().padStart(2,'0')}</strong><span>${t("道绘画题目")}</span></div><div class="stat"><strong>${unique(all.map(modelKey)).length.toString().padStart(2,'0')}</strong><span>${t("个模型 / 来源")}</span></div><div class="stat"><strong>${all.length.toString().padStart(2,'0')}</strong><span>${t("份 SVG 作品")}</span></div></div></section>
     <div class="topic-nav" aria-label="${t("选择题目")}">${data.topics.map((topic,i) => `<button class="topic-button${topic.id === state.topic.id ? ' active' : ''}" data-topic="${esc(topic.id)}" aria-pressed="${topic.id === state.topic.id}">${icon(topic.icon || (i ? 'leaf' : 'grid'))}<span>${esc(topicTitle(topic))}</span><span class="count">${baseline(topic).length}</span></button>`).join('')}</div>
     <div class="topic-heading"><h2>${esc(topicTitle(state.topic))} <span class="pill">${t("可切换思考深度")}</span></h2><div class="topic-links"><button class="text-button" data-action="prompt" aria-expanded="${state.promptOpen}" aria-controls="prompt-panel">${icon('file')} ${t("看提示词")}</button><a class="text-button advanced-link" href="${topicHref('compare',state.topic.id)}">${t("高级比较")} ${icon('arrow')}</a></div></div>
     ${promptHTML()}
@@ -246,7 +246,7 @@ function renderChrome(){
   document.documentElement.lang=getLanguage()==='en'?'en':'zh-CN';
   document.querySelectorAll('[data-i18n]').forEach(node=>node.textContent=t(node.dataset.i18n));
   document.querySelectorAll('[data-i18n-aria]').forEach(node=>node.setAttribute('aria-label',t(node.dataset.i18nAria)));
-  document.querySelector('meta[name="description"]').content=t('同一道题，不同模型。浏览 SVG 作品，比较模型与思考强度。');
+  document.querySelector('meta[name="description"]').content=t('通过 SVG 动画观察模型表现差距与行为风格，辅助识别中转服务的模型混用或降级。');
   const button=document.querySelector('#language-toggle');
   button.textContent=getLanguage()==='en'?'中文':'English';
   button.setAttribute('aria-label',getLanguage()==='en'?'Switch to Chinese':'切换为英文');

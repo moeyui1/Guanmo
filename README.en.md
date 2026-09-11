@@ -2,7 +2,11 @@
 
 [简体中文](README.md) | [English](README.en.md)
 
-One prompt, different models. A manually curated gallery of animated SVG artworks.
+Guanmo compares animated SVG outputs to reveal performance gaps and recurring behavioral styles across models. It also provides a visual reference for spotting possible model substitution or downgrading by third-party API relay services.
+
+Compare outputs from a relay service with the collected samples, looking at instruction following, spatial relationships, motion, composition, and color choices. The manually curated gallery supports comparisons across models, reasoning levels, and repeated samples.
+
+These patterns are clues, not proof of model identity from a single sample. Prompts, reasoning levels, and sampling settings also affect the output.
 
 The collection currently includes three topics: **Pelican riding a bicycle**, **Pelican cycling from right to left**, and **Calico cat skateboarding from right to left**. The latter two focus on right-to-left movement. The calico-cat topic features GPT, Gemini, and Grok, plus manually imported DeepSeek, Doubao, GLM, MiniMax, and Qwen artworks. Imported artworks without a supplied reasoning level are marked Unspecified. The current prompt for each topic is available on the site. The calico-cat prompt is sent verbatim in Chinese: `生成一张三花猫滑着滑板从右到左前进的svg动图`. It is not translated or expanded; only the animated SVG output format is specified separately.
 
