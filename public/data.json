@@ -310,7 +310,7 @@
           "id": "pelican-deepseek-v4-flash",
           "model": "DeepSeek-V4-Flash",
           "provider": "DeepSeek",
-          "reasoning": "unspecified",
+          "reasoning": "default",
           "home": true,
           "src": "assets/pelican/deepseek-v4-flash.svg"
         },
@@ -467,7 +467,7 @@
           "id": "pelican-legacy-1",
           "model": "未标注模型",
           "provider": "个人样本",
-          "reasoning": "unspecified",
+          "reasoning": "default",
           "home": false,
           "variant": "早期样本 01",
           "src": "assets/legacy/pelican_bicycle.svg"
@@ -476,7 +476,7 @@
           "id": "pelican-legacy-2",
           "model": "未标注模型",
           "provider": "个人样本",
-          "reasoning": "unspecified",
+          "reasoning": "default",
           "home": false,
           "variant": "早期样本 02",
           "src": "assets/legacy/pelican-riding-bicycle-animation.svg"
@@ -485,7 +485,7 @@
           "id": "pelican-legacy-3",
           "model": "未标注模型",
           "provider": "个人样本",
-          "reasoning": "unspecified",
+          "reasoning": "default",
           "home": false,
           "variant": "早期样本 03",
           "src": "assets/legacy/pelican-on-a-bicycle.svg"
@@ -494,7 +494,7 @@
           "id": "pelican-legacy-4",
           "model": "未标注模型",
           "provider": "个人样本",
-          "reasoning": "unspecified",
+          "reasoning": "default",
           "home": false,
           "variant": "早期样本 04",
           "src": "assets/legacy/pelican-on-a-bicycle-animated.svg"
@@ -678,7 +678,7 @@
           "id": "calico-skateboard-left-deepseek-v4.1-flash",
           "model": "DeepSeek-V4.1-Flash",
           "provider": "DeepSeek",
-          "reasoning": "unspecified",
+          "reasoning": "default",
           "home": true,
           "src": "assets/calico-skateboard-left/imported/deepseek-v4.1-flash.svg",
           "presentation": {
@@ -710,7 +710,7 @@
           "id": "calico-skateboard-left-glm5.3",
           "model": "GLM-5.3",
           "provider": "Z.ai",
-          "reasoning": "unspecified",
+          "reasoning": "default",
           "home": true,
           "src": "assets/calico-skateboard-left/imported/glm5.3.svg"
         },
@@ -740,7 +740,7 @@
           "id": "calico-skateboard-left-qwen3.8-max",
           "model": "Qwen3.8-Max",
           "provider": "Alibaba",
-          "reasoning": "unspecified",
+          "reasoning": "default",
           "home": true,
           "src": "assets/calico-skateboard-left/imported/qwen3.8-max.svg"
         },
@@ -770,7 +770,7 @@
           "id": "calico-skateboard-left-kimi-k3",
           "model": "Kimi K3",
           "provider": "Moonshot AI",
-          "reasoning": "unspecified",
+          "reasoning": "default",
           "home": true,
           "src": "assets/calico-skateboard-left/imported/kimi-k3.svg"
         },
@@ -808,7 +808,7 @@
           "id": "calico-skateboard-left-doubao-2.1-turbo",
           "model": "Doubao-Seed-2.1-turbo",
           "provider": "ByteDance",
-          "reasoning": "unspecified",
+          "reasoning": "default",
           "home": true,
           "src": "assets/calico-skateboard-left/imported/doubao-2.1-turbo.svg",
           "presentation": {
@@ -819,7 +819,7 @@
           "id": "calico-skateboard-left-minimax-m3",
           "model": "MiniMax M3",
           "provider": "MiniMax",
-          "reasoning": "unspecified",
+          "reasoning": "default",
           "home": true,
           "src": "assets/calico-skateboard-left/imported/minimax-m3.svg"
         },
@@ -838,7 +838,7 @@
           "id": "calico-skateboard-left-deepseek-v4-flash",
           "model": "DeepSeek-V4-Flash",
           "provider": "DeepSeek",
-          "reasoning": "unspecified",
+          "reasoning": "default",
           "home": true,
           "src": "assets/calico-skateboard-left/imported/deepseek-v4-flash.svg",
           "presentation": {
@@ -849,7 +849,7 @@
           "id": "calico-skateboard-left-deepseek-v4-pro",
           "model": "DeepSeek-V4-Pro",
           "provider": "DeepSeek",
-          "reasoning": "unspecified",
+          "reasoning": "default",
           "home": true,
           "src": "assets/calico-skateboard-left/imported/deepseek-v4-pro.svg"
         },

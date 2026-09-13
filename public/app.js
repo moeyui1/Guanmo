@@ -22,13 +22,13 @@ const shapes = {
   river:'<path d="M7 3c12 5-11 7 1 12s0 6 0 6M16 3c12 5-11 7 1 12s0 6 0 6"/>',
 };
 const icon = name => `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${shapes[name] || shapes.grid}</svg>`;
-const effortName = level => ({default:t("默认"),unspecified:t("未标注"),none:t("无思考"),minimal:'Minimal',low:'Low',medium:'Medium',high:'High',xhigh:'XHigh',max:'Max',ultra:'Ultra'}[level] || level || t("默认"));
-const effort = sample => sample.reasoning || 'default';
+const effortName = level => ({default:t("默认"),unspecified:t("默认"),none:t("无思考"),minimal:'Minimal',low:'Low',medium:'Medium',high:'High',xhigh:'XHigh',max:'Max',ultra:'Ultra'}[level] || level || t("默认"));
+const effort = sample => !sample.reasoning || sample.reasoning === 'unspecified' ? 'default' : sample.reasoning;
 const modelName=sample=>t(sample.model);
 const providerName=sample=>t(sample.provider || '其他');
 const modelKey = sample => JSON.stringify([sample.provider || '其他', sample.model]);
 const unique = values => [...new Set(values)];
-const effortOrder=['default','unspecified','none','minimal','low','medium','high','xhigh','max','ultra'];
+const effortOrder=['default','none','minimal','low','medium','high','xhigh','max','ultra'];
 const orderedEfforts=values=>unique(values).sort((a,b)=>(effortOrder.includes(a)?effortOrder.indexOf(a):999)-(effortOrder.includes(b)?effortOrder.indexOf(b):999));
 let data;
 const PAGE_SIZE=12;
@@ -63,7 +63,7 @@ function sampleLabel(sample) {
   const siblings=state.topic.samples.filter(s=>modelKey(s)===modelKey(sample) && effort(s)===effort(sample));
   return t('样本 {n}',{n:siblings.findIndex(s=>s.id===sample.id)+1});
 }
-function baseline(topic = state.topic) { return topic.samples.filter(s => s.home===true || (s.home!==false && ['default','unspecified'].includes(effort(s)))); }
+function baseline(topic = state.topic) { return topic.samples.filter(s => s.home===true || (s.home!==false && effort(s)==='default')); }
 function topicHref(mode, topicId, ids) {
   const params = new URLSearchParams({topic:topicId});
   if (ids?.length) params.set('samples',ids.join(','));

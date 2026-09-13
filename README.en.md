@@ -8,7 +8,7 @@ Compare outputs from a relay service with the collected samples, looking at inst
 
 These patterns are clues, not proof of model identity from a single sample. Prompts, reasoning levels, and sampling settings also affect the output.
 
-The collection currently includes three topics: **Pelican riding a bicycle**, **Pelican cycling from right to left**, and **Calico cat skateboarding from right to left**. The latter two focus on right-to-left movement. The calico-cat topic features GPT, Gemini, and Grok, plus manually imported DeepSeek, Kimi, Doubao, GLM, MiniMax, and Qwen artworks. Imported artworks without a supplied reasoning level are marked Unspecified. The current prompt for each topic is available on the site. The calico-cat prompt is sent verbatim in Chinese: `生成一张三花猫滑着滑板从右到左前进的svg动图`. It is not translated or expanded; only the animated SVG output format is specified separately.
+The collection currently includes three topics: **Pelican riding a bicycle**, **Pelican cycling from right to left**, and **Calico cat skateboarding from right to left**. The latter two focus on right-to-left movement. The calico-cat topic features GPT, Gemini, and Grok, plus manually imported DeepSeek, Kimi, Doubao, GLM, MiniMax, and Qwen artworks. Artworks without a supplied reasoning level are treated as Default. The current prompt for each topic is available on the site. The calico-cat prompt is sent verbatim in Chinese: `生成一张三花猫滑着滑板从右到左前进的svg动图`. It is not translated or expanded; only the animated SVG output format is specified separately.
 
 **Live site: https://moeyui1.github.io/Guanmo/**
 
@@ -46,7 +46,7 @@ Place the SVG under `public/assets/`, then append an entry to the relevant topic
 }
 ```
 
-Each `id` must be unique. A sample appears as a homepage card when its reasoning level is `default` or `unspecified` and `home` is not `false`. Setting `home: true` explicitly makes any reasoning level the initial artwork for that card. For a model with only low, middle, and high levels, set Medium to `home: true` and the other two to `false`.
+Each `id` must be unique. Missing or empty reasoning values and legacy `unspecified` values are treated as `default`. For new artworks without an explicit level, use `"reasoning": "default"`. A sample appears as a homepage card when its reasoning level is default and `home` is not `false`. Setting `home: true` explicitly makes any reasoning level the initial artwork for that card. For a model with only low, middle, and high levels, set Medium to `home: true` and the other two to `false`.
 
 Other levels for the same provider and model appear automatically in the card's dropdown, ordered from lowest to highest. Repeated samples are available in Advanced compare and are numbered in collection order. New providers and reasoning labels require no changes to the page code.
 
@@ -67,7 +67,7 @@ Topics may include a `titleEn` field for their English name; otherwise, the orig
 
 The skateboarding-cat topic uses an open-ended generation process: the Chinese theme is passed verbatim, with only the animated SVG output format specified. Canvas size, duration, and visual style are left to the model. Presentation is standardized afterwards in a 16:9 frame. Set `presentation: {"fit":"cover"}` on a topic or sample to scale proportionally and crop the edges, or `{"fit":"contain"}` to preserve the full scene. Wide moving scenes retain their full travel path. Downloads preserve the generated dimensions and animation; necessary syntax compatibility fixes do not change shapes or motion parameters.
 
-All GPT, Gemini, and Grok artworks for the calico-cat topic use the exact Chinese prompt above, default reasoning, and independent sessions. Known prompts are recorded in `samples[].prompt`; missing generation details for manual imports are not inferred.
+All GPT, Gemini, and Grok artworks for the calico-cat topic use the exact Chinese prompt above, default reasoning, and independent sessions. Known prompts are recorded in `samples[].prompt`; other missing generation details for manual imports are not inferred; unspecified reasoning follows the default convention above.
 
 ## Build and deploy
 
