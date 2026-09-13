@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
+  <style>
+    .rider {
+      animation: ride 4s linear infinite;
+    }
+    @keyframes ride {
+      0%   { transform: translateX(650px); }
+      100% { transform: translateX(-300px); }
+    }
+    .bob {
+      animation: bob 0.6s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-6px); }
+    }
+    .wheel {
+      animation: spin 0.5s linear infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(-360deg); }
+    }
+    .tail {
+      animation: wag 0.8s ease-in-out infinite;
+      transform-origin: 215px 160px;
+    }
+    @keyframes wag {
+      0%, 100% { transform: rotate(0deg); }
+      50%      { transform: rotate(15deg); }
+    }
+    .ear {
+      animation: twitch 2s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    @keyframes twitch {
+      0%, 90%, 100% { transform: rotate(0deg); }
+      95%           { transform: rotate(-10deg); }
+    }
+    .cloud {
+      animation: drift 6s linear infinite;
+    }
+    @keyframes drift {
+      0%   { transform: translateX(650px); }
+      100% { transform: translateX(-150px); }
+    }
+  </style>
+
+  <!-- 背景 -->
+  <rect width="600" height="300" fill="#aee2ff"/>
+  <rect y="250" width="600" height="50" fill="#7ec850"/>
+  <rect y="240" width="600" height="12" fill="#999"/>
+
+  <!-- 云朵 -->
+  <g class="cloud" opacity="0.9">
+    <ellipse cx="60" cy="60" rx="40" ry="20" fill="#fff"/>
+    <ellipse cx="90" cy="50" rx="30" ry="18" fill="#fff"/>
+  </g>
+  <g class="cloud" style="animation-delay:-3s" opacity="0.8">
+    <ellipse cx="40" cy="120" rx="35" ry="16" fill="#fff"/>
+    <ellipse cx="65" cy="110" rx="25" ry="14" fill="#fff"/>
+  </g>
+
+  <!-- 从右到左滑行的骑手 -->
+  <g class="rider">
+    <g class="bob">
+      <!-- 滑板 -->
+      <rect x="80" y="225" width="160" height="10" rx="5" fill="#e67e22"/>
+      <rect x="80" y="225" width="160" height="4" rx="2" fill="#f39c12"/>
+      <!-- 轮子 -->
+      <g class="wheel">
+        <circle cx="110" cy="242" r="11" fill="#333"/>
+        <circle cx="110" cy="242" r="5" fill="#aaa"/>
+        <line x1="105" y1="242" x2="115" y2="242" stroke="#666" stroke-width="2"/>
+      </g>
+      <g class="wheel">
+        <circle cx="210" cy="242" r="11" fill="#333"/>
+        <circle cx="210" cy="242" r="5" fill="#aaa"/>
+        <line x1="205" y1="242" x2="215" y2="242" stroke="#666" stroke-width="2"/>
+      </g>
+
+      <!-- 尾巴 -->
+      <path class="tail" d="M215 160 Q250 150 255 120" stroke="#ff8c42" stroke-width="16" fill="none" stroke-linecap="round"/>
+
+      <!-- 后腿 -->
+      <rect x="195" y="185" width="18" height="42" rx="9" fill="#ffffff"/>
+      <ellipse cx="204" cy="226" rx="12" ry="7" fill="#ffffff"/>
+
+      <!-- 身体（白底 + 橘/黑斑块 = 三花） -->
+      <ellipse cx="150" cy="165" rx="55" ry="42" fill="#ffffff"/>
+      <ellipse cx="175" cy="150" rx="22" ry="16" fill="#ff8c42"/>
+      <ellipse cx="130" cy="185" rx="18" ry="14" fill="#333333"/>
+      <ellipse cx="125" cy="150" rx="14" ry="11" fill="#ff8c42" opacity="0.85"/>
+
+      <!-- 前腿（站姿） -->
+      <rect x="105" y="185" width="18" height="42" rx="9" fill="#ffffff"/>
+      <ellipse cx="114" cy="226" rx="12" ry="7" fill="#ffffff"/>
+      <rect x="128" y="188" width="16" height="38" rx="8" fill="#ffffff"/>
+      <ellipse cx="136" cy="226" rx="11" ry="7" fill="#ffffff"/>
+
+      <!-- 头 -->
+      <g>
+        <!-- 左耳（朝前方向） -->
+        <polygon class="ear" points="82,102 72,70 100,88" fill="#ff8c42"/>
+        <polygon points="86,96 80,78 96,88" fill="#ffb37e"/>
+        <!-- 右耳 -->
+        <polygon points="120,95 138,72 142,100" fill="#333333"/>
+        <polygon points="124,92 135,79 138,96" fill="#666"/>
+        <!-- 头形 -->
+        <circle cx="105" cy="120" r="38" fill="#ffffff"/>
+        <ellipse cx="125" cy="105" rx="16" ry="13" fill="#ff8c42"/>
+        <ellipse cx="90" cy="102" rx="10" ry="9" fill="#333333"/>
+        <!-- 眼睛（朝左看，前进方向） -->
+        <circle cx="88" cy="118" r="5" fill="#2c3e50"/>
+        <circle cx="86.5" cy="116.5" r="1.6" fill="#fff"/>
+        <circle cx="116" cy="118" r="5" fill="#2c3e50"/>
+        <circle cx="114.5" cy="116.5" r="1.6" fill="#fff"/>
+        <!-- 鼻子嘴 -->
+        <polygon points="98,130 106,130 102,136" fill="#e98a8a"/>
+        <path d="M102 136 Q98 142 92 140 M102 136 Q106 142 112 140" stroke="#888" stroke-width="1.5" fill="none"/>
+        <!-- 胡须 -->
+        <line x1="70" y1="128" x2="92" y2="131" stroke="#bbb" stroke-width="1.5"/>
+        <line x1="70" y1="138" x2="92" y2="135" stroke="#bbb" stroke-width="1.5"/>
+        <line x1="114" y1="131" x2="136" y2="128" stroke="#bbb" stroke-width="1.5"/>
+        <line x1="114" y1="135" x2="136" y2="138" stroke="#bbb" stroke-width="1.5"/>
+      </g>
+    </g>
+
+    <!-- 速度线 -->
+    <g opacity="0.5">
+      <line x1="260" y1="150" x2="300" y2="150" stroke="#fff" stroke-width="4" stroke-linecap="round">
+        <animate attributeName="opacity" values="0;0.8;0" dur="0.4s" repeatCount="indefinite"/>
+      </line>
+      <line x1="265" y1="180" x2="310" y2="180" stroke="#fff" stroke-width="4" stroke-linecap="round">
+        <animate attributeName="opacity" values="0;0.8;0" dur="0.4s" begin="0.2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="262" y1="210" x2="298" y2="210" stroke="#fff" stroke-width="4" stroke-linecap="round">
+        <animate attributeName="opacity" values="0;0.8;0" dur="0.4s" begin="0.1s" repeatCount="indefinite"/>
+      </line>
+    </g>
+  </g>
+</svg>

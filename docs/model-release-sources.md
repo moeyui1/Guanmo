@@ -1,9 +1,10 @@
 # 模型发布日期与来源
 
-核对日期：2026-09-09。默认按公开发布公告或官方可用性记录排序；不使用样本生成时间、训练截止时间或后续快照更新时间。
+核对日期：2026-09-13。默认按公开发布公告或官方可用性记录排序；不使用样本生成时间、训练截止时间或后续快照更新时间。
 
 | 模型 | 发布日期 | 官方来源 |
 |---|---|---|
+| DeepSeek-V4.1-Flash | 2026-09-10 | [官方记录](https://api-docs.deepseek.com/updates) |
 | GPT-6 Astra | 2026-09-03 | [官方记录](https://developers.openai.com/api/docs/changelog) |
 | Gemini 3.8 Flash | 2026-09-02 | [官方记录](https://ai.google.dev/gemini-api/docs/changelog) |
 | GLM-5.3 | 2026-08-14 | [官方记录](https://z.ai/blog/glm-5.3) |
@@ -12,6 +13,7 @@
 | Qwen3.8-Max | 2026-08-03 | [官方记录](https://qwen.ai/blog?id=qwen3.8) |
 | Gemini 3.6 Flash | 2026-07-21 | [官方记录](https://ai.google.dev/gemini-api/docs/changelog) |
 | Grok 4.5 | 2026-07-16 | [官方记录](https://x.ai/news/grok-4-5) |
+| Kimi K3 | 2026-07-16 | [官方记录](https://www.kimi.com/blog/) |
 | GPT-5.6 Sol | 2026-07-09 | [官方记录](https://developers.openai.com/api/docs/changelog) |
 | GPT-5.6 Terra | 2026-07-09 | [官方记录](https://developers.openai.com/api/docs/changelog) |
 | GPT-5.6 Luna | 2026-07-09 | [官方记录](https://developers.openai.com/api/docs/changelog) |
@@ -46,3 +48,6 @@
 - MiniMax M3：采用官方发布文章的 2026-06-01，不使用不同接入平台的上架日期。
 
 模型展示名称遵循官方公开名称：DeepSeek-V4-Flash、DeepSeek-V4-Pro、Doubao-Seed-2.1-turbo、GLM-5.3、MiniMax M3、Qwen3.8-Max。更新名称时同步作品、modelOrder 和 modelReleases，保持提供方与模型名称的排序键一致；作品 ID 和资源路径保持稳定。
+
+- Kimi K3：官方研究索引标注 2026-07-16；名称采用官方发布文章中的 Kimi K3。
+- DeepSeek-V4.1-Flash：官方更新日志于 2026-09-10 发布。保留历史 DeepSeek-V4-Flash 作品及其当时的模型标注，不因 API 别名现在指向新版本而重标旧作品。

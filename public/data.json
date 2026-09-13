@@ -675,6 +675,17 @@
       "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图",
       "samples": [
         {
+          "id": "calico-skateboard-left-deepseek-v4.1-flash",
+          "model": "DeepSeek-V4.1-Flash",
+          "provider": "DeepSeek",
+          "reasoning": "unspecified",
+          "home": true,
+          "src": "assets/calico-skateboard-left/imported/deepseek-v4.1-flash.svg",
+          "presentation": {
+            "fit": "contain"
+          }
+        },
+        {
           "id": "calico-skateboard-left-copilot-2026-09-09T12-13-06-517Z-gpt-6-astra",
           "model": "GPT-6 Astra",
           "provider": "OpenAI",
@@ -754,6 +765,14 @@
           "note": "Copilot CLI",
           "src": "assets/calico-skateboard-left/copilot/copilot-2026-09-09T11-56-31-273Z-grok-4.5.svg",
           "prompt": "生成一张三花猫滑着滑板从右到左前进的svg动图"
+        },
+        {
+          "id": "calico-skateboard-left-kimi-k3",
+          "model": "Kimi K3",
+          "provider": "Moonshot AI",
+          "reasoning": "unspecified",
+          "home": true,
+          "src": "assets/calico-skateboard-left/imported/kimi-k3.svg"
         },
         {
           "id": "calico-skateboard-left-copilot-2026-09-09T12-13-06-531Z-gpt-5.6-sol",
@@ -911,6 +930,7 @@
     }
   ],
   "modelOrder": [
+    "DeepSeek-V4.1-Flash",
     "GPT-6 Astra",
     "Gemini 3.8 Flash",
     "GLM-5.3",
@@ -919,6 +939,7 @@
     "Qwen3.8-Max",
     "Gemini 3.6 Flash",
     "Grok 4.5",
+    "Kimi K3",
     "GPT-5.6 Sol",
     "GPT-5.6 Terra",
     "GPT-5.6 Luna",
@@ -939,6 +960,12 @@
     "未标注模型"
   ],
   "modelReleases": [
+    {
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "releaseDate": "2026-09-10",
+      "source": "https://api-docs.deepseek.com/updates"
+    },
     {
       "model": "GPT-6 Astra",
       "provider": "OpenAI",
@@ -986,6 +1013,13 @@
       "provider": "xAI",
       "releaseDate": "2026-07-16",
       "source": "https://x.ai/news/grok-4-5"
+    },
+    {
+      "model": "Kimi K3",
+      "provider": "Moonshot AI",
+      "releaseDate": "2026-07-16",
+      "source": "https://www.kimi.com/blog/",
+      "nameSource": "https://www.kimi.com/blog/kimi-k3.html"
     },
     {
       "model": "GPT-5.6 Sol",
